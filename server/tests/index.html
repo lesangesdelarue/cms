@@ -2,15 +2,30 @@
 <html>
   <head> </head>
   <body>
-    <form
-      ref="uploadForm"
-      id="uploadForm"
-      action="/upload"
-      method="post"
-      encType="multipart/form-data"
-    >
-      <input type="file" name="sampleFile" />
-      <input type="submit" value="Upload!" />
-    </form>
+    <div>
+      <a href="gql">GraphQL</a>
+      <pre>
+{
+  shops {
+    shop_id
+    address
+    info
+  }
+}
+        </pre
+      >
+    </div>
+    <div>
+      <form
+        ref="uploadForm"
+        id="uploadForm"
+        action="/upload"
+        method="post"
+        encType="multipart/form-data"
+      >
+        <input type="file" name="sampleFile" />
+        <input type="submit" value="Upload" />
+      </form>
+    </div>
   </body>
 </html>

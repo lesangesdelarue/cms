@@ -18,8 +18,8 @@ npm run server:ncc
 ```
 API_GQL_PORT=
 
-# 'tests' will enable static files serving by nodejs
-NODE_ENV='tests'
+# 'dev' will enable static files serving by nodejs
+NODE_ENV='dev'
 
 # where to store uploads => relative path (default 'dist/uploads')
 UPLOAD_DIR=

@@ -1,6 +1,5 @@
 import fs from 'fs';
-
-import conf from './server.conf';
+import conf from './conf';
 
 export default { ensureUploadDir, upload };
 
