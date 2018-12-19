@@ -1,0 +1,30 @@
+{
+  "name": "ladr_cms",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server:dev": "npm-run-all --parallel server:dev:build server:dev:start",
+    "server:dev:build": "rollup -w -c server/server.rollup.config.js",
+    "server:dev:start": "nodemon dist/server.dev.js",
+    "server:ncc": "npm run server:ncc:build && npm run server:ncc:start",
+    "server:ncc:build": "ncc build server/server.index.js -o dist/ncc -M -S",
+    "server:ncc:start": "node dist/ncc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@zeit/ncc": "^0.6.0",
+    "graphql": "^14.0.2",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^0.68.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "helmet": "^3.15.0"
+  }
+}
