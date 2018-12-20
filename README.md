@@ -5,6 +5,7 @@
 ```
 // setup
 npm install
+npm run gen:imgs // to generate tests images
 
 // dev
 npm run server:dev

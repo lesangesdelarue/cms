@@ -16,7 +16,6 @@ const schema = buildSchema(`
     ${promotions.query}
     ${shops.query}
   }
-  scalar Date
   ${products.type}
   ${productCategories.type}
   ${productConditions.type}

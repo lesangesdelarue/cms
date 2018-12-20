@@ -1,29 +1,22 @@
 import conf from '../server/conf';
+import imageGenerator from './imageGenerator';
 import _mock from './products.mock';
 
-const products = _mock.items.map(o => {
-  const _price = rnd(30);
-  return Object.assign({}, o, {
-    batch: !!rnd(),
-    category: rnd(conf.productCategories.length),
-    condition: 0,
-    gallery: ['default'],
-    shops: rnd(4),
-    price: {
-      initial: _price,
-      selling: _price * 0.5,
-    },
-    quantity: {
-      val: rnd(6),
-      unit: '',
-    },
-  });
-});
+generateImgs();
 
-function rnd(maxValue = 2) {
-  return Math.floor(Math.random() * maxValue);
+async function generateImgs() {
+  for (let i = 0; i < _mock.items.length; i += 1) {
+    const o = _mock.items[i];
+    for (let j = 0; j < o.gallery.length; j += 1) {
+      await imageGenerator({
+        batch: o.batch,
+        category: conf.productCategories[o.category].val,
+        condition: conf.productConditions[o.condition].val,
+        dir: 'server/tests/img',
+        id: o.id,
+        number: j,
+        title: o.title,
+      });
+    }
+  }
 }
-
-products.forEach(function(o) {
-  console.log(o);
-});
