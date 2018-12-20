@@ -2,36 +2,28 @@ import conf from './conf';
 import graphqlHTTP from 'express-graphql';
 import { buildSchema } from 'graphql';
 
+import products from './products';
+import promotions from './promotions';
 import shops from './shops';
 
 const schema = buildSchema(`
   type Query {
-    shops: [Shop]
+    ${products.query}
+    ${promotions.query}
+    ${shops.query}
   }
-  type Product {
-    prod_id:String
-    prod_condition:String
-    info:String
-    price_full:Float
-    price_discounted:Float
-  }
-  type Shop {
-    shop_id:Int
-    name:String
-    address:String    
-  }
-  type Promotion {
-    promo_id:String
-    info:String
-    promo_products: [Product] 
-    promo_shops:[Shop]
-  }
+  scalar Date
+  ${products.type}
+  ${promotions.type}
+  ${shops.type}
 `);
 
 export default graphqlHTTP({
   schema,
   rootValue: {
-    shops: () => shops.items,
+    products: products.resolver,
+    promotions: promotions.resolver,
+    shops: shops.resolver,
   },
   graphiql: conf.NODE_ENV === 'dev',
 });
