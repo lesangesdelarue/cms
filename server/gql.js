@@ -2,11 +2,11 @@ import conf from './conf';
 import graphqlHTTP from 'express-graphql';
 import { buildSchema } from 'graphql';
 
-import products from './products';
-import productCategories from './product.categories';
-import productConditions from './product.conditions';
-import promotions from './promotions';
-import shops from './shops';
+import products from './gql/products';
+import productCategories from './gql/product.categories';
+import productConditions from './gql/product.conditions';
+import promotions from './gql/promotions';
+import shops from './gql/shops';
 
 const schema = buildSchema(`
   type Query {
