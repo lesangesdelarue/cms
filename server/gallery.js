@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { existsSync, mkdirSync } from 'fs';
 import conf from './conf';
 
 export default { upload };
@@ -23,7 +23,7 @@ function upload(req, res) {
 function ensureUploadDir() {
   conf.UPLOAD_DIR = conf.UPLOAD_DIR || 'dist/uploads';
 
-  if (!fs.existsSync(conf.UPLOAD_DIR)) {
-    fs.mkdirSync(conf.UPLOAD_DIR);
+  if (!existsSync(conf.UPLOAD_DIR)) {
+    mkdirSync(conf.UPLOAD_DIR);
   }
 }

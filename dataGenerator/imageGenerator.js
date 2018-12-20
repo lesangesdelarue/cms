@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { writeFileSync } from 'fs';
 var svg2img = require('svg2img');
 
 export default function(params) {
@@ -8,7 +8,7 @@ export default function(params) {
       error,
       buffer,
     ) {
-      fs.writeFileSync(`${dir}/${id}_${number}.jpg`, buffer);
+      writeFileSync(`${dir}/${id}_${number}.jpg`, buffer);
       resolve();
     });
   });

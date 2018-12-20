@@ -1,10 +1,10 @@
-import fs from 'fs';
+import { readFileSync } from 'fs';
 
 import dotenv from 'dotenv';
 
 const conf = dotenv.config().parsed;
 try {
-  const _raw = fs.readFileSync('conf.json');
+  const _raw = readFileSync('conf.json');
   const _confJson = JSON.parse(_raw);
   Object.assign(conf, _confJson);
 } catch (err) {

@@ -1,5 +1,7 @@
+import productsMock from './products.mock';
+
 export default {
-  query: '', // TODO
+  query: 'products: [Product]',
   type: `
   type Product {
     id: String
@@ -23,10 +25,6 @@ export default {
     initial: Float
     selling: Float
   }
-  
-  
   `,
-  resolver() {
-    return []; // TODO
-  },
+  resolver: productsMock.resolver,
 };
