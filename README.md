@@ -25,9 +25,13 @@ NODE_ENV='dev'
 UPLOAD_DIR=
 ```
 
-**shops.json**
+**conf.json**
 
-Configuration file in cwd, contains shops data
+Configuration file in cwd, contains configuration data:
+
+- shop lists
+- product categories
+- product conditons
 
 **postgresql**
 
