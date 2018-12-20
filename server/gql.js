@@ -16,9 +16,9 @@ const schema = buildSchema(`
     price_discounted:Float
   }
   type Shop {
-    shop_id:String
-    address:String
-    info:String
+    shop_id:Int
+    name:String
+    address:String    
   }
   type Promotion {
     promo_id:String

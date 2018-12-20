@@ -1,7 +1,9 @@
 import fs from 'fs';
 import conf from './conf';
 
-export default { ensureUploadDir, upload };
+export default { upload };
+
+ensureUploadDir();
 
 function upload(req, res) {
   const _keys = Object.keys(req.files);

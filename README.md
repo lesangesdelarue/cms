@@ -16,7 +16,7 @@ npm run server:ncc
 **.env**
 
 ```
-API_GQL_PORT=
+API_GQL_PORT=3001
 
 # 'dev' will enable static files serving by nodejs
 NODE_ENV='dev'
@@ -24,6 +24,10 @@ NODE_ENV='dev'
 # where to store uploads => relative path (default 'dist/uploads')
 UPLOAD_DIR=
 ```
+
+**shops.json**
+
+Configuration file in cwd, contains shops data
 
 **postgresql**
 
