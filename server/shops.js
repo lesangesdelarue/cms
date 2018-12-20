@@ -1,24 +1,14 @@
-import fs from 'fs';
-
-var _shopItems;
-
-// load shops.json configuration file
-try {
-  const rawShops = fs.readFileSync('shops.json');
-  _shopItems = JSON.parse(rawShops);
-} catch (err) {
-  console.error('loading shops.json');
-}
+import conf from './conf';
 
 export default {
   query: 'shops: [Shop]',
   type: `
   type Shop {
-    shop_id:Int
+    id:Int
     name:String
     address:String    
   }`,
   resolver() {
-    return _shopItems;
+    return conf.shops;
   },
 };

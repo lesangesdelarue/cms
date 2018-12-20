@@ -1,0 +1,35 @@
+{
+  "productCategories": [
+    { "id": 0, "val": "Animalerie" },
+    { "id": 1, "val": "Bébé" },
+    { "id": 2, "val": "Boissons" },
+    { "id": 3, "val": "Entretien, nettoyage" },
+    { "id": 4, "val": "Epicerie salée" },
+    { "id": 5, "val": "Epicerie sucrée" },
+    { "id": 6, "val": "Fruits, légumes" },
+    { "id": 7, "val": "Hygiène, santé" },
+    { "id": 8, "val": "Jouets" },
+    { "id": 9, "val": "Maison, Bricolage" },
+    { "id": 10, "val": "Musique, livres, films" },
+    { "id": 11, "val": "Sports, loisirs" },
+    { "id": 12, "val": "Vêtements, Chaussures, Bijoux" },
+    { "id": 13, "val": "Viandes, poissons" }
+  ],
+  "productConditions": [
+    { "id": 0, "val": "Neuf" },
+    { "id": 1, "val": "Occasion" },
+    { "id": 2, "val": "Reconditionné" }
+  ],
+  "shops": [
+    {
+      "id": 0,
+      "name": "L’épicerie solidaire des Anges de la rue",
+      "address": "3 Rue de Copernic 34770 Gigean"
+    },
+    {
+      "id": 1,
+      "name": "Le grand marché solidaire des Anges de la rue",
+      "address": "Le mas neuf Avenue de l'agau 34970 Lattes"
+    }
+  ]
+}

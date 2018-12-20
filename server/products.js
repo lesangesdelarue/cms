@@ -2,12 +2,13 @@ export default {
   query: '', // TODO
   type: `
   type Product {
-    prod_id: String
+    id: String
+    batch: Boolean
     created_at: Date
     gallery: [String]
     title: String
-    shops: [Int]
-    tags: [String]
+    shops: Int
+    category: Int
     quantity: Quantity
     condition: Int
     price: Price
