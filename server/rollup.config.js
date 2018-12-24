@@ -1,3 +1,5 @@
+import buble from 'rollup-plugin-buble';
+
 export default [
   {
     input: 'server/index.js',
@@ -11,6 +13,12 @@ export default [
       'graphql',
       'helmet',
     ],
+  },
+  {
+    input: 'front/index.js',
+    plugins: [buble()],
+    output: { file: 'server/tests/app.js', format: 'iife', interop: false },
+    external: [],
   },
   {
     input: 'dataGenerator/index.js',
