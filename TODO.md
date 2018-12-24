@@ -1,0 +1,2 @@
+- paginate graphQL API
+- merge template into SPA application

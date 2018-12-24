@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div class="nav">
+        <div class="nav__left">
+            <a href="#">Produits</a>
+            <a href="#" class="active">Promotions</a>
+        </div>
+        <div class="nav__right">
+            <a href="#">Déconnexion</a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="offer-edit__export">
+            <button>Exporter pour Facebook</button>
+        </div>
+        <div class="offer-edit__add-product">
+            <button onclick="openProductsList();">Ajouter un produit</button>
+        </div>    
+        <div class="offer-edit__product" style="background-image:url(http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg);">
+            <button class="offer-edit__product__delete">x</button>
+            <div class="offer-edit__product__title">Nom du produit</div>
+            <div class="offer-edit__product__price">
+                <div class="offer-edit__product__price__content">
+                    <span class="offer-edit__product__price__precise" style="display:none;">à partir de</span>
+                    <span class="offer-edit__product__price__final">25€</span>
+                    <span class="offer-edit__product__price__initial">50€</span>
+                </div>
+            </div>
+        </div>
+        <div class="offer-edit__product" style="background-image:url(http://www.capturemag.net/wp-content/uploads/2015/10/RickMorty2Feat.png);">
+            <button class="offer-edit__product__delete">x</button>
+            <div class="offer-edit__product__title">Nom du produit</div>
+            <div class="offer-edit__product__price">
+                <div class="offer-edit__product__price__content">
+                    <span class="offer-edit__product__price__precise">à partir de</span>
+                    <span class="offer-edit__product__price__final">10€ /kg</span>
+                    <span class="offer-edit__product__price__initial">20€ /kg</span>
+                </div>
+            </div>
+        </div>
+        <div class="offer-edit__add-product">
+            <button onclick="openProductsList();">Ajouter un produit</button>
+        </div>
+        <div id="productsList" class="offer-edit__products-list">
+            <button class="offer-edit__products-list__close" onclick="closeProductsList()">x</button>
+            <div class="wrapper">
+                <div class="product">
+                    <div class="product__image" style="background-image:url(http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg)"></div>
+                    <ul class="product__description">
+                        <li><strong>Titre du produit</strong></li>
+                        <li>
+                            <span style="display:inline;">à partir de</span>
+                            <span class="product__price__initial">20€</span>
+                            <span class="product__price__final">10€</span>
+                            <span>/ kg</span>
+                        </li>
+                        <li class="product__info--secondary">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
+                        <li class="product__info--secondary">20 exemplaires</li>
+                        <li class="product__info--secondary">Grand Marché Solidaire Lattes</li>
+                        <li class="product__info--secondary">Catégorie</li>
+                    </ul>
+                </div>
+                <div class="product">
+                    <div class="product__image" style="background-image:url(http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg)"></div>
+                    <ul class="product__description">
+                        <li><strong>Titre du produit</strong></li>
+                        <li>
+                            <span style="display:inline;">à partir de</span>
+                            <span class="product__price__initial">20€</span>
+                            <span class="product__price__final">10€</span>
+                            <span>/ kg</span>
+                        </li>
+                        <li class="product__info--secondary">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
+                        <li class="product__info--secondary">20 exemplaires</li>
+                        <li class="product__info--secondary">Grand Marché Solidaire Lattes</li>
+                        <li class="product__info--secondary">Catégorie</li>
+                    </ul>
+                </div>
+                <div class="product">
+                    <div class="product__image" style="background-image:url(http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg)"></div>
+                    <ul class="product__description">
+                        <li><strong>Titre du produit</strong></li>
+                        <li>
+                            <span style="display:inline;">à partir de</span>
+                            <span class="product__price__initial">20€</span>
+                            <span class="product__price__final">10€</span>
+                            <span>/ kg</span>
+                        </li>
+                        <li class="product__info--secondary">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
+                        <li class="product__info--secondary">20 exemplaires</li>
+                        <li class="product__info--secondary">Grand Marché Solidaire Lattes</li>
+                        <li class="product__info--secondary">Catégorie</li>
+                    </ul>
+                </div>
+                <div class="product">
+                    <div class="product__image" style="background-image:url(http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg)"></div>
+                    <ul class="product__description">
+                        <li><strong>Titre du produit</strong></li>
+                        <li>
+                            <span style="display:inline;">à partir de</span>
+                            <span class="product__price__initial">20€</span>
+                            <span class="product__price__final">10€</span>
+                            <span>/ kg</span>
+                        </li>
+                        <li class="product__info--secondary">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
+                        <li class="product__info--secondary">20 exemplaires</li>
+                        <li class="product__info--secondary">Grand Marché Solidaire Lattes</li>
+                        <li class="product__info--secondary">Catégorie</li>
+                    </ul>
+                </div>
+                <div class="product">
+                    <div class="product__image" style="background-image:url(http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg)"></div>
+                    <ul class="product__description">
+                        <li><strong>Titre du produit</strong></li>
+                        <li>
+                            <span style="display:inline;">à partir de</span>
+                            <span class="product__price__initial">20€</span>
+                            <span class="product__price__final">10€</span>
+                            <span>/ kg</span>
+                        </li>
+                        <li class="product__info--secondary">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
+                        <li class="product__info--secondary">20 exemplaires</li>
+                        <li class="product__info--secondary">Grand Marché Solidaire Lattes</li>
+                        <li class="product__info--secondary">Catégorie</li>
+                    </ul>
+                </div>
+                <div class="product">
+                    <div class="product__image" style="background-image:url(http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg)"></div>
+                    <ul class="product__description">
+                        <li><strong>Titre du produit</strong></li>
+                        <li>
+                            <span style="display:inline;">à partir de</span>
+                            <span class="product__price__initial">20€</span>
+                            <span class="product__price__final">10€</span>
+                            <span>/ kg</span>
+                        </li>
+                        <li class="product__info--secondary">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
+                        <li class="product__info--secondary">20 exemplaires</li>
+                        <li class="product__info--secondary">Grand Marché Solidaire Lattes</li>
+                        <li class="product__info--secondary">Catégorie</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var productsList = document.getElementById('productsList');
+        var body = document.getElementsByTagName('body')[0];
+        function openProductsList() {
+            productsList.style.display = 'block';
+            body.style.overflow = 'hidden';
+        }
+        function closeProductsList() {
+            productsList.style.display = 'none';
+            body.style.overflow = 'scroll';
+        }
+    </script>
+</body>
+</html>
