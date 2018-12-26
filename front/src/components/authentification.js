@@ -1,6 +1,6 @@
 import React from 'react';
 
-import auth from '../gauth';
+import app from '../app';
 
 export default class Authentification extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ export default class Authentification extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    auth.onConnectSubmit(this.state.login);
+    app.auth.onConnectSubmit(this.state.login);
   }
 
   render() {

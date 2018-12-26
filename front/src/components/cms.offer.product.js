@@ -1,11 +1,12 @@
 import React from 'react';
 
-export default class CmsOfferProduct extends React.Component {
-  render() {
-    const divStyle = {
-      backgroundImage: 'url(' + this.props.imgUrl + ')',
-    };
-
-    return <div class="offer__product" style={divStyle} />;
-  }
+export default function CmsOfferProduct(props) {
+  return (
+    <div
+      className="offer__product"
+      style={{
+        backgroundImage: 'url(' + props.imgUrl + ')',
+      }}
+    />
+  );
 }

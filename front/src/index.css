@@ -76,7 +76,7 @@ body {
 .nav__right {
   float: right;
 }
-.nav a {
+/* .nav a {
   color: white;
   display: inline-block;
   padding: 10px;
@@ -89,7 +89,7 @@ body {
   background: #f77336;
   color: white;
   font-weight: bold;
-}
+} */
 
 /* Product list */
 
@@ -323,4 +323,59 @@ body {
 }
 .product-edit__form__save {
   padding: 10px 20px;
+}
+
+button.link {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  padding-bottom: 12px;
+  text-decoration: none;
+
+  align-items: normal;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgb(0, 0, 238);
+  border-style: none;
+  box-sizing: content-box;
+  cursor: pointer;
+  font: inherit;
+  height: auto;
+  perspective-origin: 0 0;
+  text-align: start;
+  transform-origin: 0 0;
+  width: auto;
+  -moz-appearance: none;
+  -webkit-logical-height: 1em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
+  -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
+}
+
+/* Mozilla uses a pseudo-element to show focus on buttons, */
+/* but anchors are highlighted via the focus pseudo-class. */
+
+@supports (-moz-appearance: none) {
+  /* Mozilla-only */
+  button.link::-moz-focus-inner {
+    /* reset any predefined properties */
+    border: none;
+    padding: 0;
+  }
+  button.link:focus {
+    /* add outline to focus pseudo-class */
+    outline-style: dotted;
+    outline-width: 1px;
+  }
+}
+
+button.link.active {
+  background: #f77336;
+  color: white;
+  font-weight: bold;
+}
+
+button.link.active:hover {
+  background: #f88e5d;
+}
+
+button.link:hover {
+  background-color: #00aff5;
 }

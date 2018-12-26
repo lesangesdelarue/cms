@@ -5,23 +5,27 @@ import './index.css';
 import Authentification from './components/authentification';
 import Cms from './components/cms';
 
-import gauth from './gauth';
-import gstate from './gstate';
+import app from './app';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = gstate;
 
-    gauth.onConnectSubmit = this.handleConnected.bind(this);
+    this.state = {
+      auth: { login: '', connected: false },
+      nav: { current: 'offers' },
+    };
+
+    // [!] we want global state available from everywhere
+    app.getState = this.getState.bind(this);
+    app.setState = this.setState.bind(this);
   }
+  getState() {
+    return this.state;
+  }
+
   render() {
     return this.state.auth.connected === false ? <Authentification /> : <Cms />;
-  }
-
-  async handleConnected(params) {
-    const res = await gauth.submit(params);
-    this.setState({ auth: { connected: res.connected } });
   }
 }
 
