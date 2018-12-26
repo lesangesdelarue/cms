@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "front:dev": "cd front; npm start",
     "gen:imgs": "node dist/dataGenerator.js",
     "server:dev": "npm-run-all --parallel server:dev:build server:dev:start",
     "server:dev:build": "rollup -w -c server/rollup.config.js",

@@ -14,6 +14,19 @@ npm run server:dev
 npm run server:ncc
 ```
 
+**front**
+
+`[!]` frontend uses a dedicated front/node_modules
+
+```
+// setup
+cd front; npm install
+
+// dev (localhost:3000)
+npm run front:dev
+
+```
+
 **.env**
 
 ```

@@ -1,2 +1,4 @@
 - paginate graphQL API
-- merge template into SPA application
+- ajouter la quantité
+- aligner à partir de
+- merge template into SPA application ?
