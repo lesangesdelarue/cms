@@ -1,12 +1,15 @@
 import React from 'react';
 
+import app from '../app';
 import CmsOfferProduct from './cms.offer.product';
 
 export default function CmsOfferList() {
   return (
     <div className="wrapper">
       <div className="offers__add">
-        <button>Ajouter une promotion</button>
+        <button data-key="offer_edit" onClick={app.onNavClick}>
+          Ajouter une promotion
+        </button>
       </div>
       {_offer()}
       {_offer()}
