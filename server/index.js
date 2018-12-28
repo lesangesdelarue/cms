@@ -7,6 +7,8 @@ import conf from './conf';
 import gallery from './gallery';
 import gql from './gql';
 
+import cors from 'cors';
+
 const app = express();
 const host = 'localhost';
 const port = conf.API_GQL_PORT;
@@ -14,6 +16,7 @@ const port = conf.API_GQL_PORT;
 // [!] static server
 if (conf.NODE_ENV === 'dev') {
   app.use(express.static('server/tests'));
+  app.use(cors());
 }
 
 app.use(helmet());

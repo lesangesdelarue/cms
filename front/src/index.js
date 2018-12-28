@@ -14,6 +14,11 @@ export default class App extends React.Component {
     this.state = {
       auth: { login: '', connected: false },
       nav: { current: 'offers' },
+      offers: [],
+      productCategories: [],
+      productConditions: [],
+      products: [],
+      shops: [],
     };
 
     // [!] we want global state available from everywhere

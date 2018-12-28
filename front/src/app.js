@@ -1,3 +1,5 @@
+import api from './api';
+
 const app = {
   setState: null,
   getState: null,
@@ -20,14 +22,20 @@ const app = {
 export default app;
 
 async function onConnectSubmit(params) {
-  const res = await connectSubmit(params);
-  app.setState({ auth: { connected: res.connected } });
+  const connectResponse = await connectSubmit(params);
+  const gqlResponse = await api.initial();
+
+  Object.assign(gqlResponse, {
+    auth: { connected: connectResponse.connected },
+  });
+  app.setState(gqlResponse);
 }
 
 function onDisconnect() {
   app.setState({ auth: { connected: false } });
 }
 
+// [!] mock
 async function connectSubmit(params) {
   return new Promise(resolve => {
     setTimeout(() => {

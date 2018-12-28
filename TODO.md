@@ -1,4 +1,4 @@
-- paginate graphQL API
+- déplacer les nodes modules du serveur et faire un lanceur commun
+- fusionner la requête de connection avec la réponse initiale
 - ajouter la quantité
 - aligner à partir de
-- merge template into SPA application ?
