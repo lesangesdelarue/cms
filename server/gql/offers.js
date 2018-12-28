@@ -4,7 +4,7 @@ export default {
   query: 'offers(page:Int): Offers',
   type: `
   type Offers {
-    items: [Offers]
+    items: [Offer]
     page: Page
   }
   type Offer {
@@ -13,7 +13,5 @@ export default {
     offer_products: [String] 
     offer_shops: Int
   }`,
-  resolver() {
-    return offersMock.resolver;
-  },
+  resolver: offersMock.resolver,
 };
