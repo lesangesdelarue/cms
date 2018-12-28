@@ -9,11 +9,6 @@ export default {
     page: Page
   }
 
-  type Page {
-    current: Int
-    length: Int
-  }
-
   type Product {
     id: String
     batch: Boolean
