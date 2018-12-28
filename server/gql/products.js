@@ -1,8 +1,19 @@
 import productsMock from './products.mock';
 
 export default {
-  query: 'products: [Product]',
+  query: 'products(page:Int): Products',
   type: `
+
+  type Products {
+    items: [Product]
+    page: Page
+  }
+
+  type Page {
+    current: Int
+    length: Int
+  }
+
   type Product {
     id: String
     batch: Boolean

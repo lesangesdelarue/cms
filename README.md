@@ -37,6 +37,9 @@ NODE_ENV='dev'
 
 # where to store uploads => relative path (default 'dist/uploads')
 UPLOAD_DIR=
+
+# pagination, number of items displayed per page
+PAGE_SIZE=
 ```
 
 **conf.json**
