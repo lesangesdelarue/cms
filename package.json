@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm-run-all --parallel front:dev server:dev",
     "front:dev": "cd front && npm run start",
     "gen:imgs": "node dist/dataGenerator.js",
     "server:dev": "npm-run-all --parallel server:dev:build server:dev:start",

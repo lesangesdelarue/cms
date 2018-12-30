@@ -1,12 +1,19 @@
 # CMS de l'association Les anges de la rue
 
-**server**
+**dev**
 
 ```
 // setup
-npm install
-npm run gen:imgs // to generate tests images
+npm install; npm run gen:imgs; cd front; npm install; cd ..
 
+// dev
+npm run dev
+
+```
+
+**server**
+
+```
 // dev
 npm run server:dev
 
@@ -19,9 +26,6 @@ npm run server:ncc
 `[!]` frontend uses a dedicated front/node_modules
 
 ```
-// setup
-cd front; npm install
-
 // dev (localhost:3000)
 npm run front:dev
 

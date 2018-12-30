@@ -1,4 +1,4 @@
-- déplacer les nodes modules du serveur et faire un lanceur commun
+- déplacer les nodes modules du serveur
 - fusionner la requête de connection avec la réponse initiale
 - ajouter la quantité
 - aligner à partir de
