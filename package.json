@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel front:dev server:dev",
+    "build": "npm run front:build && npm run server:ncc",
+    "front:build": "cd front && npm run build",
     "front:dev": "cd front && npm run start",
     "gen:imgs": "node dist/dataGenerator.js",
     "server:dev": "npm-run-all --parallel server:dev:build server:dev:start",
-    "server:dev:build": "rollup -w -c server/rollup.config.js",
+    "server:dev:build": "cross-env NODE_ENV=dev rollup -w -c server/rollup.config.js",
     "server:dev:start": "nodemon dist/server.dev.js",
     "server:ncc": "npm run server:ncc:build && npm run server:ncc:start",
-    "server:ncc:build": "ncc build server/index.js -o dist/ncc -M -S",
+    "server:ncc:build": "cross-env NODE_ENV=production ncc build server/index.js -o dist/ncc -M -S",
     "server:ncc:start": "node dist/ncc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,12 +28,15 @@
     "svg2img": "^0.5.0"
   },
   "dependencies": {
-    "cors": "^2.8.5",
+    "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-fileupload": "^1.0.0",
     "express-graphql": "^0.7.1",
+    "express-session": "^1.15.6",
     "graphql": "^14.0.2",
-    "helmet": "^3.15.0"
+    "helmet": "^3.15.0",
+    "memorystore": "^1.6.0"
   }
 }

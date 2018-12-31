@@ -1,4 +1,5 @@
 import api from './api';
+import settings from './settings';
 
 const app = {
   setState: null,
@@ -22,27 +23,27 @@ const app = {
 export default app;
 
 async function onConnectSubmit(params) {
-  const connectResponse = await connectSubmit(params);
-  const gqlResponse = await api.initial();
+  const res = await api.connect(params);
 
-  Object.assign(gqlResponse, {
-    auth: { connected: connectResponse.connected },
+  if (res.connected === true) {
+    Object.assign(settings, {
+      shops: res.shops,
+      productCategories: res.productCategories,
+      productConditions: res.productConditions,
+    });
+  }
+
+  app.setState({
+    auth: {
+      connected: res.connected,
+      error: !res.connected,
+      login: res.login,
+    },
   });
-  app.setState(gqlResponse);
 }
 
 function onDisconnect() {
   app.setState({ auth: { connected: false } });
-}
-
-// [!] mock
-async function connectSubmit(params) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      const res = { login: params.login, connected: true };
-      resolve(res);
-    }, 400);
-  });
 }
 
 function onNavClick(e) {

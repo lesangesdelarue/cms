@@ -12,12 +12,10 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      auth: { login: '', connected: false },
+      auth: { login: '', connected: false, error: false },
       nav: { current: 'offers' },
-      offers: [],
       productCategories: [],
       productConditions: [],
-      products: [],
       shops: [],
     };
 

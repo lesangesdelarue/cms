@@ -22,7 +22,7 @@ export default class Authentification extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    app.auth.onConnectSubmit(this.state.login);
+    app.auth.onConnectSubmit(this.state);
   }
 
   render() {

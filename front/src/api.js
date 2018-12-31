@@ -1,20 +1,37 @@
-import initial from './api.initial.query';
+import offers from './gql.offers';
+import products from './gql.products';
 
 const queries = {
-  initial: _api_queryPack(initial),
+  offers: _api_queryPack(offers),
+  products: _api_queryPack(products),
 };
 
-const QUERY_PREFIX = 'http://localhost:3001/gql?query=';
-
 export default {
-  initial() {
-    return _api_fetch(queries.initial);
+  connect,
+  offers() {
+    return _gqlFetch(queries.offers);
+  },
+  products() {
+    return _gqlFetch(queries.products);
   },
 };
 
-function _api_fetch(_encodedQuery) {
+async function connect(params) {
+  const rawResponse = await fetch('connect', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  });
+  const content = await rawResponse.json();
+  return content;
+}
+
+function _gqlFetch(_encodedQuery) {
   return new Promise(resolve => {
-    fetch(QUERY_PREFIX + _encodedQuery)
+    fetch('gql?query=' + _encodedQuery)
       .then(res => res.json())
       .then(json => {
         resolve(json.data);

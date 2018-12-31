@@ -6,38 +6,21 @@
 // setup
 npm install; npm run gen:imgs; cd front; npm install; cd ..
 
-// dev
-npm run dev
-
-```
-
-**server**
-
-```
-// dev
-npm run server:dev
-
-// prod
-npm run server:ncc
-```
-
-**front**
-
-`[!]` frontend uses a dedicated front/node_modules
-
-```
 // dev (localhost:3000)
-npm run front:dev
+npm run dev
 
 ```
 
 **.env**
 
 ```
-API_GQL_PORT=3001
+SERVER_PORT=3001
 
-# 'dev' will enable static files serving by nodejs
-NODE_ENV='dev'
+# users
+USERS='login1:passwd1;login2:passwd2'
+
+# session secret
+SESSION_SECRET='mysecret'
 
 # where to store uploads => relative path (default 'dist/uploads')
 UPLOAD_DIR=
