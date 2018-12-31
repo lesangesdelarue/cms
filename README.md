@@ -4,32 +4,16 @@
 
 ```
 // setup
-npm install; cd front; npm install; cd ..
+npm run setup
 
-// unzip public/img.zip into public
-
-// dev (localhost:3000)
+// dev (localhost:3000 using proxy server on localhost:3001)
 npm run dev
 
 ```
 
 **.env**
 
-```
-SERVER_PORT=3001
-
-# users
-USERS='login1:passwd1;login2:passwd2'
-
-# session secret
-SESSION_SECRET='mysecret'
-
-# where to store uploads => relative path (default 'dist/uploads')
-UPLOAD_DIR=
-
-# pagination, number of items displayed per page
-PAGE_SIZE=
-```
+A `.env` template is generated on setup.
 
 **conf.json**
 
@@ -39,7 +23,7 @@ Configuration file in cwd, contains configuration data:
 - product categories
 - product conditons
 
-**postgresql**
+**postgresql (DRAFT)**
 
 ```
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
