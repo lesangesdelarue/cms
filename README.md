@@ -4,7 +4,9 @@
 
 ```
 // setup
-npm install; npm run gen:imgs; cd front; npm install; cd ..
+npm install; cd front; npm install; cd ..
+
+// unzip public/img.zip into public
 
 // dev (localhost:3000)
 npm run dev

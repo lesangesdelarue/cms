@@ -1,4 +1,4 @@
-server/tests/img
+front/public/img
 
 node_modules
 package-lock.json

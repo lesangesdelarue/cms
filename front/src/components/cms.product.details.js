@@ -1,22 +1,24 @@
 import React from 'react';
 
 export default function CmsProductDetails(props) {
+  const p = props.prod;
   return (
     <div className="product">
       <div
         className="product__image"
         style={{
-          backgroundImage: 'url(' + props.imgUrl + ')',
+          backgroundImage:
+            'url(' + process.env.PUBLIC_URL + '/img/' + p.gallery[0] + '.jpg)',
         }}
       />
       <ul className="product__description">
         <li>
-          <strong>Titre du produit</strong>
+          <strong>{p.title}</strong>
         </li>
         <li>
           <span style={{ display: 'inline' }}>à partir de</span>
-          <span className="product__price__initial">20€</span>
-          <span className="product__price__final">10€</span>
+          <span className="product__price__initial">{p.price.initial}€</span>
+          <span className="product__price__final">{p.price.selling}€</span>
           <span>/ kg</span>
         </li>
         <li className="product__info--secondary">

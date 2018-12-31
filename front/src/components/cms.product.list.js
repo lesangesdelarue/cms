@@ -9,12 +9,12 @@ export default class CmsProductList extends React.Component {
     super(props);
 
     this.state = {
-      products: [],
+      products: { page: null, items: [] },
     };
   }
   async componentDidMount() {
-    const products = await api.products();
-    this.setState({ products });
+    const res = await api.products();
+    this.setState({ products: res.products });
   }
   render() {
     return (
@@ -24,7 +24,10 @@ export default class CmsProductList extends React.Component {
             Ajouter un produit
           </button>
         </div>
-        <CmsProductDetails imgUrl="http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg" />
+
+        {this.state.products.items.map(prod_ => (
+          <CmsProductDetails key={prod_.id} prod={prod_} />
+        ))}
       </div>
     );
   }
