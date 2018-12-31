@@ -1,9 +1,5 @@
 import conf from './conf';
 
-import productCategories from './gql/product.categories';
-import productConditions from './gql/product.conditions';
-import shops from './gql/shops';
-
 if (!conf.USERS) console.error('missing USERS in .env');
 
 const creds = conf.USERS.split(';').map(credline => {
@@ -29,9 +25,10 @@ function connect(req, res) {
 
   if (_isAllowed === true) {
     Object.assign(data, {
-      productCategories: productCategories.resolver(),
-      productConditions: productConditions.resolver(),
-      shops: shops.resolver(),
+      productCategories: conf.productCategories,
+      productConditions: conf.productConditions,
+      productUnits: conf.productUnits,
+      shops: conf.shops,
     });
     req.session.connected = login;
   }

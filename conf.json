@@ -15,6 +15,12 @@
     { "id": 12, "val": "Vêtements, Chaussures, Bijoux" },
     { "id": 13, "val": "Viandes, poissons" }
   ],
+  "productUnits": [
+    { "id": 0, "unit": "", "label": "1 unité de produit" },
+    { "id": 1, "unit": "kg", "label": "1 kg de produit" },
+    { "id": 2, "unit": "l", "label": "1 litre de produit" }
+  ],
+
   "productConditions": [
     { "id": 0, "val": "Neuf" },
     { "id": 1, "val": "Occasion" },
@@ -23,12 +29,12 @@
   "shops": [
     {
       "id": 1,
-      "name": "L’épicerie solidaire des Anges de la rue",
+      "name": "Epicerie solidaire Gigean",
       "address": "3 Rue de Copernic 34770 Gigean"
     },
     {
       "id": 2,
-      "name": "Le grand marché solidaire des Anges de la rue",
+      "name": "Grand marché solidaire Lattes",
       "address": "Le mas neuf Avenue de l'agau 34970 Lattes"
     }
   ]

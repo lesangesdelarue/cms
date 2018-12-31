@@ -1,18 +1,13 @@
 import offers from './gql.offers';
 import products from './gql.products';
 
-const queries = {
-  offers: _api_queryPack(offers),
-  products: _api_queryPack(products),
-};
-
 export default {
   connect,
   offers() {
-    return _gqlFetch(queries.offers);
+    return _gqlFetch(offers);
   },
   products() {
-    return _gqlFetch(queries.products);
+    return _gqlFetch(products);
   },
 };
 
@@ -37,14 +32,4 @@ function _gqlFetch(_encodedQuery) {
         resolve(json.data);
       });
   });
-}
-
-function _api_queryPack(query_) {
-  return query_
-    .replace(/\n/g, ' ')
-    .replace(/ +(?= )/g, '')
-    .replace(/ \{|\{ /g, '{')
-    .replace(/ \{|\{ /g, '{')
-    .replace(/ \}|\} /g, '}')
-    .replace(/ \}|\} /g, '}');
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import settings from '../settings';
+
 export default class CmsProductEdit extends React.Component {
   render() {
     return (
@@ -34,27 +36,33 @@ export default class CmsProductEdit extends React.Component {
         <div className="product-edit__form__field">
           <label htmlFor="product_location">Point de vente</label>
           <select id="product_location">
-            <option>Grand Marché Solidaire Lattes</option>
-            <option>Epicerie Solidaire Gigean</option>
+            {settings.shops.map(shop_ => (
+              <option value={shop_.id} key={shop_.id}>
+                {shop_.name}
+              </option>
+            ))}
           </select>
         </div>
 
         <div className="product-edit__form__field">
           <label htmlFor="product_category">Catégorie</label>
           <select id="product_category">
-            <option>Vêtements</option>
-            <option>Décorations</option>
-            <option>Bricolage & Matériaux de construction</option>
-            <option>Maison</option>
+            {settings.productCategories.map(cat_ => (
+              <option value={cat_.id} key={cat_.id}>
+                {cat_.val}
+              </option>
+            ))}
           </select>
         </div>
 
         <div className="product-edit__form__field">
           <label htmlFor="product_quantity_type">Type de quantité</label>
           <select id="product_quantity_type">
-            <option>Nombre</option>
-            <option>Poids (kg)</option>
-            <option>Volume (L)</option>
+            {settings.productUnits.map(cat_ => (
+              <option value={cat_.id} key={cat_.id}>
+                {cat_.label}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -66,17 +74,19 @@ export default class CmsProductEdit extends React.Component {
         <div className="product-edit__form__field">
           <label htmlFor="product_price_scope">Ce que concerne le prix</label>
           <select id="product_price_scope">
-            <option>1 unité d'un produit</option>
-            <option>1kg de produit (poids)</option>
-            <option>1L de produit (volume)</option>
+            {settings.productUnits.map(cat_ => (
+              <option value={cat_.id} key={cat_.id}>
+                {cat_.label}
+              </option>
+            ))}
           </select>
         </div>
 
         <div className="product-edit__form__field">
           <label htmlFor="product_price_precise">Prix "à partir de"</label>
           <select id="product_price_precise">
-            <option>Non</option>
-            <option>Oui</option>
+            <option value="0">Non</option>
+            <option value="1">Oui</option>
           </select>
         </div>
 

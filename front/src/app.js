@@ -30,6 +30,7 @@ async function onConnectSubmit(params) {
       shops: res.shops,
       productCategories: res.productCategories,
       productConditions: res.productConditions,
+      productUnits: res.productUnits,
     });
   }
 
