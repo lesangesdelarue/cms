@@ -1,5 +1,3 @@
-// import buble from 'rollup-plugin-buble';
-
 export default [
   {
     input: 'server/index.js',
@@ -18,12 +16,6 @@ export default [
       'memorystore',
     ],
   },
-  // {
-  //   input: 'front/index.js',
-  //   plugins: [buble()],
-  //   output: { file: 'server/tests/app.js', format: 'iife', interop: false },
-  //   external: [],
-  // },
   {
     input: 'dataGenerator/index.js',
     output: { file: 'dist/dataGenerator.js', format: 'cjs', interop: false },

@@ -22,12 +22,12 @@
   ],
   "shops": [
     {
-      "id": 0,
+      "id": 1,
       "name": "L’épicerie solidaire des Anges de la rue",
       "address": "3 Rue de Copernic 34770 Gigean"
     },
     {
-      "id": 1,
+      "id": 2,
       "name": "Le grand marché solidaire des Anges de la rue",
       "address": "Le mas neuf Avenue de l'agau 34970 Lattes"
     }
