@@ -22,16 +22,12 @@ export default function CmsProductDetails(props) {
           {p.batch === true && (
             <span style={{ display: 'inline' }}>à partir de</span>
           )}
-          <span className="product__price__initial">{p.price.initial}€</span>
-          <span className="product__price__final">{p.price.selling}€</span>
+          <span className="product__price__initial">{p.price.initial}€ </span>
+          <span className="product__price__final">{p.price.selling}€ </span>
           <span>/ kg</span>
         </li>
-        <li className="product__info--secondary">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout.
-        </li>
-        <li className="product__info--secondary">20 exemplaires</li>
-        {/* shops */}
+        <li className="product__info--secondary">{p.desc}</li>
+        <li className="product__info--secondary">{p.stock} exemplaires</li>
         {shops.map(shop => (
           <li key={shop.id} className="product__info--secondary">
             {shop.name}

@@ -9,17 +9,15 @@ const settings = {
 export default settings;
 
 function getShops(mask_) {
-  const _ids = [];
+  const _shops = [];
 
-  if (mask_ & 1) {
-    _ids.push(1);
-  }
-
-  if (mask_ & 2) {
-    _ids.push(2);
-  }
-
-  return _ids.map(id_ => settings.shops.find(shop => shop.id === id_));
+  // 8 shops max
+  [1, 2, 4, 8, 16, 32, 64, 128].forEach(id => {
+    if (mask_ & id) {
+      _shops.push(settings.shops.find(shop => shop.id === id));
+    }
+  });
+  return _shops;
 }
 
 function getProductCategory(id_) {

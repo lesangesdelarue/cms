@@ -13,7 +13,9 @@ export default {
     id: String
     batch: Boolean
     created_at: Int
+    desc: String
     gallery: [String]
+    stock: Int
     title: String
     shops: Int
     category: Int

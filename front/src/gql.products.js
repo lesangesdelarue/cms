@@ -9,7 +9,9 @@ export default `{
       batch
       condition
       created_at
+      desc
       gallery
+      stock
       title
       shops
       category
