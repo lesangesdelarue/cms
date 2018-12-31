@@ -1,5 +1,6 @@
 const settings = {
   getProductCategory,
+  getProductQuantity,
   getShops,
   shops: [],
   productCategories: [],
@@ -18,6 +19,11 @@ function getShops(mask_) {
     }
   });
   return _shops;
+}
+
+function getProductQuantity(qty_) {
+  if (qty_.unit === '') return '';
+  return '???'; // TODO
 }
 
 function getProductCategory(id_) {

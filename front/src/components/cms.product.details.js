@@ -24,7 +24,7 @@ export default function CmsProductDetails(props) {
           )}
           <span className="product__price__initial">{p.price.initial}€ </span>
           <span className="product__price__final">{p.price.selling}€ </span>
-          <span>/ kg</span>
+          <span>{settings.getProductQuantity(p.quantity)}</span>
         </li>
         <li className="product__info--secondary">{p.desc}</li>
         <li className="product__info--secondary">{p.stock} exemplaires</li>
