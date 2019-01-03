@@ -1,13 +1,13 @@
-import offers from './gql.offers';
-import products from './gql.products';
+import offers from './offers';
+import products from './products';
 
 export default {
   connect,
   offers() {
-    return _gqlFetch(offers);
+    return _gqlFetch(offers.gql);
   },
   products() {
-    return _gqlFetch(products);
+    return _gqlFetch(products.gql);
   },
 };
 

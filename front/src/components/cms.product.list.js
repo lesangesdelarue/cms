@@ -20,7 +20,7 @@ export default class CmsProductList extends React.Component {
     return (
       <div className="wrapper">
         <div className="products__add">
-          <button data-key="product_edit" onClick={app.onNavClick}>
+          <button data-key="product_add" onClick={app.onNavClick}>
             Ajouter un produit
           </button>
         </div>

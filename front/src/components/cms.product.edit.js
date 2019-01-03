@@ -1,8 +1,19 @@
 import React from 'react';
 
+import products from '../products';
 import settings from '../settings';
 
 export default class CmsProductEdit extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const mode = props.prod ? 'edit' : 'add';
+
+    this.state = {
+      mode,
+      product: mode === 'add' ? products.create() : props.prod,
+    };
+  }
   render() {
     return (
       <div className="wrapper product-edit">

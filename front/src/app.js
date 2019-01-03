@@ -9,14 +9,6 @@ const app = {
     onConnectSubmit,
     onDisconnect,
   },
-  offer: {
-    openProductList() {
-      console.log('TODO openProductList');
-    },
-    removeProduct() {
-      console.log('TODO removeProduct');
-    },
-  },
   onNavClick,
 };
 

@@ -16,6 +16,9 @@ const _navmap = {
   offers() {
     return <CmsOfferList />;
   },
+  product_add() {
+    return <CmsProductEdit />;
+  },
   product_edit() {
     return <CmsProductEdit />;
   },
