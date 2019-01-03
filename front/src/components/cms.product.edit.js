@@ -14,13 +14,35 @@ export default class CmsProductEdit extends React.Component {
       prod: mode === 'add' ? products.create() : props.prod,
     };
 
+    this.handleChangeBatch = this.handleChangeBatch.bind(this);
+    this.handleChangeCategory = this.handleChangeCategory.bind(this);
     this.handleChangeDesc = this.handleChangeDesc.bind(this);
     this.handleChangeInitialPrice = this.handleChangeInitialPrice.bind(this);
     this.handleChangeSellingPrice = this.handleChangeSellingPrice.bind(this);
+    this.handleChangeProductUnit = this.handleChangeProductUnit.bind(this);
     this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
+    this.handleChangeShop = this.handleChangeShop.bind(this);
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
 
     this.handleSave = this.handleSave.bind(this);
+  }
+
+  handleChangeBatch(event) {
+    const newState = Object.assign({}, this.state);
+    newState.prod.batch = event.target.value === '1';
+    this.setState(newState);
+  }
+
+  handleChangeShop(event) {
+    const newState = Object.assign({}, this.state);
+    newState.prod.shops = parseInt(event.target.value, 10);
+    this.setState(newState);
+  }
+
+  handleChangeCategory(event) {
+    const newState = Object.assign({}, this.state);
+    newState.prod.category = parseInt(event.target.value, 10);
+    this.setState(newState);
   }
 
   handleChangeDesc(event) {
@@ -43,6 +65,12 @@ export default class CmsProductEdit extends React.Component {
     this.setState(newState);
   }
 
+  handleChangeProductUnit(event) {
+    const newState = Object.assign({}, this.state);
+    newState.prod.quantity.unit = event.target.value;
+    this.setState(newState);
+  }
+
   handleChangeQuantity(event) {
     const newState = Object.assign({}, this.state);
     newState.prod.quantity.val = parseInt(event.target.value, 10);
@@ -62,6 +90,7 @@ export default class CmsProductEdit extends React.Component {
   render() {
     const prod = this.state.prod;
     const hasPhoto = prod.gallery.length > 1;
+    const shopId = settings.getShop(prod.shops);
 
     return (
       <div className="wrapper product-edit">
@@ -107,7 +136,11 @@ export default class CmsProductEdit extends React.Component {
 
         <div className="product-edit__form__field">
           <label htmlFor="product_location">Point de vente</label>
-          <select id="product_location">
+          <select
+            id="product_location"
+            onChange={this.handleChangeShop}
+            value={shopId.id}
+          >
             {settings.shops.map(shop_ => (
               <option value={shop_.id} key={shop_.id}>
                 {shop_.name}
@@ -118,7 +151,11 @@ export default class CmsProductEdit extends React.Component {
 
         <div className="product-edit__form__field">
           <label htmlFor="product_category">Catégorie</label>
-          <select id="product_category">
+          <select
+            id="product_category"
+            value={prod.category}
+            onChange={this.handleChangeCategory}
+          >
             {settings.productCategories.map(cat_ => (
               <option value={cat_.id} key={cat_.id}>
                 {cat_.val}
@@ -129,9 +166,13 @@ export default class CmsProductEdit extends React.Component {
 
         <div className="product-edit__form__field">
           <label htmlFor="product_quantity_type">Type de quantité</label>
-          <select id="product_quantity_type">
+          <select
+            id="product_quantity_type"
+            onChange={this.handleChangeProductUnit}
+            value={prod.quantity.unit}
+          >
             {settings.productUnits.map(cat_ => (
-              <option value={cat_.id} key={cat_.id}>
+              <option value={cat_.unit} key={cat_.id}>
                 {cat_.label}
               </option>
             ))}
@@ -161,7 +202,11 @@ export default class CmsProductEdit extends React.Component {
 
         <div className="product-edit__form__field">
           <label htmlFor="product_price_precise">Prix "à partir de"</label>
-          <select id="product_price_precise">
+          <select
+            id="product_price_precise"
+            onChange={this.handleChangeBatch}
+            value={prod.batch === true ? '1' : '0'}
+          >
             <option value="0">Non</option>
             <option value="1">Oui</option>
           </select>

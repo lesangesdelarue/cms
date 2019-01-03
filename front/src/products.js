@@ -44,7 +44,7 @@ function create() {
     gallery: [],
     stock: -1,
     title: '',
-    shops: 0,
+    shops: 1,
     category: 0,
     price: { initial: 0, selling: 0 },
     quantity: { val: 1, unit: '' },

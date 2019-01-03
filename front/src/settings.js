@@ -2,6 +2,11 @@ const settings = {
   getProductCategory,
   getProductQuantity,
   getShops,
+  getShop(mask_) {
+    const t = getShops(mask_);
+    console.log(mask_, t);
+    return t[0];
+  },
   shops: [],
   productCategories: [],
   productConditions: [],
@@ -9,6 +14,10 @@ const settings = {
 
 export default settings;
 
+/**
+ * a bit mask is used to store shops
+ * => very few shops, avoid an array structure
+ */
 function getShops(mask_) {
   const _shops = [];
 
