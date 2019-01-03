@@ -39,7 +39,7 @@ function create() {
     id: uuidv4(),
     batch: false,
     condition: 0,
-    created_at: Date.now() / 1000,
+    created_at: Math.floor(Date.now() / 1000),
     desc: '',
     gallery: [],
     stock: -1,

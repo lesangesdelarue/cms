@@ -11,11 +11,56 @@ export default class CmsProductEdit extends React.Component {
 
     this.state = {
       mode,
-      product: mode === 'add' ? products.create() : props.prod,
+      prod: mode === 'add' ? products.create() : props.prod,
     };
+
+    this.handleChangeDesc = this.handleChangeDesc.bind(this);
+    this.handleChangeInitialPrice = this.handleChangeInitialPrice.bind(this);
+    this.handleChangeSellingPrice = this.handleChangeSellingPrice.bind(this);
+    this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
+    this.handleChangeTitle = this.handleChangeTitle.bind(this);
+
+    this.handleSave = this.handleSave.bind(this);
   }
+
+  handleChangeDesc(event) {
+    const newState = Object.assign({}, this.state);
+    newState.prod.desc = event.target.value;
+    this.setState(newState);
+  }
+
+  handleChangeInitialPrice(event) {
+    const newState = Object.assign({}, this.state);
+    const value = parseInt(event.target.value, 10);
+    newState.prod.price.initial = value;
+    newState.prod.price.selling = value / 2;
+    this.setState(newState);
+  }
+
+  handleChangeSellingPrice(event) {
+    const newState = Object.assign({}, this.state);
+    newState.prod.price.selling = parseInt(event.target.value, 10);
+    this.setState(newState);
+  }
+
+  handleChangeQuantity(event) {
+    const newState = Object.assign({}, this.state);
+    newState.prod.quantity.val = parseInt(event.target.value, 10);
+    this.setState(newState);
+  }
+
+  handleChangeTitle(event) {
+    const newState = Object.assign({}, this.state);
+    newState.prod.title = event.target.value;
+    this.setState(newState);
+  }
+
+  handleSave() {
+    console.log(this.state.prod);
+  }
+
   render() {
-    const prod = this.state.product;
+    const prod = this.state.prod;
     const hasPhoto = prod.gallery.length > 1;
 
     return (
@@ -44,12 +89,20 @@ export default class CmsProductEdit extends React.Component {
 
         <div className="product-edit__form__field">
           <label htmlFor="product_title">Titre</label>
-          <input type="text" id="product_title" />
+          <input
+            type="text"
+            id="product_title"
+            onChange={this.handleChangeTitle}
+          />
         </div>
 
         <div className="product-edit__form__field">
           <label htmlFor="product_description">Description</label>
-          <input type="text" id="product_description" />
+          <input
+            type="text"
+            id="product_description"
+            onChange={this.handleChangeDesc}
+          />
         </div>
 
         <div className="product-edit__form__field">
@@ -87,7 +140,12 @@ export default class CmsProductEdit extends React.Component {
 
         <div className="product-edit__form__field">
           <label htmlFor="product_quantity">Quantité</label>
-          <input type="text" id="product_quantity" />
+          <input
+            type="number"
+            id="product_quantity"
+            value={prod.quantity.val}
+            onChange={this.handleChangeQuantity}
+          />
         </div>
 
         <div className="product-edit__form__field">
@@ -111,15 +169,27 @@ export default class CmsProductEdit extends React.Component {
 
         <div className="product-edit__form__field">
           <label htmlFor="product_price_initial">Prix initial</label>
-          <input type="text" id="product_price_initial" />
+          <input
+            type="number"
+            id="product_price_initial"
+            onChange={this.handleChangeInitialPrice}
+            value={prod.price.initial}
+          />
         </div>
 
         <div className="product-edit__form__field">
           <label htmlFor="product_price_final">Prix de vente</label>
-          <input type="text" id="product_price_final" />
+          <input
+            type="number"
+            id="product_price_final"
+            onChange={this.handleChangeSellingPrice}
+            value={prod.price.selling}
+          />
         </div>
 
-        <button className="product-edit__form__save">Enregistrer</button>
+        <button className="product-edit__form__save" onClick={this.handleSave}>
+          Enregistrer
+        </button>
       </div>
     );
   }
