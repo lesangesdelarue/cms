@@ -5,7 +5,7 @@ export default function CmsOfferProduct(props) {
     <div
       className="offer__product"
       style={{
-        backgroundImage: 'url(' + props.imgUrl + ')',
+        backgroundImage: 'url(' + props.offer.imgUrl + ')',
       }}
     />
   );

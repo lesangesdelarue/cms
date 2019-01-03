@@ -1,30 +1,35 @@
 import React from 'react';
 
+import api from '../api';
 import app from '../app';
 import CmsOfferProduct from './cms.offer.product';
 
-export default function CmsOfferList() {
-  return (
-    <div className="wrapper">
-      <div className="offers__add">
-        <button data-key="offer_edit" onClick={app.onNavClick}>
-          Ajouter une promotion
-        </button>
-      </div>
-      {_offer()}
-      {_offer()}
-      {_offer()}
-    </div>
-  );
-}
+export default class CmsOfferList extends React.Component {
+  constructor(props) {
+    super(props);
 
-function _offer() {
-  return (
-    <div className="offer">
-      <div className="offer__date">10/06/2019</div>
-      <CmsOfferProduct imgUrl="http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg" />
-      <CmsOfferProduct imgUrl="https://pmcvariety.files.wordpress.com/2017/10/rickandmorty.jpg?w=1000" />
-      <CmsOfferProduct imgUrl="http://www.capturemag.net/wp-content/uploads/2015/10/RickMorty2Feat.png" />
-    </div>
-  );
+    this.state = {
+      offers: { page: null, items: [] },
+    };
+  }
+  async componentDidMount() {
+    const res = await api.offers();
+    console.log(res);
+    this.setState({ offers: res.offers });
+  }
+  render() {
+    return (
+      <div className="wrapper">
+        <div className="offers__add">
+          <button data-key="offer_edit" onClick={app.onNavClick}>
+            Ajouter une promotion
+          </button>
+        </div>
+
+        {this.state.offers.items.map(offer_ => (
+          <CmsOfferProduct key={offer_.id} offer={offer_} />
+        ))}
+      </div>
+    );
+  }
 }
