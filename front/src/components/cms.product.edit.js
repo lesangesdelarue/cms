@@ -15,18 +15,26 @@ export default class CmsProductEdit extends React.Component {
     };
   }
   render() {
+    const prod = this.state.product;
+    const hasPhoto = prod.gallery.length > 1;
+
     return (
       <div className="wrapper product-edit">
         <h2>Photos</h2>
         <div className="product-edit__photos">
           <div
             className="product-edit__photo"
-            style={{
-              backgroundImage:
-                'url(http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/rick_morty_0.jpg)',
-            }}
+            style={
+              hasPhoto
+                ? {
+                    backgroundImage: 'url(' + prod.gallery[0] + ')',
+                  }
+                : { backgroundColor: '#eee' }
+            }
           >
-            <button className="product-edit__photo__delete">x</button>
+            {hasPhoto && (
+              <button className="product-edit__photo__delete">x</button>
+            )}
           </div>
           <button className="product-edit__photo__add">
             Ajouter une photo
