@@ -1,5 +1,7 @@
 import React from 'react';
 
+import axios from 'axios';
+
 import products from '../products';
 import settings from '../settings';
 
@@ -12,6 +14,8 @@ export default class CmsProductEdit extends React.Component {
     this.state = {
       mode,
       prod: mode === 'add' ? products.create() : props.prod,
+      selectedFile: null,
+      loaded: 0,
     };
 
     this.handleChangeBatch = this.handleChangeBatch.bind(this);
@@ -25,7 +29,48 @@ export default class CmsProductEdit extends React.Component {
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
 
     this.handleSave = this.handleSave.bind(this);
+
+    this.handleselectedFile = this.handleselectedFile.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
+
+  handleselectedFile = event => {
+    const newState = Object.assign({}, this.state);
+    newState.selectedFile = event.target.files[0];
+    newState.loaded = 0;
+    this.setState(newState);
+
+    // setTimeout(() => {
+    //   this.handleUpload();
+    // }, 400);
+  };
+
+  handleUpload = () => {
+    const data = new FormData();
+    data.append(
+      'imgFile',
+      this.state.selectedFile,
+      // this.state.selectedFile.name,
+      products.imgFilename(this.state.prod),
+    );
+
+    axios
+      .post('/upload', data, {
+        onUploadProgress: ProgressEvent => {
+          this.setState({
+            loaded: (ProgressEvent.loaded / ProgressEvent.total) * 100,
+          });
+        },
+      })
+      .then(res => {
+        const newState = Object.assign({}, this.state);
+        newState.selectedFile = null;
+        const imgUrl = products.imgUrl(newState.prod);
+        newState.prod.gallery[0] = `${imgUrl}?${Date.now()}`;
+        this.setState(newState);
+        console.log(res.statusText);
+      });
+  };
 
   handleChangeBatch(event) {
     const newState = Object.assign({}, this.state);
@@ -89,7 +134,8 @@ export default class CmsProductEdit extends React.Component {
 
   render() {
     const prod = this.state.prod;
-    const hasPhoto = prod.gallery.length > 1;
+    const hasPhoto = prod.gallery.length > 0;
+    const hasSelectedFile = this.state.selectedFile !== null;
     const selectedShop = settings.getShop(prod.shop);
 
     return (
@@ -110,9 +156,19 @@ export default class CmsProductEdit extends React.Component {
               <button className="product-edit__photo__delete">x</button>
             )}
           </div>
-          <button className="product-edit__photo__add">
-            Ajouter une photo
-          </button>
+
+          <div>
+            <input
+              type="file"
+              onChange={this.handleselectedFile}
+              style={{ display: hasSelectedFile === false ? '' : 'none' }}
+            />
+            {hasSelectedFile && (
+              <button onClick={this.handleUpload}>
+                {'Télécharger ' + Math.round(this.state.loaded, 2) + '%'}
+              </button>
+            )}
+          </div>
         </div>
         <h2>Description</h2>
 

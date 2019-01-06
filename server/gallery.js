@@ -11,9 +11,9 @@ function upload(req, res) {
     return res.status(400).send('No files were uploaded.');
   }
 
-  const sampleFile = req.files.sampleFile;
+  const { imgFile } = req.files;
 
-  sampleFile.mv(`${conf.UPLOAD_DIR}/filename.jpg`, function(err) {
+  imgFile.mv(`${conf.UPLOAD_DIR}/${imgFile.name}`, function(err) {
     if (err) return res.status(500).send(err);
 
     res.send('File uploaded!');

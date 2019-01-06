@@ -31,6 +31,12 @@ export default {
     }
   }
   `,
+  imgFilename(prod) {
+    return prod.id + '_0.jpg';
+  },
+  imgUrl(prod) {
+    return `img/${prod.id}_0.jpg?${Date.now()}`; // to invalidate browser cache
+  },
 };
 
 function create() {
