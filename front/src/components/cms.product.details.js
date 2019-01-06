@@ -4,7 +4,7 @@ import settings from '../settings';
 
 export default function CmsProductDetails(props) {
   const p = props.prod;
-  const shops = settings.getShops(p.shops);
+  const shop = settings.getShop(p.shop);
   return (
     <div className="product">
       <div
@@ -28,11 +28,10 @@ export default function CmsProductDetails(props) {
         </li>
         <li className="product__info--secondary">{p.desc}</li>
         <li className="product__info--secondary">{p.stock} exemplaires</li>
-        {shops.map(shop => (
-          <li key={shop.id} className="product__info--secondary">
-            {shop.name}
-          </li>
-        ))}
+        <li key={shop.id} className="product__info--secondary">
+          {shop.name}
+        </li>
+
         <li className="product__info--secondary">
           {settings.getProductCategory(p.category)}
         </li>

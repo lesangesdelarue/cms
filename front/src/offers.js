@@ -5,7 +5,7 @@ export default {
       id
       info
       offer_products
-      offer_shops      
+      offer_shop      
     }
     page {
       current

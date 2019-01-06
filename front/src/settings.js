@@ -1,33 +1,16 @@
 const settings = {
   getProductCategory,
   getProductQuantity,
-  getShops,
-  getShop(mask_) {
-    const t = getShops(mask_);
-    console.log(mask_, t);
-    return t[0];
-  },
-  shops: [],
+  getShop,
   productCategories: [],
   productConditions: [],
+  shops: [],
 };
 
 export default settings;
 
-/**
- * a bit mask is used to store shops
- * => very few shops, avoid an array structure
- */
-function getShops(mask_) {
-  const _shops = [];
-
-  // 8 shops max
-  [1, 2, 4, 8, 16, 32, 64, 128].forEach(id => {
-    if (mask_ & id) {
-      _shops.push(settings.shops.find(shop => shop.id === id));
-    }
-  });
-  return _shops;
+function getShop(id_) {
+  return settings.shops.find(shop => shop.id === id_);
 }
 
 function getProductQuantity(qty_) {

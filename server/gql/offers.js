@@ -11,7 +11,7 @@ export default {
     id:String
     info:String
     offer_products: [String] 
-    offer_shops: Int
+    offer_shop: Int
   }`,
   resolver: offersMock.resolver,
 };

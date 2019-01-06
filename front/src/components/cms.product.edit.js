@@ -35,7 +35,7 @@ export default class CmsProductEdit extends React.Component {
 
   handleChangeShop(event) {
     const newState = Object.assign({}, this.state);
-    newState.prod.shops = parseInt(event.target.value, 10);
+    newState.prod.shop = parseInt(event.target.value, 10);
     this.setState(newState);
   }
 
@@ -90,7 +90,7 @@ export default class CmsProductEdit extends React.Component {
   render() {
     const prod = this.state.prod;
     const hasPhoto = prod.gallery.length > 1;
-    const shopId = settings.getShop(prod.shops);
+    const selectedShop = settings.getShop(prod.shop);
 
     return (
       <div className="wrapper product-edit">
@@ -139,7 +139,7 @@ export default class CmsProductEdit extends React.Component {
           <select
             id="product_location"
             onChange={this.handleChangeShop}
-            value={shopId.id}
+            value={selectedShop.id}
           >
             {settings.shops.map(shop_ => (
               <option value={shop_.id} key={shop_.id}>
@@ -187,17 +187,6 @@ export default class CmsProductEdit extends React.Component {
             value={prod.quantity.val}
             onChange={this.handleChangeQuantity}
           />
-        </div>
-
-        <div className="product-edit__form__field">
-          <label htmlFor="product_price_scope">Ce que concerne le prix</label>
-          <select id="product_price_scope">
-            {settings.productUnits.map(cat_ => (
-              <option value={cat_.id} key={cat_.id}>
-                {cat_.label}
-              </option>
-            ))}
-          </select>
         </div>
 
         <div className="product-edit__form__field">

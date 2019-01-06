@@ -28,12 +28,12 @@
   ],
   "shops": [
     {
-      "id": 1,
+      "id": 0,
       "name": "Epicerie solidaire Gigean",
       "address": "3 Rue de Copernic 34770 Gigean"
     },
     {
-      "id": 2,
+      "id": 1,
       "name": "Grand marché solidaire Lattes",
       "address": "Le mas neuf Avenue de l'agau 34970 Lattes"
     }

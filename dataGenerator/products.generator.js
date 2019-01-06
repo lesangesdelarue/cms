@@ -16,7 +16,7 @@ const products = _mock.items.map(o => {
       }
       return t;
     })(),
-    shops: rnd(4),
+    shop: rnd(2),
     price: {
       initial: _price,
       selling: _price * 0.5,

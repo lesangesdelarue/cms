@@ -17,7 +17,7 @@ export default {
     gallery: [String]
     stock: Int
     title: String
-    shops: Int
+    shop: Int
     category: Int
     quantity: Quantity
     condition: Int
