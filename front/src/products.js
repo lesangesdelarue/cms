@@ -15,7 +15,6 @@ export default {
         created_at
         desc
         gallery
-        stock
         title
         shop
         category
@@ -42,7 +41,6 @@ function create() {
     created_at: Math.floor(Date.now() / 1000),
     desc: '',
     gallery: [],
-    stock: -1,
     title: '',
     shop: 1,
     category: 0,

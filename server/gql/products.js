@@ -15,7 +15,6 @@ export default {
     created_at: Int
     desc: String
     gallery: [String]
-    stock: Int
     title: String
     shop: Int
     category: Int
