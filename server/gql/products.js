@@ -1,7 +1,7 @@
 import productsMock from './products.mock';
 
 export default {
-  query: 'products(page:Int): Products',
+  productQuery: 'products(page:Int): Products',
   type: `
 
   type Products {
@@ -33,5 +33,36 @@ export default {
     selling: Float
   }
   `,
-  resolver: productsMock.resolver,
+  products: productsMock.resolver,
+  createProduct,
+  updateProduct,
 };
+
+var fakeDatabase = {};
+
+class Message {
+  constructor(id, { content, author }) {
+    this.id = id;
+    this.content = content;
+    this.author = author;
+  }
+}
+
+function createProduct({ input }) {
+  console.log('**' + JSON.stringify(input, undefined, 1) + '**');
+  var id = require('crypto')
+    .randomBytes(10)
+    .toString('hex');
+
+  fakeDatabase[id] = input;
+  return new Message(id, input);
+}
+
+function updateProduct({ id, input }) {
+  if (!fakeDatabase[id]) {
+    throw new Error('no message exists with id ' + id);
+  }
+  // This replaces all old data, but some apps might want partial update.
+  fakeDatabase[id] = input;
+  return new Message(id, input);
+}

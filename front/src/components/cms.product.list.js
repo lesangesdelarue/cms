@@ -1,6 +1,6 @@
 import React from 'react';
 
-import api from '../api';
+import api from '../clientApi';
 import app from '../app';
 import CmsProductDetails from './cms.product.details';
 
@@ -13,7 +13,7 @@ export default class CmsProductList extends React.Component {
     };
   }
   async componentDidMount() {
-    const res = await api.products();
+    const res = await api.products.items();
     this.setState({ products: res.products });
   }
   render() {

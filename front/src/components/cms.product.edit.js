@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import products from '../products';
 import settings from '../settings';
+import api from '../clientApi';
 
 export default class CmsProductEdit extends React.Component {
   constructor(props) {
@@ -129,7 +130,7 @@ export default class CmsProductEdit extends React.Component {
   }
 
   handleSave() {
-    console.log(this.state.prod);
+    api.products.create(this.state.prod);
   }
 
   render() {
@@ -151,11 +152,7 @@ export default class CmsProductEdit extends React.Component {
                   }
                 : { backgroundColor: '#eee' }
             }
-          >
-            {hasPhoto && (
-              <button className="product-edit__photo__delete">x</button>
-            )}
-          </div>
+          />
 
           <div>
             <input
@@ -165,7 +162,7 @@ export default class CmsProductEdit extends React.Component {
             />
             {hasSelectedFile && (
               <button onClick={this.handleUpload}>
-                {'Télécharger ' + Math.round(this.state.loaded, 2) + '%'}
+                {'Télécharger ' + _progressLabel(this.state.loaded)}
               </button>
             )}
           </div>
@@ -283,4 +280,9 @@ export default class CmsProductEdit extends React.Component {
       </div>
     );
   }
+}
+
+function _progressLabel(value_) {
+  const _percent = Math.round(value_, 2);
+  return _percent === 0 ? '' : '' + _percent + ' %';
 }

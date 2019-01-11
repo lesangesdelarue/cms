@@ -1,5 +1,2 @@
 - requête d'ajout de produit
-- téléchargement d'image produit
-- ajouter la quantité
-- aligner à partir de
 - déplacer les nodes modules du serveur

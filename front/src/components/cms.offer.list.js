@@ -1,6 +1,6 @@
 import React from 'react';
 
-import api from '../api';
+import api from '../clientApi';
 import app from '../app';
 
 import CmsOfferProduct from './cms.offer.product';

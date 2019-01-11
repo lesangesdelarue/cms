@@ -2,12 +2,31 @@ import conf from './conf';
 import graphqlHTTP from 'express-graphql';
 import { buildSchema } from 'graphql';
 
-import products from './gql/products';
+import gqlProducts from './gql/products';
 import offers from './gql/offers';
 
 const schema = buildSchema(`
+
+  input MessageInput {
+    content: String
+    author: String
+  }
+
+  type Message {
+    id: ID!
+    content: String
+    author: String
+  }
+
+  type Mutation {
+    createProduct(input: MessageInput): Message
+    updateProduct(id: ID!, input: MessageInput): Message
+  }
+
+
+
   type Query {
-    ${products.query}
+    ${gqlProducts.productQuery}
     ${offers.query}
   }
 
@@ -16,15 +35,22 @@ const schema = buildSchema(`
     length: Int
   }
 
-  ${products.type}
+  ${gqlProducts.type}
   ${offers.type}
 `);
 
 export default graphqlHTTP({
   schema,
   rootValue: {
-    products: products.resolver,
+    // queries
+    products: gqlProducts.products,
     offers: offers.resolver,
+
+    // mutations
+    createProduct: gqlProducts.createProduct,
+    updateProduct: gqlProducts.updateProduct,
   },
   graphiql: conf.NODE_ENV === 'dev',
 });
+
+// ----------------------------------------------------------------------------

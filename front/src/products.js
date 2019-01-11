@@ -2,7 +2,8 @@ import uuidv4 from './uuidv4';
 
 export default {
   create,
-  gql: `{
+  gql: {
+    items: `{
     products {
       page {
         current
@@ -31,6 +32,7 @@ export default {
     }
   }
   `,
+  },
   imgFilename(prod) {
     return prod.id + '_0.jpg';
   },

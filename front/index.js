@@ -1,4 +1,4 @@
-import api from './api';
+import api from './clientApi';
 import model from './model';
 
 api.fetch().then(data => {

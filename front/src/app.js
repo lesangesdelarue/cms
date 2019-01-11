@@ -1,4 +1,4 @@
-import api from './api';
+import api from './clientApi';
 import settings from './settings';
 
 const app = {
