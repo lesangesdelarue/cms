@@ -19,8 +19,8 @@ const schema = buildSchema(`
   }
 
   type Mutation {
-    createProduct(input: MessageInput): Message
-    updateProduct(id: ID!, input: MessageInput): Message
+    productCreate(input: MessageInput): Message
+    productUpdate(id: ID!, input: MessageInput): Message
   }
 
 
@@ -43,12 +43,12 @@ export default graphqlHTTP({
   schema,
   rootValue: {
     // queries
-    products: gqlProducts.products,
+    products: gqlProducts.productList,
     offers: offers.resolver,
 
     // mutations
-    createProduct: gqlProducts.createProduct,
-    updateProduct: gqlProducts.updateProduct,
+    productCreate: gqlProducts.productCreate,
+    productUpdate: gqlProducts.productUpdate,
   },
   graphiql: conf.NODE_ENV === 'dev',
 });

@@ -7,7 +7,7 @@ export default {
     return _gqlFetch(offers.gql);
   },
   products: {
-    items() {
+    productList() {
       return _gqlFetch(products.gql.items);
     },
     create: _gqlPost,
@@ -41,10 +41,8 @@ function _gqlFetch(query_) {
 }
 
 function _gqlPost() {
-  var author = 'andy';
-  var content = 'hope is a good thing';
   var query = `mutation CreateProduct($input: MessageInput) {
-  createProduct(input: $input) {
+  productCreate(input: $input) {
     id
   }
 }`;
@@ -59,8 +57,8 @@ function _gqlPost() {
       query,
       variables: {
         input: {
-          author,
-          content,
+          author: 'andy',
+          content: 'hope is a good thing',
         },
       },
     }),
@@ -68,24 +66,3 @@ function _gqlPost() {
     .then(r => r.json())
     .then(data => console.log('data returned:', data));
 }
-
-// function _gqlPost({ query, variables }) {
-//   return new Promise(resolve => {
-//     fetch('gql', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         Accept: 'application/json',
-//       },
-//       body: JSON.stringify({
-//         query,
-//         variables,
-//       }),
-//     })
-//       .then(res => res.json())
-//       .then(json => {
-//         console.log(json);
-//         resolve(json);
-//       });
-//   });
-// }

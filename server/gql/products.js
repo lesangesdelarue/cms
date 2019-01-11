@@ -33,9 +33,9 @@ export default {
     selling: Float
   }
   `,
-  products: productsMock.resolver,
-  createProduct,
-  updateProduct,
+  productList: productsMock.resolver,
+  productCreate,
+  productUpdate,
 };
 
 var fakeDatabase = {};
@@ -48,7 +48,7 @@ class Message {
   }
 }
 
-function createProduct({ input }) {
+function productCreate({ input }) {
   console.log('**' + JSON.stringify(input, undefined, 1) + '**');
   var id = require('crypto')
     .randomBytes(10)
@@ -58,7 +58,7 @@ function createProduct({ input }) {
   return new Message(id, input);
 }
 
-function updateProduct({ id, input }) {
+function productUpdate({ id, input }) {
   if (!fakeDatabase[id]) {
     throw new Error('no message exists with id ' + id);
   }

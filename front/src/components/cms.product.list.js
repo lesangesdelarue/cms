@@ -13,7 +13,7 @@ export default class CmsProductList extends React.Component {
     };
   }
   async componentDidMount() {
-    const res = await api.products.items();
+    const res = await api.products.productList();
     this.setState({ products: res.products });
   }
   render() {
