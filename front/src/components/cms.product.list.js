@@ -14,7 +14,6 @@ export default class CmsProductList extends React.Component {
   }
   async componentDidMount() {
     const res = await api.productList();
-    console.log(res);
     this.setState({ productList: res.productList });
   }
   render() {

@@ -15,7 +15,6 @@ export default class CmsOfferList extends React.Component {
   }
   async componentDidMount() {
     const res = await clientApi.offerList();
-    console.log(res);
     this.setState({ offerList: res.offerList });
   }
 

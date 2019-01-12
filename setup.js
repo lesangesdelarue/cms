@@ -5,7 +5,8 @@ if (!fs.existsSync(conf.UPLOAD_DIR)) {
   fs.mkdirSync(conf.UPLOAD_DIR);
 }
 
-const _dotEnv = `USERS='lesanges:delarue'
+const _dotEnv = `
+USERS='lesanges:delarue'
 SERVER_PORT=3001
 SESSION_SECRET='tarteauxmyrtilles'
 PAGE_SIZE=5`;

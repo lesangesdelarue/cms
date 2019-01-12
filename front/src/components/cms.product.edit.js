@@ -41,9 +41,9 @@ export default class CmsProductEdit extends React.Component {
     newState.loaded = 0;
     this.setState(newState);
 
-    // setTimeout(() => {
-    //   this.handleUpload();
-    // }, 400);
+    setTimeout(() => {
+      this.handleUpload();
+    }, 400);
   };
 
   handleUpload = () => {
