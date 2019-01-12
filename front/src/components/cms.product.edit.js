@@ -51,7 +51,7 @@ export default class CmsProductEdit extends React.Component {
     data.append(
       'imgFile',
       this.state.selectedFile,
-      // this.state.selectedFile.name,
+      // this.state.selectedFile.name,git
       products.imgFilename(this.state.prod),
     );
 
