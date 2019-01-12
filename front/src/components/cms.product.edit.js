@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import products from '../products.app';
 import settings from '../settings';
-import api from '../clientApi';
+import clientApi from '../clientApi';
 
 export default class CmsProductEdit extends React.Component {
   constructor(props) {
@@ -41,9 +41,8 @@ export default class CmsProductEdit extends React.Component {
     newState.loaded = 0;
     this.setState(newState);
 
-    setTimeout(() => {
-      this.handleUpload();
-    }, 400);
+    // autolaunch upload
+    setTimeout(this.handleUpload, 400);
   };
 
   handleUpload = () => {
@@ -51,7 +50,6 @@ export default class CmsProductEdit extends React.Component {
     data.append(
       'imgFile',
       this.state.selectedFile,
-      // this.state.selectedFile.name,git
       products.imgFilename(this.state.prod),
     );
 
@@ -130,7 +128,9 @@ export default class CmsProductEdit extends React.Component {
   }
 
   handleSave() {
-    api.products.create(this.state.prod);
+    const prod = this.state.prod;
+    console.log(prod);
+    clientApi.productCreate(this.state.prod);
   }
 
   render() {

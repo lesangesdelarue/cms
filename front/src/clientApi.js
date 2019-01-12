@@ -9,11 +9,17 @@ export default {
   productList() {
     return _gqlFetch(products.queries.productList);
   },
-  products: {
-    create: _gqlPost,
-    // create(product_) {
-    //   return _gqlPost({ query: products.gql.create, variables: product_ });
-    // },
+  productCreate(product) {
+    const query = products.mutations.productCreate;
+
+    const variables = {
+      // input: {
+      //   author: 'andy',
+      //   content: 'hope is a good thing',
+      // },
+      product,
+    };
+    return _gqlPost({ query, variables });
   },
 };
 
@@ -31,23 +37,15 @@ async function connect(params) {
 }
 
 function _gqlFetch(query_) {
-  return new Promise(resolve => {
-    fetch('gql?query=' + query_)
-      .then(res => res.json())
-      .then(json => {
-        resolve(json.data);
-      });
-  });
+  return fetch('gql?query=' + query_)
+    .then(res => res.json())
+    .then(json => {
+      return json.data;
+    });
 }
 
-function _gqlPost() {
-  var query = `mutation CreateProduct($input: MessageInput) {
-  productCreate(input: $input) {
-    id
-  }
-}`;
-
-  fetch('/gql', {
+function _gqlPost({ query, variables }) {
+  return fetch('/gql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -55,12 +53,7 @@ function _gqlPost() {
     },
     body: JSON.stringify({
       query,
-      variables: {
-        input: {
-          author: 'andy',
-          content: 'hope is a good thing',
-        },
-      },
+      variables,
     }),
   })
     .then(r => r.json())

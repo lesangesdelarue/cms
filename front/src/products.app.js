@@ -33,6 +33,29 @@ export default {
   }
   `,
   },
+  mutations: {
+    productCreate: `mutation ProductCreate($product: ProductInput) {
+      productCreate(product: $product) {
+        id
+        batch
+        created_at
+        desc
+        gallery
+        title
+        shop
+        category
+        condition
+        price {
+          initial
+          selling
+        }
+        quantity {
+          val
+          unit
+        }
+      }
+    }`,
+  },
   imgFilename(prod) {
     return prod.id + '_0.jpg';
   },

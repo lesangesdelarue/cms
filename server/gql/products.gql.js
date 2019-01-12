@@ -3,7 +3,7 @@ import productsMock from './products.mock';
 export default {
   query: 'productList(page:Int): Products',
   mutation: `
-    productCreate(input: MessageInput): Message
+    productCreate(product: ProductInput): Product
     productUpdate(id: ID!, input: MessageInput): Message
   `,
   type: `
@@ -41,6 +41,30 @@ export default {
     author: String
   }
 
+  input ProductInput {
+    id: String
+    batch: Boolean
+    created_at: Int
+    desc: String
+    gallery: [String]
+    title: String
+    shop: Int
+    category: Int
+    quantity: QuantityInput
+    condition: Int
+    price: PriceInput
+  }
+
+  input QuantityInput {
+    val: Float
+    unit: String
+  }
+
+  input PriceInput {
+    initial: Float
+    selling: Float
+  }
+
   type Message {
     id: ID!
     content: String
@@ -52,7 +76,6 @@ export default {
   resolvers: {
     productList: productsMock.resolver,
     productCreate,
-    productUpdate,
   },
 };
 
@@ -66,21 +89,17 @@ class Message {
   }
 }
 
-function productCreate({ input }) {
-  console.log('**' + JSON.stringify(input, undefined, 1) + '**');
-  var id = require('crypto')
-    .randomBytes(10)
-    .toString('hex');
-
-  fakeDatabase[id] = input;
-  return new Message(id, input);
+function productCreate(params) {
+  const { product } = params;
+  console.log(params);
+  return product;
 }
 
-function productUpdate({ id, input }) {
-  if (!fakeDatabase[id]) {
-    throw new Error('no message exists with id ' + id);
-  }
-  // This replaces all old data, but some apps might want partial update.
-  fakeDatabase[id] = input;
-  return new Message(id, input);
-}
+// function productUpdate({ id, input }) {
+//   if (!fakeDatabase[id]) {
+//     throw new Error('no message exists with id ' + id);
+//   }
+//   // This replaces all old data, but some apps might want partial update.
+//   fakeDatabase[id] = input;
+//   return new Message(id, input);
+// }
