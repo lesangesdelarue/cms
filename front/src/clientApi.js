@@ -3,23 +3,21 @@ import products from './products.app';
 
 export default {
   connect,
-  offerList() {
-    return _gqlFetch(offers.queries.offerList);
+  async offerList() {
+    const res = await _gqlFetch(offers.queries.offerList);
+    return res;
   },
-  productList() {
-    return _gqlFetch(products.queries.productList);
+  async productList() {
+    const res = await _gqlFetch(products.queries.productList);
+    return res;
   },
-  productCreate(product) {
-    const query = products.mutations.productCreate;
-
-    const variables = {
-      // input: {
-      //   author: 'andy',
-      //   content: 'hope is a good thing',
-      // },
-      product,
-    };
-    return _gqlPost({ query, variables });
+  async productCreate(product) {
+    return _gqlPost({
+      query: products.mutations.productCreate,
+      variables: {
+        product,
+      },
+    });
   },
 };
 
@@ -32,20 +30,18 @@ async function connect(params) {
     },
     body: JSON.stringify(params),
   });
-  const content = await rawResponse.json();
-  return content;
+  const json = await rawResponse.json();
+  return json;
 }
 
-function _gqlFetch(query_) {
-  return fetch('gql?query=' + query_)
-    .then(res => res.json())
-    .then(json => {
-      return json.data;
-    });
+async function _gqlFetch(query_) {
+  const rawResponse = await fetch('gql?query=' + query_);
+  const json = await rawResponse.json();
+  return json.data;
 }
 
-function _gqlPost({ query, variables }) {
-  return fetch('/gql', {
+async function _gqlPost({ query, variables }) {
+  const rawResponse = await fetch('/gql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -55,7 +51,7 @@ function _gqlPost({ query, variables }) {
       query,
       variables,
     }),
-  })
-    .then(r => r.json())
-    .then(data => console.log('data returned:', data));
+  });
+  const json = await rawResponse.json();
+  return json.data;
 }

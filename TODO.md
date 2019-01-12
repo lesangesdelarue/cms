@@ -1,3 +1,4 @@
 - requête d'ajout de produit
+- message d'erreur sur mot de passe invalide
 - déplacer les nodes modules du serveur
 - traiter les message d'erreur (déconnexion)

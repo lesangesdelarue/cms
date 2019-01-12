@@ -19,6 +19,8 @@ export default class CmsProductEdit extends React.Component {
       loaded: 0,
     };
 
+    this.handleChangeProduct = this.handleChangeProduct.bind(this); // whole product
+
     this.handleChangeBatch = this.handleChangeBatch.bind(this);
     this.handleChangeCategory = this.handleChangeCategory.bind(this);
     this.handleChangeDesc = this.handleChangeDesc.bind(this);
@@ -70,6 +72,12 @@ export default class CmsProductEdit extends React.Component {
         console.log(res.statusText);
       });
   };
+
+  handleChangeProduct(prod) {
+    const newState = Object.assign({}, this.state);
+    newState.prod = prod;
+    this.setState(newState);
+  }
 
   handleChangeBatch(event) {
     const newState = Object.assign({}, this.state);
@@ -127,10 +135,9 @@ export default class CmsProductEdit extends React.Component {
     this.setState(newState);
   }
 
-  handleSave() {
-    const prod = this.state.prod;
-    console.log(prod);
-    clientApi.productCreate(this.state.prod);
+  async handleSave() {
+    const res = await clientApi.productCreate(this.state.prod);
+    this.handleChangeProduct(res.productCreate);
   }
 
   render() {
