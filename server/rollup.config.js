@@ -1,7 +1,19 @@
 export default [
   {
-    input: 'setup.js',
-    output: { file: 'dist/setup.js', format: 'cjs', interop: false },
-    external: ['dotenv', 'fs'],
+    input: 'server/index.js',
+    output: { file: 'dist/server.dev.js', format: 'cjs', interop: false },
+    external: [
+      'body-parser',
+      'cors',
+      'dotenv',
+      'express',
+      'express-session',
+      'express-fileupload',
+      'express-graphql',
+      'fs',
+      'graphql',
+      'helmet',
+      'memorystore',
+    ],
   },
 ];
