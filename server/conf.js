@@ -8,6 +8,8 @@ try {
   const _confJson = JSON.parse(_raw);
   Object.assign(conf, _confJson);
 
+  conf.UPLOAD_DIR = 'front/public/img';
+
   // post process
   conf.PAGE_SIZE = parseInt(conf.PAGE_SIZE, 10);
 } catch (err) {

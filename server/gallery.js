@@ -21,8 +21,6 @@ function upload(req, res) {
 }
 
 function ensureUploadDir() {
-  conf.UPLOAD_DIR = conf.UPLOAD_DIR || 'dist/uploads';
-
   if (!existsSync(conf.UPLOAD_DIR)) {
     mkdirSync(conf.UPLOAD_DIR);
   }

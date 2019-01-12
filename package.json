@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "npm i && cross-env NODE_ENV=dev rollup -c server/rollup.config.js && node dataGenerator/dotEnv.generator.js && node dist/dataGenerator.js && cd front && npm i",
+    "presetup": "npm i && cd front && npm i",
+    "setup": "cross-env NODE_ENV=dev rollup -c rollup.config.js && node dist/setup.js",
     "dev": "npm-run-all --parallel front:dev server:dev",
     "build": "npm run front:build && npm run server:ncc",
     "front:build": "cd front && npm run build",
