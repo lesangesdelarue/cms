@@ -9,12 +9,13 @@ export default class CmsProductList extends React.Component {
     super(props);
 
     this.state = {
-      products: { page: null, items: [] },
+      productList: { page: null, items: [] },
     };
   }
   async componentDidMount() {
-    const res = await api.products.productList();
-    this.setState({ products: res.products });
+    const res = await api.productList();
+    console.log(res);
+    this.setState({ productList: res.productList });
   }
   render() {
     return (
@@ -25,7 +26,7 @@ export default class CmsProductList extends React.Component {
           </button>
         </div>
 
-        {this.state.products.items.map(prod_ => (
+        {this.state.productList.items.map(prod_ => (
           <CmsProductDetails key={prod_.id} prod={prod_} />
         ))}
       </div>

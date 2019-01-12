@@ -2,9 +2,9 @@ import uuidv4 from './uuidv4';
 
 export default {
   create,
-  gql: {
-    items: `{
-    products {
+  queries: {
+    productList: `{
+    productList {
       page {
         current
         length

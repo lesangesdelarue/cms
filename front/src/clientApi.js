@@ -1,15 +1,15 @@
-import offers from './offers';
-import products from './products';
+import offers from './offers.app';
+import products from './products.app';
 
 export default {
   connect,
-  offers() {
-    return _gqlFetch(offers.gql);
+  offerList() {
+    return _gqlFetch(offers.queries.offerList);
+  },
+  productList() {
+    return _gqlFetch(products.queries.productList);
   },
   products: {
-    productList() {
-      return _gqlFetch(products.gql.items);
-    },
     create: _gqlPost,
     // create(product_) {
     //   return _gqlPost({ query: products.gql.create, variables: product_ });

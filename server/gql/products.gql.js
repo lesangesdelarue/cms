@@ -1,9 +1,12 @@
 import productsMock from './products.mock';
 
 export default {
-  productQuery: 'products(page:Int): Products',
+  query: 'productList(page:Int): Products',
+  mutation: `
+    productCreate(input: MessageInput): Message
+    productUpdate(id: ID!, input: MessageInput): Message
+  `,
   type: `
-
   type Products {
     items: [Product]
     page: Page
@@ -32,10 +35,25 @@ export default {
     initial: Float
     selling: Float
   }
+
+  input MessageInput {
+    content: String
+    author: String
+  }
+
+  type Message {
+    id: ID!
+    content: String
+    author: String
+  }
+
+
   `,
-  productList: productsMock.resolver,
-  productCreate,
-  productUpdate,
+  resolvers: {
+    productList: productsMock.resolver,
+    productCreate,
+    productUpdate,
+  },
 };
 
 var fakeDatabase = {};

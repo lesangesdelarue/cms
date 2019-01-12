@@ -1,6 +1,6 @@
 import React from 'react';
 
-import api from '../clientApi';
+import clientApi from '../clientApi';
 import app from '../app';
 
 import CmsOfferProduct from './cms.offer.product';
@@ -10,12 +10,13 @@ export default class CmsOfferList extends React.Component {
     super(props);
 
     this.state = {
-      offers: { page: null, items: [] },
+      offerList: { page: null, items: [] },
     };
   }
   async componentDidMount() {
-    const res = await api.offers();
-    this.setState({ offers: res.offers });
+    const res = await clientApi.offerList();
+    console.log(res);
+    this.setState({ offerList: res.offerList });
   }
 
   render() {
@@ -27,7 +28,7 @@ export default class CmsOfferList extends React.Component {
           </button>
         </div>
 
-        {this.state.offers.items.map(offer_ => (
+        {this.state.offerList.items.map(offer_ => (
           <CmsOfferProduct key={offer_.id} offer={offer_} />
         ))}
       </div>

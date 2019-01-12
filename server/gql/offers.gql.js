@@ -1,7 +1,7 @@
 import offersMock from './offers.mock';
 
 export default {
-  query: 'offers(page:Int): Offers',
+  query: 'offerList(page:Int): Offers',
   type: `
   type Offers {
     items: [Offer]
@@ -13,5 +13,7 @@ export default {
     offer_products: [String] 
     offer_shop: Int
   }`,
-  resolver: offersMock.resolver,
+  resolvers: {
+    offerList: offersMock.resolver,
+  },
 };

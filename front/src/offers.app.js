@@ -1,6 +1,7 @@
 export default {
-  gql: `{
-  offers {
+  queries: {
+    offerList: `{
+  offerList {
     items {
       id
       info
@@ -14,4 +15,5 @@ export default {
   }
 }
 `,
+  },
 };

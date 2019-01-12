@@ -1,2 +1,3 @@
 - requête d'ajout de produit
 - déplacer les nodes modules du serveur
+- traiter les message d'erreur (déconnexion)

@@ -2,7 +2,7 @@ import React from 'react';
 
 import axios from 'axios';
 
-import products from '../products';
+import products from '../products.app';
 import settings from '../settings';
 import api from '../clientApi';
 
