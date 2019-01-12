@@ -2,13 +2,16 @@ import { readFileSync } from 'fs';
 
 import dotenv from 'dotenv';
 
-const conf = dotenv.config().parsed;
+const conf = {
+  UPLOAD_DIR: 'front/public/img',
+};
+
+Object.assign(conf, dotenv.config().parsed);
+
 try {
   const _raw = readFileSync('conf.json');
   const _confJson = JSON.parse(_raw);
   Object.assign(conf, _confJson);
-
-  conf.UPLOAD_DIR = 'front/public/img';
 
   // post process
   conf.PAGE_SIZE = parseInt(conf.PAGE_SIZE, 10);
