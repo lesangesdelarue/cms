@@ -17,6 +17,7 @@ const app = {
       console.log('TODO removeProduct');
     },
   },
+  go,
   onNavClick,
 };
 
@@ -47,14 +48,17 @@ function onDisconnect() {
   app.setState({ auth: { connected: false } });
 }
 
-function onNavClick(e) {
+function go(key) {
   const { current } = app.getState().nav;
-  const key = e.target.getAttribute('data-key');
   if (key === null || key === current) return;
   if (key === 'disconnect') {
     app.auth.onDisconnect();
     return;
   }
-
   app.setState({ nav: { current: key } });
+}
+
+function onNavClick(e) {
+  const key = e.target.getAttribute('data-key');
+  go(key);
 }

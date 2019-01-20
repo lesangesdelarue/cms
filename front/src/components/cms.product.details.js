@@ -25,8 +25,11 @@ export default function CmsProductDetails(props) {
           <span className="product__price__final">{p.price.selling}€ </span>
           <span>{settings.getProductQuantity(p.quantity)}</span>
         </li>
-        <li className="product__info--secondary">{p.desc}</li>
-        <li className="product__info--secondary">{p.stock} exemplaires</li>
+        {p.desc && <li className="product__info--secondary">{p.desc}</li>}
+        <li className="product__info--secondary">
+          {p.quantity.val}{' '}
+          {p.quantity.unit === '' ? 'exemplaires' : p.quantity.unit}
+        </li>
         <li key={shop.id} className="product__info--secondary">
           {shop.name}
         </li>
