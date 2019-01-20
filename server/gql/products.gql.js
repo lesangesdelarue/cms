@@ -1,4 +1,5 @@
-import productsMock from './products.mock';
+import conf from '../conf';
+import model from '../model';
 
 export default {
   query: 'productList(page:Int): Products',
@@ -70,29 +71,42 @@ export default {
     content: String
     author: String
   }
-
-
   `,
   resolvers: {
-    productList: productsMock.resolver,
+    productList,
     productCreate,
   },
 };
 
-var fakeDatabase = {};
-
-class Message {
-  constructor(id, { content, author }) {
-    this.id = id;
-    this.content = content;
-    this.author = author;
-  }
-}
-
 function productCreate(params) {
+  const { products } = model.data;
   const { product } = params;
   console.log(params);
+  products.unshift(product);
+  model.save();
   return product;
+}
+
+function productList(params) {
+  const page = params.page || 0;
+  const pageSize = conf.PAGE_SIZE;
+  const { products } = model.data;
+
+  const totalSize = products.length;
+  const nbPages = Math.ceil(totalSize / pageSize);
+
+  const items = [];
+  const start = page * pageSize;
+  let end = start + pageSize;
+  if (end >= totalSize) {
+    end = totalSize;
+  }
+
+  for (let i = start; i < end; i += 1) {
+    items.push(products[i]);
+  }
+
+  return { items, page: { current: page, length: nbPages } };
 }
 
 // function productUpdate({ id, input }) {

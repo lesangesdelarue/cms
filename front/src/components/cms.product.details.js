@@ -10,8 +10,7 @@ export default function CmsProductDetails(props) {
       <div
         className="product__image"
         style={{
-          backgroundImage:
-            'url(' + process.env.PUBLIC_URL + '/img/' + p.gallery[0] + '.jpg)',
+          backgroundImage: 'url(' + process.env.PUBLIC_URL + p.gallery[0] + ')',
         }}
       />
       <ul className="product__description">
