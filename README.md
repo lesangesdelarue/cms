@@ -24,6 +24,10 @@ Configuration file in cwd, contains configuration data:
 - product categories
 - product conditons
 
+**data.json**
+
+Fake database endpoint
+
 **postgresql (DRAFT)**
 
 ```
