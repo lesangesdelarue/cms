@@ -50,7 +50,6 @@ body {
   padding: 5px 30px;
 }
 .authentication__error {
-  display: none;
   text-align: center;
   width: 300px;
   margin: 0 auto;

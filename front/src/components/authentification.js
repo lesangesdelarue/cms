@@ -5,7 +5,7 @@ import app from '../app';
 export default class Authentification extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { login: '', passwd: '' };
+    this.state = { error: false, login: '', passwd: '' };
 
     this.login_handleChange = this.login_handleChange.bind(this);
     this.passwd_handleChange = this.passwd_handleChange.bind(this);
@@ -22,7 +22,9 @@ export default class Authentification extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    app.auth.onConnectSubmit(this.state);
+    const auth = await app.auth.onConnectSubmit(this.state);
+    const { error } = auth;
+    error && this.setState({ error: true });
   }
 
   render() {
@@ -30,7 +32,11 @@ export default class Authentification extends React.Component {
       <div className="authentication">
         <div className="authentication__content">
           <h1>Les Anges de la Rue</h1>
-          <p className="authentication__error">Mauvais login ou mot de passe</p>
+          {this.state.error === true && (
+            <p className="authentication__error">
+              Mauvais login ou mot de passe
+            </p>
+          )}
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"

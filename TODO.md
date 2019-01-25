@@ -1,4 +1,2 @@
-- mettre des prix avec virgules
-- message d'erreur sur mot de passe invalide
 - déplacer les nodes modules du serveur
 - traiter les message d'erreur (déconnexion)

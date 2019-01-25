@@ -35,13 +35,17 @@ async function onConnectSubmit(params) {
     });
   }
 
+  const auth = {
+    connected: res.connected,
+    error: !res.connected,
+    login: res.login,
+  };
+
   app.setState({
-    auth: {
-      connected: res.connected,
-      error: !res.connected,
-      login: res.login,
-    },
+    auth,
   });
+
+  return auth;
 }
 
 function onDisconnect() {
