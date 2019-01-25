@@ -19,7 +19,10 @@ function _link(newRoute, label) {
   return (
     <button
       className={'link' + (route[0] === newRoute[0] ? ' active' : '')}
-      data-action={newRoute}
+      onClick={function(e) {
+        e.preventDefault();
+        app.action(newRoute);
+      }}
     >
       {label}
     </button>

@@ -23,7 +23,12 @@ export default class CmsProductList extends React.Component {
       <div className="wrapper">
         <div className="product__create">
           {mode === 'product_list' && (
-            <button data-action="product_create" onClick={app.onAction}>
+            <button
+              onClick={e => {
+                e.preventDefault();
+                app.action('product_create');
+              }}
+            >
               Créer un produit
             </button>
           )}

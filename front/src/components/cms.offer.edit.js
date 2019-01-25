@@ -34,8 +34,10 @@ export default class CmsOfferEdit extends React.Component {
         </div>
         <div className="offer-edit__add-product">
           <button
-            data-action="offer_product_add_display_modal"
-            onClick={app.onAction}
+            onClick={function(e) {
+              e.preventDefault();
+              app.action('offer_product_add_display_modal');
+            }}
           >
             Ajouter un produit
           </button>
