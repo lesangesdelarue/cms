@@ -106,7 +106,7 @@ export default class CmsProductEdit extends React.Component {
 
   handleChangeInitialPrice(event) {
     const newState = Object.assign({}, this.state);
-    const value = parseInt(event.target.value, 10);
+    const value = parseFloat(event.target.value);
     newState.prod.price.initial = value;
     newState.prod.price.selling = value / 2;
     this.setState(newState);
@@ -114,7 +114,7 @@ export default class CmsProductEdit extends React.Component {
 
   handleChangeSellingPrice(event) {
     const newState = Object.assign({}, this.state);
-    newState.prod.price.selling = parseInt(event.target.value, 10);
+    newState.prod.price.selling = parseFloat(event.target.value);
     this.setState(newState);
   }
 
