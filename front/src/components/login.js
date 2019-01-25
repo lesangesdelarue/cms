@@ -2,7 +2,7 @@ import React from 'react';
 
 import app from '../app';
 
-export default class Authentification extends React.Component {
+export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = { error: false, login: '', passwd: '' };
@@ -22,7 +22,8 @@ export default class Authentification extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    const auth = await app.auth.onConnectSubmit(this.state);
+    // const auth = await app.connect(this.state);
+    const auth = await app.actionPayload('connect', this.state);
     const { error } = auth;
     error && this.setState({ error: true });
   }

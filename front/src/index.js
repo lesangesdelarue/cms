@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import Authentification from './components/authentification';
+import Login from './components/login';
 import Cms from './components/cms';
 
 import app from './app';
@@ -13,7 +13,7 @@ export default class App extends React.Component {
 
     this.state = {
       auth: { login: '', connected: false, error: false },
-      nav: { current: 'offer_list' },
+      route: 'offer_list',
     };
 
     // [!] we want global state available from everywhere
@@ -25,7 +25,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    return this.state.auth.connected === false ? <Authentification /> : <Cms />;
+    return this.state.auth.connected === false ? <Login /> : <Cms />;
   }
 }
 

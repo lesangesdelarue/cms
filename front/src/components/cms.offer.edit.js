@@ -33,7 +33,7 @@ export default class CmsOfferEdit extends React.Component {
           <button onClick={this.exportImage}>Exporter pour Facebook</button>
         </div>
         <div className="offer-edit__add-product">
-          <button onClick={app.offer.openProductList}>
+          <button data-action="offer_product_add" onClick={app.onAction}>
             Ajouter un produit
           </button>
         </div>
@@ -44,12 +44,7 @@ export default class CmsOfferEdit extends React.Component {
               backgroundImage: 'url(extraimg/rick_morty_0.jpg)',
             }}
           >
-            <button
-              className="offer-edit__product__delete"
-              onClick={app.offer.removeProduct}
-            >
-              x
-            </button>
+            <button className="offer-edit__product__delete">x</button>
             <div className="offer-edit__product__title">Nom du produit</div>
             <div className="offer-edit__product__price">
               <div className="offer-edit__product__price__content">
@@ -70,12 +65,7 @@ export default class CmsOfferEdit extends React.Component {
               backgroundImage: 'url(extraimg/RickMorty2Feat.png)',
             }}
           >
-            <button
-              className="offer-edit__product__delete"
-              onClick={app.offer.removeProduct}
-            >
-              x
-            </button>
+            <button className="offer-edit__product__delete">x</button>
             <div className="offer-edit__product__title">Nom du produit</div>
             <div className="offer-edit__product__price">
               <div className="offer-edit__product__price__content">
@@ -93,7 +83,7 @@ export default class CmsOfferEdit extends React.Component {
           </div>
         </div>
         <div className="offer-edit__add-product">
-          <button onClick={app.offer.openProductList}>
+          <button data-action="offer_product_add" onClick={app.onAction}>
             Ajouter un produit
           </button>
         </div>

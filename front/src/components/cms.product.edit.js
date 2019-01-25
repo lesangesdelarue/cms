@@ -139,7 +139,7 @@ export default class CmsProductEdit extends React.Component {
   async handleSave() {
     const res = await clientApi.productCreate(this.state.prod);
     this.handleChangeProduct(res.productCreate);
-    app.go('products');
+    app.action('product_list');
   }
 
   render() {

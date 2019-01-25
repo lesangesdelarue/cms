@@ -1,68 +1,40 @@
-import api from './clientApi';
-import settings from './settings';
+import actions from './actions';
 
 const app = {
   setState: null,
   getState: null,
-
-  auth: {
-    onConnectSubmit,
-    onDisconnect,
-  },
-  offer: {
-    openProductList() {
-      console.log('TODO openProductList');
-    },
-    removeProduct() {
-      console.log('TODO removeProduct');
-    },
-  },
+  action,
+  actionPayload,
+  onAction,
+  onActionPayload,
   go,
-  onNavClick,
 };
 
 export default app;
 
-async function onConnectSubmit(params) {
-  const res = await api.connect(params);
-
-  if (res.connected === true) {
-    Object.assign(settings, {
-      shops: res.shops,
-      productCategories: res.productCategories,
-      productConditions: res.productConditions,
-      productUnits: res.productUnits,
-    });
-  }
-
-  const auth = {
-    connected: res.connected,
-    error: !res.connected,
-    login: res.login,
-  };
-
-  app.setState({
-    auth,
-  });
-
-  return auth;
+function action(actionId) {
+  return actions[actionId](app, actionId);
 }
 
-function onDisconnect() {
-  app.setState({ auth: { connected: false } });
+function actionPayload(actionId, payload) {
+  return actions[actionId](app, actionId, payload);
 }
 
-function go(key) {
-  const { current } = app.getState().nav;
-  if (key === null || key === current) return;
-  if (key === 'disconnect') {
-    app.auth.onDisconnect();
-    return;
-  }
-  app.setState({ nav: { current: key } });
+function go(newRoute) {
+  const { route } = app.getState();
+  if (route === newRoute) return;
+  app.setState({ route: newRoute });
 }
 
-function onNavClick(e) {
-  const key = e.target.getAttribute('data-key');
-  go(key);
+function onAction(e) {
+  e.preventDefault();
+  const actionId = e.target.getAttribute('data-action');
+  actions[actionId](app, actionId);
+}
+
+function onActionPayload(e) {
+  e.preventDefault();
+  const actionId = e.target.getAttribute('data-action'),
+    actionPayload = e.target.getAttribute('data-payload');
+  actions[actionId](app, actionId, actionPayload);
 }

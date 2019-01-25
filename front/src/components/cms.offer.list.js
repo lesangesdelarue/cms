@@ -22,7 +22,7 @@ export default class CmsOfferList extends React.Component {
     return (
       <div className="wrapper">
         <div className="offers__add">
-          <button data-key="offer_create" onClick={app.onNavClick}>
+          <button data-action="offer_create" onClick={app.onAction}>
             Créer une promotion
           </button>
         </div>

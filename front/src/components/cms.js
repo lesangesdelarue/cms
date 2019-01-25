@@ -1,44 +1,16 @@
 import React from 'react';
 
-import CmsNav from './cms.nav';
-
-import CmsOfferList from './cms.offer.list';
-import CmsOfferEdit from './cms.offer.edit';
-import CmsProductList from './cms.product.list';
-import CmsProductEdit from './cms.product.edit';
+import CmsNav from './cms.navbar';
+import CmsRouter from './cms.router';
 
 import app from '../app';
 
-const _navmap = {
-  offer_edit() {
-    return <CmsOfferEdit mode="edit" />;
-  },
-  offer_create() {
-    return <CmsOfferEdit mode="create" />;
-  },
-  offer_list() {
-    return <CmsOfferList />;
-  },
-  product_create() {
-    return <CmsProductEdit />;
-  },
-  product_edit() {
-    return <CmsProductEdit />;
-  },
-  product_list() {
-    return <CmsProductList mode="list" />;
-  },
-  product_pick() {
-    return <CmsProductList mode="pick" />;
-  },
-};
-
 export default function Cms() {
-  const { current } = app.getState().nav;
+  const { route } = app.getState();
   return (
     <div>
       <CmsNav />
-      {_navmap[current]()}
+      {CmsRouter.routes[route]()}
     </div>
   );
 }
