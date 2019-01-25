@@ -33,7 +33,10 @@ export default class CmsOfferEdit extends React.Component {
           <button onClick={this.exportImage}>Exporter pour Facebook</button>
         </div>
         <div className="offer-edit__add-product">
-          <button data-action="offer_product_add" onClick={app.onAction}>
+          <button
+            data-action="offer_product_add_display_modal"
+            onClick={app.onAction}
+          >
             Ajouter un produit
           </button>
         </div>
@@ -83,7 +86,10 @@ export default class CmsOfferEdit extends React.Component {
           </div>
         </div>
         <div className="offer-edit__add-product">
-          <button data-action="offer_product_add" onClick={app.onAction}>
+          <button
+            data-action="offer_product_add_display_modal"
+            onClick={app.onAction}
+          >
             Ajouter un produit
           </button>
         </div>

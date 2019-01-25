@@ -20,8 +20,8 @@ function Routes() {
     offer_list() {
       return <CmsOfferList />;
     },
-    offer_product_add() {
-      return <CmsProductList mode="product_add" />;
+    offer_product_add_display_modal() {
+      return <CmsProductList mode="offer_product_add_display_modal" />;
     },
     product_create() {
       return <CmsProductEdit />;
@@ -30,7 +30,7 @@ function Routes() {
       return <CmsProductEdit />;
     },
     product_list() {
-      return <CmsProductList mode="list" />;
+      return <CmsProductList mode="product_list" />;
     },
   };
 }

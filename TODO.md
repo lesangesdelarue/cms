@@ -1,2 +1,3 @@
+- add product to offer
 - déplacer les nodes modules du serveur
 - traiter les message d'erreur (déconnexion)

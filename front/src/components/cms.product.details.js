@@ -1,12 +1,18 @@
 import React from 'react';
 
 import settings from '../settings';
+import app from '../app';
 
 export default function CmsProductDetails(props) {
   const p = props.prod;
   const shop = settings.getShop(p.shop);
   return (
-    <div className="product">
+    <div
+      className="product"
+      onClick={function(e) {
+        app.actionPayload('offer_add_product', p);
+      }}
+    >
       <div
         className="product__image"
         style={{

@@ -27,6 +27,7 @@ function go(newRoute) {
 }
 
 function onAction(e) {
+  console.log('.');
   e.preventDefault();
   const actionId = e.target.getAttribute('data-action');
   actions[actionId](app, actionId);

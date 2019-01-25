@@ -8,13 +8,14 @@ const actions = {
       params,
     );
   },
+  offer_add_product,
+  offer_create,
 };
 
 [
-  'offer_create',
   'offer_edit',
   'offer_list',
-  'offer_product_add',
+  'offer_product_add_display_modal',
   'product_create',
   'product_edit',
   'product_list',
@@ -24,6 +25,16 @@ const actions = {
 
 export default actions;
 
+function offer_create(app, actionId) {
+  app.setState({ offer: { edit: { products: [] } } });
+  app.go(actionId);
+}
+
 function _go(app, actionId) {
   app.go(actionId);
+}
+
+function offer_add_product(app, actionId, payload) {
+  console.log('TODO, add product to offer');
+  console.log(payload);
 }

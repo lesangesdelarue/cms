@@ -22,7 +22,6 @@ export default class Login extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    // const auth = await app.connect(this.state);
     const auth = await app.actionPayload('connect', this.state);
     const { error } = auth;
     error && this.setState({ error: true });
