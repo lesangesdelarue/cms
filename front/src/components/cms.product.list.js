@@ -9,7 +9,7 @@ export default class CmsProductList extends React.Component {
     super(props);
 
     this.state = {
-      productList: { page: null, items: [] },
+      productList: { page: null, items: [], mode: props.mode },
     };
   }
   async componentDidMount() {
@@ -19,9 +19,9 @@ export default class CmsProductList extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <div className="products__add">
-          <button data-key="product_add" onClick={app.onNavClick}>
-            Ajouter un produit
+        <div className="product__create">
+          <button data-key="product_create" onClick={app.onNavClick}>
+            Créer un produit
           </button>
         </div>
 

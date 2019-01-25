@@ -92,7 +92,6 @@ export default class CmsOfferEdit extends React.Component {
             </div>
           </div>
         </div>
-        {/* zzzz */}
         <div className="offer-edit__add-product">
           <button onClick={app.offer.openProductList}>
             Ajouter un produit

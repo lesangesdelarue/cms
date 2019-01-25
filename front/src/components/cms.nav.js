@@ -6,8 +6,8 @@ export default function CmsNav() {
   return (
     <div className="nav" onClick={app.onNavClick}>
       <div className="nav__left">
-        {_link('products', 'Produits')}
-        {_link('offers', 'Promotions')}
+        {_link('product_list', 'Produits')}
+        {_link('offer_list', 'Promotions')}
       </div>
       <div className="nav__right">{_link('disconnect', 'Déconnexion')}</div>
     </div>

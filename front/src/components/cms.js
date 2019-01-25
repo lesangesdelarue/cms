@@ -11,19 +11,25 @@ import app from '../app';
 
 const _navmap = {
   offer_edit() {
-    return <CmsOfferEdit />;
+    return <CmsOfferEdit mode="edit" />;
   },
-  offers() {
+  offer_create() {
+    return <CmsOfferEdit mode="create" />;
+  },
+  offer_list() {
     return <CmsOfferList />;
   },
-  product_add() {
+  product_create() {
     return <CmsProductEdit />;
   },
   product_edit() {
     return <CmsProductEdit />;
   },
-  products() {
-    return <CmsProductList />;
+  product_list() {
+    return <CmsProductList mode="list" />;
+  },
+  product_pick() {
+    return <CmsProductList mode="pick" />;
   },
 };
 
