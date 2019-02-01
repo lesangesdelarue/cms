@@ -38,7 +38,7 @@ export default class CmsProductList extends React.Component {
         </div>
 
         {this.state.productList.items.map(prod_ => (
-          <CmsProductDetails key={prod_.id} prod={prod_} />
+          <CmsProductDetails key={prod_.id} prod={prod_} mode={mode} />
         ))}
       </div>
     );

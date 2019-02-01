@@ -371,3 +371,16 @@ button.link.active:hover {
 button.link:hover {
   background-color: #00aff5;
 }
+
+span.product-offer-selected {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background: #f77336;
+  padding: 2px;
+  color: #fff;
+}
+
+div.product.selected {
+  border: 1px solid #f77336;
+}

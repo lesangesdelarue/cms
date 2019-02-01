@@ -1,3 +1,5 @@
-- add product to offer
+- valider/annuler les ajouts de produits dans la promotion
+- édition de la promotion
+- modal plus explicite lors de la selection des produits
 - déplacer les nodes modules du serveur
 - traiter les message d'erreur (déconnexion)

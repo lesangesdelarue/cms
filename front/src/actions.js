@@ -1,14 +1,12 @@
+import model from './model';
 import user from './user';
 
 const actions = {
   disconnect: user.disconnect,
   async connect(app, actionId, params) {
-    return user.connect(
-      app,
-      params,
-    );
+    return user.connect(app, params);
   },
-  offer_add_product,
+  offer_toggle_product,
   offer_create,
 };
 
@@ -26,7 +24,10 @@ const actions = {
 export default actions;
 
 function offer_create(app, actionId) {
-  app.setState({ offer: { edit: { products: [] } } });
+  const offer = { products: [] };
+  model.offer = offer;
+  model.offers.push(offer);
+  app.setState({ offer });
   app.go(actionId);
 }
 
@@ -34,7 +35,12 @@ function _go(app, actionId) {
   app.go(actionId);
 }
 
-function offer_add_product(app, actionId, payload) {
-  console.log('TODO, add product to offer');
-  console.log(payload);
+function offer_toggle_product(app, actionId, product) {
+  const findIndex = model.offer.products.findIndex(p => product.id === p.id);
+
+  if (findIndex === -1) {
+    model.offer.products.push(product);
+  } else {
+    model.offer.products.splice(findIndex, 1);
+  }
 }
