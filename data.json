@@ -1,5 +1,16 @@
 {
- "offers": [],
+ "offers": [
+  {
+   "id": "3a127afe-18ee-4284-be75-0b0cc49616a7",
+   "created_at": 1549224638,
+   "info": "",
+   "offer_products": [
+    "9d437650-b084-42af-8bad-d885034adf96",
+    "47e504c7-e225-41d7-a4c4-702b0e25348f"
+   ],
+   "offer_shop": 1
+  }
+ ],
  "products": [
   {
    "id": "9d437650-b084-42af-8bad-d885034adf96",

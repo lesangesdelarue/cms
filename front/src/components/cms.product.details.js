@@ -30,7 +30,7 @@ export default class CmsProductDetails extends React.Component {
     const isProductSelected =
       isOfferPick === false
         ? false
-        : model.offer.products.findIndex(product => product.id === p.id) > -1;
+        : model.offer.offer_products.findIndex(id => id === p.id) > -1;
 
     return (
       <div

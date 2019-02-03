@@ -5,7 +5,7 @@ export default {
   query: 'productList(page:Int): Products',
   mutation: `
     productCreate(product: ProductInput): Product
-    productUpdate(id: ID!, input: MessageInput): Message
+    productUpdate(product: ProductInput): Product
   `,
   type: `
   type Products {
@@ -37,11 +37,6 @@ export default {
     selling: Float
   }
 
-  input MessageInput {
-    content: String
-    author: String
-  }
-
   input ProductInput {
     id: String
     batch: Boolean
@@ -66,11 +61,6 @@ export default {
     selling: Float
   }
 
-  type Message {
-    id: ID!
-    content: String
-    author: String
-  }
   `,
   resolvers: {
     productList,

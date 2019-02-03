@@ -1,6 +1,8 @@
-// import clientApi from './clientApi';
+import clientApi from './clientApi';
 import model from './model';
 import user from './user';
+
+import offerApp from './offers.app';
 
 const actions = {
   disconnect: user.disconnect,
@@ -26,15 +28,15 @@ const actions = {
 export default actions;
 
 function offer_create(app, actionId) {
-  const offer = { products: [] };
+  const offer = offerApp.create();
   model.offer = offer;
   app.setState({ offer });
   app.go(actionId);
 }
 
 async function offer_save(app, actionId) {
-  // await clientApi.offerCreate(model.offer);
-  console.log(model.offer);
+  const res = await clientApi.offerCreate(model.offer);
+  console.log(model.offer, res);
   app.go('offer_list');
 }
 
@@ -43,11 +45,14 @@ function _go(app, actionId) {
 }
 
 function offer_toggle_product(app, actionId, product) {
-  const findIndex = model.offer.products.findIndex(p => product.id === p.id);
+  console.log(model.offer);
+  const findIndex = model.offer.offer_products.findIndex(
+    id => product.id === id,
+  );
 
   if (findIndex === -1) {
-    model.offer.products.push(product);
+    model.offer.offer_products.push(product.id);
   } else {
-    model.offer.products.splice(findIndex, 1);
+    model.offer.offer_products.splice(findIndex, 1);
   }
 }

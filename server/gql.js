@@ -9,6 +9,7 @@ const schema = buildSchema(`
 
   type Mutation {
     ${productsGql.mutation}
+    ${offersGql.mutation}
   }
 
   type Query {
@@ -26,7 +27,7 @@ const schema = buildSchema(`
 `);
 
 const { productList, productCreate, productUpdate } = productsGql.resolvers;
-const { offerList } = offersGql.resolvers;
+const { offerCreate, offerList } = offersGql.resolvers;
 
 export default graphqlHTTP({
   schema,
@@ -38,6 +39,8 @@ export default graphqlHTTP({
     // mutations
     productCreate,
     productUpdate,
+
+    offerCreate,
   },
   graphiql: conf.NODE_ENV === 'dev',
 });
