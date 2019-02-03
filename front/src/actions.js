@@ -1,3 +1,4 @@
+// import clientApi from './clientApi';
 import model from './model';
 import user from './user';
 
@@ -8,6 +9,7 @@ const actions = {
   },
   offer_toggle_product,
   offer_create,
+  offer_save,
 };
 
 [
@@ -26,9 +28,14 @@ export default actions;
 function offer_create(app, actionId) {
   const offer = { products: [] };
   model.offer = offer;
-  model.offers.push(offer);
   app.setState({ offer });
   app.go(actionId);
+}
+
+async function offer_save(app, actionId) {
+  // await clientApi.offerCreate(model.offer);
+  console.log(model.offer);
+  app.go('offer_list');
 }
 
 function _go(app, actionId) {

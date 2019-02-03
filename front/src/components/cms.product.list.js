@@ -12,11 +12,23 @@ export default class CmsProductList extends React.Component {
       mode: props.mode,
       productList: { page: null, items: [] },
     };
+
+    this.handleCancel = this.handleCancel.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
   async componentDidMount() {
     const res = await api.productList();
     this.setState({ productList: res.productList });
   }
+
+  handleCancel() {
+    app.go('offer_list');
+  }
+
+  handleSave() {
+    app.action('offer_save');
+  }
+
   render() {
     const { mode } = this.state;
     return (
@@ -33,7 +45,12 @@ export default class CmsProductList extends React.Component {
             </button>
           )}
           {mode === 'offer_product_add_display_modal' && (
-            <span>Sélectionner les produits à ajouter</span>
+            <div>
+              <div className="top-right-submit">
+                <button onClick={this.handleCancel}>Annuler</button>
+                <button onClick={this.handleSave}>Valider</button>
+              </div>
+            </div>
           )}
         </div>
 

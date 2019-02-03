@@ -12,23 +12,23 @@ export default class CmsOfferList extends React.Component {
     this.state = {
       offerList: { page: null, items: [] },
     };
+
+    this.handleOfferCreate = this.handleOfferCreate.bind(this);
   }
   async componentDidMount() {
     const res = await clientApi.offerList();
     this.setState({ offerList: res.offerList });
   }
 
+  handleOfferCreate() {
+    app.action('offer_create');
+  }
+
   render() {
     return (
       <div className="wrapper">
         <div className="offers__add">
-          <button
-            onClick={function(e) {
-              app.action('offer_create');
-            }}
-          >
-            Créer une promotion
-          </button>
+          <button onClick={this.handleOfferCreate}>Créer une promotion</button>
         </div>
 
         {this.state.offerList.items.map(offer_ => (

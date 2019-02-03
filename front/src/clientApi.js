@@ -19,6 +19,14 @@ export default {
       },
     });
   },
+  async offerCreate(offer) {
+    return _gqlPost({
+      query: offers.mutations.offerCreate,
+      variables: {
+        offer,
+      },
+    });
+  },
 };
 
 async function connect(params) {
