@@ -6,14 +6,19 @@ export default { upload };
 ensureUploadDir();
 
 function upload(req, res) {
-  const _keys = Object.keys(req.files);
+  const _keys = Object.keys(req.files),
+    { type } = req.body;
+
   if (_keys.length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
 
   const { imgFile } = req.files;
+  const fileName = `${conf.UPLOAD_DIR}/${type}/${imgFile.name}`;
 
-  imgFile.mv(`${conf.UPLOAD_DIR}/${imgFile.name}`, function(err) {
+  console.log(fileName);
+
+  imgFile.mv(fileName, function(err) {
     if (err) return res.status(500).send(err);
 
     res.send('File uploaded!');

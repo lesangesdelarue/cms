@@ -57,10 +57,11 @@ export default {
     }`,
   },
   imgFilename(prod) {
-    return prod.id + '_0.jpg';
+    const name = prod.id + '_0.jpg';
+    return name;
   },
   imgUrl(prod) {
-    return `img/${prod.id}_0.jpg?${Date.now()}`; // to invalidate browser cache
+    return `img/prod/${prod.id}_0.jpg?${Date.now()}`; // to invalidate browser cache
   },
 };
 

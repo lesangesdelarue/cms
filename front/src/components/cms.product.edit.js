@@ -49,12 +49,11 @@ export default class CmsProductEdit extends React.Component {
   };
 
   handleUpload = () => {
-    const data = new FormData();
-    data.append(
-      'imgFile',
-      this.state.selectedFile,
-      products.imgFilename(this.state.prod),
-    );
+    const data = new FormData(),
+      name = products.imgFilename(this.state.prod);
+
+    data.append('type', 'prod');
+    data.append('imgFile', this.state.selectedFile, name);
 
     axios
       .post('/upload', data, {
