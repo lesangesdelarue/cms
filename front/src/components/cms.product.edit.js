@@ -66,7 +66,7 @@ export default class CmsProductEdit extends React.Component {
       .then(res => {
         const newState = Object.assign({}, this.state);
         newState.selectedFile = null;
-        const imgUrl = products.imgUrl(newState.prod);
+        const imgUrl = products.imgUrl(newState.prod.id);
         newState.prod.gallery[0] = `${imgUrl}?${Date.now()}`;
         this.setState(newState);
         console.log(res.statusText);

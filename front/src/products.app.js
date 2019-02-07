@@ -60,8 +60,8 @@ export default {
     const name = prod.id + '_0.jpg';
     return name;
   },
-  imgUrl(prod) {
-    return `img/prod/${prod.id}_0.jpg?${Date.now()}`; // to invalidate browser cache
+  imgUrl(id) {
+    return `img/prod/${id}_0.jpg?${Date.now()}`; // to invalidate browser cache
   },
 };
 

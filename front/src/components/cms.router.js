@@ -12,10 +12,7 @@ export default { routes };
 function Routes() {
   return {
     offer_edit() {
-      return <CmsOfferEdit mode="edit" />;
-    },
-    offer_create() {
-      return <CmsOfferEdit mode="create" />;
+      return <CmsOfferEdit />;
     },
     offer_list() {
       return <CmsOfferList />;

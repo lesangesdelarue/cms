@@ -11,20 +11,21 @@ const actions = {
   },
   offer_toggle_product,
   offer_create,
+  offer_edit,
   offer_save,
 };
 
-[
-  'offer_edit',
-  'offer_list',
-  'product_create',
-  'product_edit',
-  'product_list',
-].forEach(k => {
+['offer_list', 'product_create', 'product_list'].forEach(k => {
   actions[k] = _go;
 });
 
 export default actions;
+
+function offer_edit(app, actionId, offer) {
+  model.offer = offer;
+  app.setState({ offer });
+  app.go('offer_edit');
+}
 
 function offer_create(app, actionId) {
   const offer = offerApp.create();
