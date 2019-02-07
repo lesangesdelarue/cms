@@ -17,7 +17,6 @@ const actions = {
 [
   'offer_edit',
   'offer_list',
-  'offer_product_add_display_modal',
   'product_create',
   'product_edit',
   'product_list',
@@ -31,12 +30,11 @@ function offer_create(app, actionId) {
   const offer = offerApp.create();
   model.offer = offer;
   app.setState({ offer });
-  app.go(actionId);
+  app.go('offer_product_add_display_modal');
 }
 
 async function offer_save(app, actionId) {
-  const res = await clientApi.offerCreate(model.offer);
-  console.log(model.offer, res);
+  await clientApi.offerCreate(model.offer);
   app.go('offer_list');
 }
 
@@ -45,7 +43,6 @@ function _go(app, actionId) {
 }
 
 function offer_toggle_product(app, actionId, product) {
-  console.log(model.offer);
   const findIndex = model.offer.offer_products.findIndex(
     id => product.id === id,
   );

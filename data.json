@@ -1,6 +1,36 @@
 {
  "offers": [
   {
+   "id": "88d2882b-532c-4a1f-ab8b-7b8e2c4f3878",
+   "created_at": 1549570868,
+   "info": "",
+   "offer_products": [
+    "533d87ee-5e98-47fd-8f6e-8874138858e5",
+    "38d2e033-e0cf-45e2-b3d8-41c19199312d",
+    "9d437650-b084-42af-8bad-d885034adf96"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "b688e8fb-4f13-4803-8376-f60bc73baca7",
+   "created_at": 1549570778,
+   "info": "",
+   "offer_products": [
+    "7809f55c-9152-4eba-855a-a47c088d18ac"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "3b019333-e6a5-49f2-ab48-0c5702233bbe",
+   "created_at": 1549570398,
+   "info": "",
+   "offer_products": [
+    "38d2e033-e0cf-45e2-b3d8-41c19199312d",
+    "533d87ee-5e98-47fd-8f6e-8874138858e5"
+   ],
+   "offer_shop": 1
+  },
+  {
    "id": "cf319c25-d7c6-4828-a8bd-f2e01de887c8",
    "created_at": 1549565683,
    "info": "",
