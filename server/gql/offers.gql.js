@@ -37,8 +37,7 @@ export default {
 function offerCreate(params) {
   const { offers } = model.data;
   const { offer } = params;
-  console.log(params);
   offers.unshift(offer);
-  // model.save();
+  model.save();
   return offer;
 }
