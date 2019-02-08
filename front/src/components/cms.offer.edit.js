@@ -46,7 +46,6 @@ export default class CmsOfferEdit extends React.Component {
         <div id="offer-area">
           {prods.map(prod => {
             const imgUrl = prod.gallery[0];
-            console.log(prod);
             return (
               <div
                 className="offer-edit__product"

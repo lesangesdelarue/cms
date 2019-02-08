@@ -1,5 +1,5 @@
-- valider/annuler les ajouts de produits dans la promotion
-- édition de la promotion
+- suppression de promotions
 - modal plus explicite lors de la selection des produits
+- édition de la promotion
 - déplacer les nodes modules du serveur
 - traiter les message d'erreur (déconnexion)
