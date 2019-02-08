@@ -1,6 +1,19 @@
 {
  "offers": [
   {
+   "id": "c2160e5f-9811-4553-901f-3e9c1fb88054",
+   "created_at": 1549637847,
+   "info": "",
+   "offer_products": [
+    "4bb1e703-9fec-4d3a-934b-b2143dd71529",
+    "9d437650-b084-42af-8bad-d885034adf96",
+    "47e504c7-e225-41d7-a4c4-702b0e25348f",
+    "7809f55c-9152-4eba-855a-a47c088d18ac",
+    "38d2e033-e0cf-45e2-b3d8-41c19199312d"
+   ],
+   "offer_shop": 1
+  },
+  {
    "id": "2a77a6ae-e067-4400-81be-9b35553aca8b",
    "created_at": 1549574712,
    "info": "",

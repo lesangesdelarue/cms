@@ -46,6 +46,7 @@ export default class CmsOfferEdit extends React.Component {
         <div id="offer-area">
           {prods.map(prod => {
             const imgUrl = prod.gallery[0];
+            console.log(prod);
             return (
               <div
                 className="offer-edit__product"
@@ -55,7 +56,7 @@ export default class CmsOfferEdit extends React.Component {
                 }}
               >
                 {/* <button className="offer-edit__product__delete">x</button> */}
-                <div className="offer-edit__product__title">Nom du produit</div>
+                <div className="offer-edit__product__title">{prod.title}</div>
                 <div className="offer-edit__product__price">
                   <div className="offer-edit__product__price__content">
                     <span
@@ -65,10 +66,10 @@ export default class CmsOfferEdit extends React.Component {
                       à partir de
                     </span>
                     <span className="offer-edit__product__price__final">
-                      25€
+                      {prod.price.selling}€
                     </span>
                     <span className="offer-edit__product__price__initial">
-                      50€
+                      {prod.price.initial}€
                     </span>
                   </div>
                 </div>
