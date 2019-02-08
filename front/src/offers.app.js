@@ -45,26 +45,6 @@ export default {
         id
         created_at
         info
-        offer_products {
-          id
-          batch
-          condition
-          created_at
-          desc
-          gallery
-          title
-          shop
-          category
-          condition
-          price {
-            initial
-            selling
-          }
-          quantity {
-            val
-            unit
-          }
-        }
         offer_shop  
       }
     }`,
