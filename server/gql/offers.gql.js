@@ -15,7 +15,7 @@ export default {
     id:String
     created_at: Int
     info:String
-    offer_products: [String] 
+    offer_products: [Product] 
     offer_shop: Int
   }
   

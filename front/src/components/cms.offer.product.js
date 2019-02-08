@@ -5,6 +5,7 @@ import app from '../app';
 export default function CmsOfferProduct(props) {
   const dt = new Date(props.offer.created_at * 1000).toLocaleDateString();
   const { offer } = props;
+
   return (
     <div
       className="offer"
@@ -17,9 +18,9 @@ export default function CmsOfferProduct(props) {
       {offer.offer_products.map(prod => (
         <div
           className="offer__product"
-          key={prod}
+          key={prod.id}
           style={{
-            backgroundImage: 'url(img/prod/' + prod + '_0.jpg)',
+            backgroundImage: 'url(' + prod.gallery[0] + ')',
           }}
         />
       ))}

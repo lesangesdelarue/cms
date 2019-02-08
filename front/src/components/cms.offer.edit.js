@@ -4,8 +4,6 @@ import FileSaver from 'file-saver';
 import React from 'react';
 import model from '../model';
 
-import products from '../products.app';
-
 export default class CmsOfferEdit extends React.Component {
   constructor(props) {
     super(props);
@@ -46,12 +44,12 @@ export default class CmsOfferEdit extends React.Component {
           </button> */}
         </div>
         <div id="offer-area">
-          {prods.map(prodId => {
-            const imgUrl = products.imgUrl(prodId);
+          {prods.map(prod => {
+            const imgUrl = prod.gallery[0];
             return (
               <div
                 className="offer-edit__product"
-                key={prodId}
+                key={prod.id}
                 style={{
                   backgroundImage: 'url(' + imgUrl + ')',
                 }}
