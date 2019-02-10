@@ -1,4 +1,3 @@
-// import domtoimage from 'dom-to-image';
 import html2canvas from 'html2canvas';
 
 import FileSaver from 'file-saver';
@@ -41,16 +40,7 @@ export default class CmsOfferEdit extends React.Component {
         <div className="offer-edit__export">
           <button onClick={this.exportImage}>Exporter pour Facebook</button>
         </div>
-        <div className="offer-edit__add-product">
-          {/* <button
-            onClick={function(e) {
-              e.preventDefault();
-              app.action('offer_product_add_display_modal');
-            }}
-          >
-            Ajouter un produit
-          </button> */}
-        </div>
+        <div className="offer-edit__add-product" />
         <div id="offer-area">
           {prods.map(prod => {
             const imgUrl = prod.gallery[0];
@@ -73,10 +63,12 @@ export default class CmsOfferEdit extends React.Component {
                       à partir de
                     </span>
                     <span className="offer-edit__product__price__final">
-                      {prod.price.selling}€
+                      {prod.price.selling}
+                      <img src="img/ui/euro.svg" alt="euro" width="16rem" />
                     </span>
                     <span className="offer-edit__product__price__initial">
-                      {prod.price.initial}€
+                      {prod.price.initial}
+                      <img src="img/ui/euro.svg" alt="euro" width="11rem" />
                     </span>
                   </div>
                 </div>
