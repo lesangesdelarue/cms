@@ -1,4 +1,6 @@
 import domtoimage from 'dom-to-image';
+import html2canvas from 'html2canvas';
+
 import FileSaver from 'file-saver';
 
 import React from 'react';
@@ -19,6 +21,10 @@ export default class CmsOfferEdit extends React.Component {
     );
     offerArea.style.width = '200px';
     offerDelProd.forEach(n => (n.style.display = 'none'));
+
+    html2canvas(offerArea).then(function(canvas) {
+      document.body.appendChild(canvas);
+    });
 
     domtoimage.toBlob(offerArea).then(function(blob) {
       FileSaver.saveAs(blob, 'my-node.jpg');
