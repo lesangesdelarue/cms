@@ -53,9 +53,13 @@ export default class CmsProductDetails extends React.Component {
           </li>
           <li>
             {p.batch === true && (
-              <span style={{ display: 'inline' }}>à partir de</span>
+              <span style={{ display: 'inline' }}>à partir de </span>
             )}
-            <span className="product__price__initial">{p.price.initial}€ </span>
+            {p.batch === false && (
+              <span className="product__price__initial">
+                {p.price.initial}€{' '}
+              </span>
+            )}
             <span className="product__price__final">{p.price.selling}€ </span>
             <span>{settings.getProductQuantity(p.quantity)}</span>
           </li>

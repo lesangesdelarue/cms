@@ -63,13 +63,18 @@ export default class CmsOfferEdit extends React.Component {
                       à partir de
                     </span>
                     <span className="offer-edit__product__price__final">
+                      <span style={{ fontSize: '0.7em' }}>
+                        {prod.batch === true ? 'à partir de ' : ''}
+                      </span>
                       {prod.price.selling}
                       <img src="img/ui/euro.svg" alt="euro" width="16rem" />
                     </span>
-                    <span className="offer-edit__product__price__initial">
-                      {prod.price.initial}
-                      <img src="img/ui/euro.svg" alt="euro" width="11rem" />
-                    </span>
+                    {prod.batch === false && (
+                      <span className="offer-edit__product__price__initial">
+                        {prod.price.initial}
+                        <img src="img/ui/euro.svg" alt="euro" width="11rem" />
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
