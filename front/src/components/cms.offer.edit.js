@@ -1,4 +1,4 @@
-import domtoimage from 'dom-to-image';
+// import domtoimage from 'dom-to-image';
 import html2canvas from 'html2canvas';
 
 import FileSaver from 'file-saver';
@@ -19,17 +19,19 @@ export default class CmsOfferEdit extends React.Component {
     const offerDelProd = document.querySelectorAll(
       '.offer-edit__product__delete',
     );
-    offerArea.style.width = '200px';
+    offerArea.style.width = '300px';
     offerDelProd.forEach(n => (n.style.display = 'none'));
 
-    html2canvas(offerArea).then(function(canvas) {
-      document.body.appendChild(canvas);
-    });
-
-    domtoimage.toBlob(offerArea).then(function(blob) {
-      FileSaver.saveAs(blob, 'my-node.jpg');
-      offerArea.style.width = '';
-      offerDelProd.forEach(n => (n.style.display = ''));
+    html2canvas(offerArea, { width: 300 }).then(function(canvas) {
+      canvas.toBlob(
+        function(blob) {
+          FileSaver.saveAs(blob, 'promotion.jpg');
+          offerArea.style.width = '';
+          offerDelProd.forEach(n => (n.style.display = ''));
+        },
+        'image/jpeg',
+        0.92,
+      );
     });
   }
   render() {
