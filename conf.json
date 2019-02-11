@@ -18,7 +18,8 @@
   "productUnits": [
     { "id": 0, "unit": "", "label": "1 unité de produit" },
     { "id": 1, "unit": "kg", "label": "1 kg de produit" },
-    { "id": 2, "unit": "l", "label": "1 litre de produit" }
+    { "id": 2, "unit": "l", "label": "1 litre de produit" },
+    { "id": 3, "unit": "m³", "label": "1 mètre cube de produit" }
   ],
 
   "productConditions": [

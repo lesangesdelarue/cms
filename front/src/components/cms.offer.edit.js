@@ -1,8 +1,8 @@
-import html2canvas from 'html2canvas';
-
 import FileSaver from 'file-saver';
-
+import html2canvas from 'html2canvas';
 import React from 'react';
+
+import settings from '../settings';
 import model from '../model';
 
 export default class CmsOfferEdit extends React.Component {
@@ -68,11 +68,15 @@ export default class CmsOfferEdit extends React.Component {
                       </span>
                       {prod.price.selling}
                       <img src="img/ui/euro.svg" alt="euro" width="16rem" />
+                      <span>{settings.getProductQuantity(prod.quantity)}</span>
                     </span>
                     {prod.batch === false && (
                       <span className="offer-edit__product__price__initial">
                         {prod.price.initial}
                         <img src="img/ui/euro.svg" alt="euro" width="11rem" />
+                        <span>
+                          {settings.getProductQuantity(prod.quantity)}
+                        </span>
                       </span>
                     )}
                   </div>

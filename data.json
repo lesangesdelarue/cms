@@ -1,308 +1,342 @@
 {
-  "offers": [
-    {
-      "id": "36876b3c-99d4-4c99-9b8a-2f9c8b37595f",
-      "created_at": 1549830571,
-      "info": "",
-      "offer_products": [
-        "adfb89a5-56ae-48b8-9d2c-4495db13ff4d",
-        "6a822d65-45bb-43bb-a67f-006b6a2253b2"
-      ],
-      "offer_shop": 1
-    },
-    {
-      "id": "2e46d1be-7bbf-4a14-9987-edc069071f9c",
-      "created_at": 1549830158,
-      "info": "",
-      "offer_products": ["6a822d65-45bb-43bb-a67f-006b6a2253b2"],
-      "offer_shop": 1
-    },
-    {
-      "id": "3b58b179-708a-4799-b390-18add4bf61eb",
-      "created_at": 1549638667,
-      "info": "",
-      "offer_products": [
-        "adfb89a5-56ae-48b8-9d2c-4495db13ff4d",
-        "4bb1e703-9fec-4d3a-934b-b2143dd71529",
-        "9d437650-b084-42af-8bad-d885034adf96",
-        "38d2e033-e0cf-45e2-b3d8-41c19199312d",
-        "533d87ee-5e98-47fd-8f6e-8874138858e5",
-        "7b3b6613-12f7-47de-9865-6dfddb2ca503"
-      ],
-      "offer_shop": 1
-    },
-    {
-      "id": "b58f8417-b883-452b-ad61-683169110c56",
-      "created_at": 1549638288,
-      "info": "",
-      "offer_products": [
-        "7809f55c-9152-4eba-855a-a47c088d18ac",
-        "47e504c7-e225-41d7-a4c4-702b0e25348f",
-        "9d437650-b084-42af-8bad-d885034adf96"
-      ],
-      "offer_shop": 1
-    },
-    {
-      "id": "5ffaa3d4-4e93-45c6-a760-e8872cc4a86d",
-      "created_at": 1549638125,
-      "info": "",
-      "offer_products": [
-        "4bb1e703-9fec-4d3a-934b-b2143dd71529",
-        "38d2e033-e0cf-45e2-b3d8-41c19199312d"
-      ],
-      "offer_shop": 1
-    },
-    {
-      "id": "c2160e5f-9811-4553-901f-3e9c1fb88054",
-      "created_at": 1549637847,
-      "info": "",
-      "offer_products": [
-        "4bb1e703-9fec-4d3a-934b-b2143dd71529",
-        "9d437650-b084-42af-8bad-d885034adf96",
-        "47e504c7-e225-41d7-a4c4-702b0e25348f",
-        "7809f55c-9152-4eba-855a-a47c088d18ac",
-        "38d2e033-e0cf-45e2-b3d8-41c19199312d"
-      ],
-      "offer_shop": 1
-    },
-    {
-      "id": "2a77a6ae-e067-4400-81be-9b35553aca8b",
-      "created_at": 1549574712,
-      "info": "",
-      "offer_products": [
-        "4bb1e703-9fec-4d3a-934b-b2143dd71529",
-        "47e504c7-e225-41d7-a4c4-702b0e25348f"
-      ],
-      "offer_shop": 1
-    },
-    {
-      "id": "88d2882b-532c-4a1f-ab8b-7b8e2c4f3878",
-      "created_at": 1549570868,
-      "info": "",
-      "offer_products": [
-        "533d87ee-5e98-47fd-8f6e-8874138858e5",
-        "38d2e033-e0cf-45e2-b3d8-41c19199312d",
-        "9d437650-b084-42af-8bad-d885034adf96"
-      ],
-      "offer_shop": 1
-    },
-    {
-      "id": "b688e8fb-4f13-4803-8376-f60bc73baca7",
-      "created_at": 1549570778,
-      "info": "",
-      "offer_products": ["7809f55c-9152-4eba-855a-a47c088d18ac"],
-      "offer_shop": 1
-    },
-    {
-      "id": "3b019333-e6a5-49f2-ab48-0c5702233bbe",
-      "created_at": 1549570398,
-      "info": "",
-      "offer_products": [
-        "38d2e033-e0cf-45e2-b3d8-41c19199312d",
-        "533d87ee-5e98-47fd-8f6e-8874138858e5"
-      ],
-      "offer_shop": 1
-    },
-    {
-      "id": "cf319c25-d7c6-4828-a8bd-f2e01de887c8",
-      "created_at": 1549565683,
-      "info": "",
-      "offer_products": [
-        "9d437650-b084-42af-8bad-d885034adf96",
-        "47e504c7-e225-41d7-a4c4-702b0e25348f"
-      ],
-      "offer_shop": 1
-    }
-  ],
-  "products": [
-    {
-      "id": "6a822d65-45bb-43bb-a67f-006b6a2253b2",
-      "batch": true,
-      "created_at": 1549829632,
-      "desc": "Boites de rangement",
-      "gallery": [
-        "img/prod/6a822d65-45bb-43bb-a67f-006b6a2253b2_0.jpg?1549829850736?1549829850736"
-      ],
-      "title": "Boite",
-      "shop": 1,
-      "category": 9,
-      "quantity": {
-        "val": 100,
-        "unit": ""
-      },
-      "condition": 0,
-      "price": {
-        "initial": 5,
-        "selling": 2.5
-      }
-    },
-    {
-      "id": "adfb89a5-56ae-48b8-9d2c-4495db13ff4d",
-      "batch": false,
-      "created_at": 1549638378,
-      "desc": "Demi barquette bio",
-      "gallery": [
-        "img/prod/adfb89a5-56ae-48b8-9d2c-4495db13ff4d_0.jpg?1549638385191?1549638385191"
-      ],
-      "title": "Oeufs ",
-      "shop": 1,
-      "category": 6,
-      "quantity": {
-        "val": 1,
-        "unit": ""
-      },
-      "condition": 0,
-      "price": {
-        "initial": 1.2,
-        "selling": 0.2
-      }
-    },
-    {
-      "id": "4bb1e703-9fec-4d3a-934b-b2143dd71529",
-      "batch": false,
-      "created_at": 1549574663,
-      "desc": "Sans alcool",
-      "gallery": [
-        "img/prod/4bb1e703-9fec-4d3a-934b-b2143dd71529_0.jpg?1549574667742?1549574667742"
-      ],
-      "title": "Bière 33 export",
-      "shop": 1,
-      "category": 2,
-      "quantity": {
-        "val": 1,
-        "unit": ""
-      },
-      "condition": 0,
-      "price": {
-        "initial": 2,
-        "selling": 1
-      }
-    },
-    {
-      "id": "9d437650-b084-42af-8bad-d885034adf96",
-      "batch": false,
-      "created_at": 1547981987,
-      "desc": "Provenance Côte d'ivoire",
-      "gallery": [
-        "img/prod/9d437650-b084-42af-8bad-d885034adf96_0.jpg?1547982041674?1547982041674"
-      ],
-      "title": "Banane",
-      "shop": 0,
-      "category": 6,
-      "quantity": {
-        "val": 50,
-        "unit": "kg"
-      },
-      "condition": 0,
-      "price": {
-        "initial": 1,
-        "selling": 0.5
-      }
-    },
-    {
-      "id": "47e504c7-e225-41d7-a4c4-702b0e25348f",
-      "batch": false,
-      "created_at": 1547980906,
-      "desc": "Savon liquide",
-      "gallery": [
-        "img/prod/47e504c7-e225-41d7-a4c4-702b0e25348f_0.jpg?1547981016472?1547981016472"
-      ],
-      "title": "Savon",
-      "shop": 1,
-      "category": 7,
-      "quantity": {
-        "val": 100,
-        "unit": ""
-      },
-      "condition": 0,
-      "price": {
-        "initial": 5,
-        "selling": 1
-      }
-    },
-    {
-      "id": "7809f55c-9152-4eba-855a-a47c088d18ac",
-      "batch": false,
-      "created_at": 1547980238,
-      "desc": "paquet de 8 rasoirs",
-      "gallery": [
-        "img/prod/7809f55c-9152-4eba-855a-a47c088d18ac_0.jpg?1547980242738?1547980242738"
-      ],
-      "title": "Rasoir BIC twin lady",
-      "shop": 1,
-      "category": 7,
-      "quantity": {
-        "val": 50,
-        "unit": ""
-      },
-      "condition": 0,
-      "price": {
-        "initial": 3,
-        "selling": 1
-      }
-    },
-    {
-      "id": "38d2e033-e0cf-45e2-b3d8-41c19199312d",
-      "batch": false,
-      "created_at": 1547979588,
-      "desc": "",
-      "gallery": [
-        "img/prod/38d2e033-e0cf-45e2-b3d8-41c19199312d_0.jpg?1547979593248?1547979593248"
-      ],
-      "title": "Chou rouge",
-      "shop": 0,
-      "category": 6,
-      "quantity": {
-        "val": 50,
-        "unit": "kg"
-      },
-      "condition": 0,
-      "price": {
-        "initial": 2,
-        "selling": 1
-      }
-    },
-    {
-      "id": "533d87ee-5e98-47fd-8f6e-8874138858e5",
-      "batch": false,
-      "created_at": 1547979135,
-      "desc": "Radis frais extra qualité",
-      "gallery": [
-        "img/prod/533d87ee-5e98-47fd-8f6e-8874138858e5_0.jpg?1547979140644?1547979140644"
-      ],
-      "title": "Radis",
-      "shop": 1,
-      "category": 6,
-      "quantity": {
-        "val": 200,
-        "unit": "kg"
-      },
-      "condition": 0,
-      "price": {
-        "initial": 1,
-        "selling": 0.5
-      }
-    },
-    {
-      "id": "7b3b6613-12f7-47de-9865-6dfddb2ca503",
-      "batch": false,
-      "created_at": 1547979093,
-      "desc": "",
-      "gallery": [
-        "img/prod/7b3b6613-12f7-47de-9865-6dfddb2ca503_0.jpg?1547979097722?1547979097722"
-      ],
-      "title": "Pommes de terre",
-      "shop": 1,
-      "category": 6,
-      "quantity": {
-        "val": 100,
-        "unit": "kg"
-      },
-      "condition": 0,
-      "price": {
-        "initial": 1,
-        "selling": 0.5
-      }
-    }
-  ]
+ "offers": [
+  {
+   "id": "ac4f006c-4116-45da-9d4d-6abaafff24bb",
+   "created_at": 1549907646,
+   "info": "",
+   "offer_products": [
+    "b2707bc5-342a-46ac-83ef-95cdf5c5505d"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "36876b3c-99d4-4c99-9b8a-2f9c8b37595f",
+   "created_at": 1549830571,
+   "info": "",
+   "offer_products": [
+    "adfb89a5-56ae-48b8-9d2c-4495db13ff4d",
+    "6a822d65-45bb-43bb-a67f-006b6a2253b2"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "2e46d1be-7bbf-4a14-9987-edc069071f9c",
+   "created_at": 1549830158,
+   "info": "",
+   "offer_products": [
+    "6a822d65-45bb-43bb-a67f-006b6a2253b2"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "3b58b179-708a-4799-b390-18add4bf61eb",
+   "created_at": 1549638667,
+   "info": "",
+   "offer_products": [
+    "adfb89a5-56ae-48b8-9d2c-4495db13ff4d",
+    "4bb1e703-9fec-4d3a-934b-b2143dd71529",
+    "9d437650-b084-42af-8bad-d885034adf96",
+    "38d2e033-e0cf-45e2-b3d8-41c19199312d",
+    "533d87ee-5e98-47fd-8f6e-8874138858e5",
+    "7b3b6613-12f7-47de-9865-6dfddb2ca503"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "b58f8417-b883-452b-ad61-683169110c56",
+   "created_at": 1549638288,
+   "info": "",
+   "offer_products": [
+    "7809f55c-9152-4eba-855a-a47c088d18ac",
+    "47e504c7-e225-41d7-a4c4-702b0e25348f",
+    "9d437650-b084-42af-8bad-d885034adf96"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "5ffaa3d4-4e93-45c6-a760-e8872cc4a86d",
+   "created_at": 1549638125,
+   "info": "",
+   "offer_products": [
+    "4bb1e703-9fec-4d3a-934b-b2143dd71529",
+    "38d2e033-e0cf-45e2-b3d8-41c19199312d"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "c2160e5f-9811-4553-901f-3e9c1fb88054",
+   "created_at": 1549637847,
+   "info": "",
+   "offer_products": [
+    "4bb1e703-9fec-4d3a-934b-b2143dd71529",
+    "9d437650-b084-42af-8bad-d885034adf96",
+    "47e504c7-e225-41d7-a4c4-702b0e25348f",
+    "7809f55c-9152-4eba-855a-a47c088d18ac",
+    "38d2e033-e0cf-45e2-b3d8-41c19199312d"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "2a77a6ae-e067-4400-81be-9b35553aca8b",
+   "created_at": 1549574712,
+   "info": "",
+   "offer_products": [
+    "4bb1e703-9fec-4d3a-934b-b2143dd71529",
+    "47e504c7-e225-41d7-a4c4-702b0e25348f"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "88d2882b-532c-4a1f-ab8b-7b8e2c4f3878",
+   "created_at": 1549570868,
+   "info": "",
+   "offer_products": [
+    "533d87ee-5e98-47fd-8f6e-8874138858e5",
+    "38d2e033-e0cf-45e2-b3d8-41c19199312d",
+    "9d437650-b084-42af-8bad-d885034adf96"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "b688e8fb-4f13-4803-8376-f60bc73baca7",
+   "created_at": 1549570778,
+   "info": "",
+   "offer_products": [
+    "7809f55c-9152-4eba-855a-a47c088d18ac"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "3b019333-e6a5-49f2-ab48-0c5702233bbe",
+   "created_at": 1549570398,
+   "info": "",
+   "offer_products": [
+    "38d2e033-e0cf-45e2-b3d8-41c19199312d",
+    "533d87ee-5e98-47fd-8f6e-8874138858e5"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "cf319c25-d7c6-4828-a8bd-f2e01de887c8",
+   "created_at": 1549565683,
+   "info": "",
+   "offer_products": [
+    "9d437650-b084-42af-8bad-d885034adf96",
+    "47e504c7-e225-41d7-a4c4-702b0e25348f"
+   ],
+   "offer_shop": 1
+  }
+ ],
+ "products": [
+  {
+   "id": "b2707bc5-342a-46ac-83ef-95cdf5c5505d",
+   "batch": false,
+   "created_at": 1549907356,
+   "desc": "Sable en vrac",
+   "gallery": [
+    "img/prod/b2707bc5-342a-46ac-83ef-95cdf5c5505d_0.jpg?1549907377664?1549907377664"
+   ],
+   "title": "Sable ",
+   "shop": 1,
+   "category": 9,
+   "quantity": {
+    "val": 60,
+    "unit": "m³"
+   },
+   "condition": 0,
+   "price": {
+    "initial": 40,
+    "selling": 20
+   }
+  },
+  {
+   "id": "6a822d65-45bb-43bb-a67f-006b6a2253b2",
+   "batch": true,
+   "created_at": 1549829632,
+   "desc": "Boites de rangement",
+   "gallery": [
+    "img/prod/6a822d65-45bb-43bb-a67f-006b6a2253b2_0.jpg?1549829850736?1549829850736"
+   ],
+   "title": "Boite",
+   "shop": 1,
+   "category": 9,
+   "quantity": {
+    "val": 100,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 5,
+    "selling": 2.5
+   }
+  },
+  {
+   "id": "adfb89a5-56ae-48b8-9d2c-4495db13ff4d",
+   "batch": false,
+   "created_at": 1549638378,
+   "desc": "Demi barquette bio",
+   "gallery": [
+    "img/prod/adfb89a5-56ae-48b8-9d2c-4495db13ff4d_0.jpg?1549638385191?1549638385191"
+   ],
+   "title": "Oeufs ",
+   "shop": 1,
+   "category": 6,
+   "quantity": {
+    "val": 1,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 1.2,
+    "selling": 0.2
+   }
+  },
+  {
+   "id": "4bb1e703-9fec-4d3a-934b-b2143dd71529",
+   "batch": false,
+   "created_at": 1549574663,
+   "desc": "Sans alcool",
+   "gallery": [
+    "img/prod/4bb1e703-9fec-4d3a-934b-b2143dd71529_0.jpg?1549574667742?1549574667742"
+   ],
+   "title": "Bière 33 export",
+   "shop": 1,
+   "category": 2,
+   "quantity": {
+    "val": 1,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 2,
+    "selling": 1
+   }
+  },
+  {
+   "id": "9d437650-b084-42af-8bad-d885034adf96",
+   "batch": false,
+   "created_at": 1547981987,
+   "desc": "Provenance Côte d'ivoire",
+   "gallery": [
+    "img/prod/9d437650-b084-42af-8bad-d885034adf96_0.jpg?1547982041674?1547982041674"
+   ],
+   "title": "Banane",
+   "shop": 0,
+   "category": 6,
+   "quantity": {
+    "val": 50,
+    "unit": "kg"
+   },
+   "condition": 0,
+   "price": {
+    "initial": 1,
+    "selling": 0.5
+   }
+  },
+  {
+   "id": "47e504c7-e225-41d7-a4c4-702b0e25348f",
+   "batch": false,
+   "created_at": 1547980906,
+   "desc": "Savon liquide",
+   "gallery": [
+    "img/prod/47e504c7-e225-41d7-a4c4-702b0e25348f_0.jpg?1547981016472?1547981016472"
+   ],
+   "title": "Savon",
+   "shop": 1,
+   "category": 7,
+   "quantity": {
+    "val": 100,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 5,
+    "selling": 1
+   }
+  },
+  {
+   "id": "7809f55c-9152-4eba-855a-a47c088d18ac",
+   "batch": false,
+   "created_at": 1547980238,
+   "desc": "paquet de 8 rasoirs",
+   "gallery": [
+    "img/prod/7809f55c-9152-4eba-855a-a47c088d18ac_0.jpg?1547980242738?1547980242738"
+   ],
+   "title": "Rasoir BIC twin lady",
+   "shop": 1,
+   "category": 7,
+   "quantity": {
+    "val": 50,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 3,
+    "selling": 1
+   }
+  },
+  {
+   "id": "38d2e033-e0cf-45e2-b3d8-41c19199312d",
+   "batch": false,
+   "created_at": 1547979588,
+   "desc": "",
+   "gallery": [
+    "img/prod/38d2e033-e0cf-45e2-b3d8-41c19199312d_0.jpg?1547979593248?1547979593248"
+   ],
+   "title": "Chou rouge",
+   "shop": 0,
+   "category": 6,
+   "quantity": {
+    "val": 50,
+    "unit": "kg"
+   },
+   "condition": 0,
+   "price": {
+    "initial": 2,
+    "selling": 1
+   }
+  },
+  {
+   "id": "533d87ee-5e98-47fd-8f6e-8874138858e5",
+   "batch": false,
+   "created_at": 1547979135,
+   "desc": "Radis frais extra qualité",
+   "gallery": [
+    "img/prod/533d87ee-5e98-47fd-8f6e-8874138858e5_0.jpg?1547979140644?1547979140644"
+   ],
+   "title": "Radis",
+   "shop": 1,
+   "category": 6,
+   "quantity": {
+    "val": 200,
+    "unit": "kg"
+   },
+   "condition": 0,
+   "price": {
+    "initial": 1,
+    "selling": 0.5
+   }
+  },
+  {
+   "id": "7b3b6613-12f7-47de-9865-6dfddb2ca503",
+   "batch": false,
+   "created_at": 1547979093,
+   "desc": "",
+   "gallery": [
+    "img/prod/7b3b6613-12f7-47de-9865-6dfddb2ca503_0.jpg?1547979097722?1547979097722"
+   ],
+   "title": "Pommes de terre",
+   "shop": 1,
+   "category": 6,
+   "quantity": {
+    "val": 100,
+    "unit": "kg"
+   },
+   "condition": 0,
+   "price": {
+    "initial": 1,
+    "selling": 0.5
+   }
+  }
+ ]
 }

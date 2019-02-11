@@ -15,7 +15,7 @@ function getShop(id_) {
 
 function getProductQuantity(qty_) {
   if (qty_.unit === '') return '';
-  return '???'; // TODO
+  return '/ ' + qty_.unit;
 }
 
 function getProductCategory(id_) {
