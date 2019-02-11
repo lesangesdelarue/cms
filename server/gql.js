@@ -27,7 +27,7 @@ const schema = buildSchema(`
 `);
 
 const { productList, productCreate, productUpdate } = productsGql.resolvers;
-const { offerCreate, offerList } = offersGql.resolvers;
+const { offerCreate, offerDelete, offerList } = offersGql.resolvers;
 
 export default graphqlHTTP({
   schema,
@@ -41,6 +41,7 @@ export default graphqlHTTP({
     productUpdate,
 
     offerCreate,
+    offerDelete,
   },
   graphiql: conf.NODE_ENV === 'dev',
 });

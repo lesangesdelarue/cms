@@ -52,7 +52,6 @@ export default class CmsOfferEdit extends React.Component {
                   backgroundImage: 'url(' + imgUrl + ')',
                 }}
               >
-                {/* <button className="offer-edit__product__delete">x</button> */}
                 <div className="offer-edit__product__title">{prod.title}</div>
                 <div className="offer-edit__product__price">
                   <div className="offer-edit__product__price__content">

@@ -5,6 +5,7 @@ export default {
   query: 'offerList(page:Int): Offers',
   mutation: `
   offerCreate(offer: OfferInput): Offer
+  offerDelete(offerIdList: [String]): [String]
 `,
   type: `
   type Offers {
@@ -31,6 +32,7 @@ export default {
   resolvers: {
     offerList: offersMock.resolver,
     offerCreate,
+    offerDelete,
   },
 };
 
@@ -40,4 +42,16 @@ function offerCreate(params) {
   offers.unshift(offer);
   model.save();
   return offer;
+}
+
+function offerDelete(params) {
+  const { offerIdList } = params,
+    filteredOffersId = model.data.offers.filter(offer => {
+      return offerIdList.includes(offer.id) === false;
+    });
+
+  model.data.offers = filteredOffersId;
+  model.save();
+
+  return offerIdList;
 }

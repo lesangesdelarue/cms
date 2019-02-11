@@ -17,6 +17,9 @@ function Routes() {
     offer_list() {
       return <CmsOfferList />;
     },
+    offer_delete_display_modal() {
+      return <CmsOfferList />;
+    },
     offer_product_add_display_modal() {
       return <CmsProductList mode="offer_product_add_display_modal" />;
     },

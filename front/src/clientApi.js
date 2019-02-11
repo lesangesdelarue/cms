@@ -27,6 +27,14 @@ export default {
       },
     });
   },
+  async offerDelete(offerIdList) {
+    return _gqlPost({
+      query: offers.mutations.offerDelete,
+      variables: {
+        offerIdList,
+      },
+    });
+  },
 };
 
 async function connect(params) {

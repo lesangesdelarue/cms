@@ -48,6 +48,9 @@ export default {
         offer_shop  
       }
     }`,
+    offerDelete: `mutation OfferDelete($offerIdList: [String]) {
+      offerDelete(offerIdList: $offerIdList) 
+    }`,
   },
 };
 

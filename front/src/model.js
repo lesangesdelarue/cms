@@ -8,4 +8,6 @@ export default {
     offer_products: [],
   },
   offers: [],
+  offers_to_delete: [],
+  offerListMode: 'list',
 };
