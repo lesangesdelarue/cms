@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family:sans-serif;
 }
 
 .wrapper {
@@ -334,7 +335,7 @@ button.link {
   padding: 10px;
   padding-bottom: 12px;
   text-decoration: none;
-
+  position:relative;
   align-items: normal;
   background-color: rgba(0, 0, 0, 0);
   border-color: rgb(0, 0, 238);
@@ -342,6 +343,7 @@ button.link {
   box-sizing: content-box;
   cursor: pointer;
   font: inherit;
+  outline:none;
   height: auto;
   perspective-origin: 0 0;
   text-align: start;
@@ -350,6 +352,24 @@ button.link {
   -moz-appearance: none;
   -webkit-logical-height: 1em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
   -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
+}
+button.link svg {
+  display:none;
+  position:absolute;
+  top:6px;
+  left:7px;
+  width:25px;
+  height:25px;
+  fill:white;
+  opacity:.5;
+}
+@media screen and (min-width:400px) {
+  button.link {
+    padding:10px 10px 10px 38px;
+  }
+  button.link svg {
+    display:block;
+  }
 }
 
 /* Mozilla uses a pseudo-element to show focus on buttons, */
@@ -372,7 +392,9 @@ button.link {
 button.link.active {
   background: #f77336;
   color: white;
-  font-weight: bold;
+}
+button.link.active svg {
+  opacity:1;
 }
 
 button.link.active:hover {
