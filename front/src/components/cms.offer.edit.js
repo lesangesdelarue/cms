@@ -5,6 +5,8 @@ import React from 'react';
 import settings from '../settings';
 import model from '../model';
 
+import '../css/cms.offer.edit.css';
+
 export default class CmsOfferEdit extends React.Component {
   constructor(props) {
     super(props);

@@ -7,6 +7,8 @@ import settings from '../settings';
 import clientApi from '../clientApi';
 import app from '../app';
 
+import '../css/cms.product.edit.css';
+
 export default class CmsProductEdit extends React.Component {
   constructor(props) {
     super(props);

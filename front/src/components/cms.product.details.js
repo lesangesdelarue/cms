@@ -5,6 +5,8 @@ import model from '../model';
 import settings from '../settings';
 import app from '../app';
 
+import '../css/cms.product.details.css';
+
 export default class CmsProductDetails extends React.Component {
   constructor(props) {
     super(props);

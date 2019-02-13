@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../css/cms.offer.product.css';
+
 export default function CmsOfferProduct(props) {
   const dt = new Date(props.offer.created_at * 1000).toLocaleDateString();
   const { offer } = props;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import app from '../app';
 
-// import productIcon from 'img/ui/productinfo.svg';
+import '../css/cms.navbar.css';
 
 export default function CmsNav() {
   return (

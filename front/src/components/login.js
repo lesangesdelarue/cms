@@ -2,6 +2,8 @@ import React from 'react';
 
 import app from '../app';
 
+import '../css/login.css';
+
 export default class Login extends React.Component {
   constructor(props) {
     super(props);

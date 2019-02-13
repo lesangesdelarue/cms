@@ -4,6 +4,8 @@ import api from '../clientApi';
 import app from '../app';
 import CmsProductDetails from './cms.product.details';
 
+import '../css/cms.product.list.css';
+
 export default class CmsProductList extends React.Component {
   constructor(props) {
     super(props);

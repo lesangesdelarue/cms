@@ -5,6 +5,8 @@ import app from '../app';
 
 import CmsOfferProduct from './cms.offer.product';
 
+import '../css/cms.offer.list.css';
+
 export default class CmsOfferList extends React.Component {
   constructor(props) {
     super(props);
