@@ -28,17 +28,20 @@ export default class CmsOfferList extends React.Component {
     return (
       <div className="wrapper">
         {mode === 'list' ? (
-          <div className="offers__add">
-            <button onClick={e => app.action('offer_create')}>
+          <div>
+            <button onClick={e => app.action('offer_create')} className="big-button">
               Créer une promotion
             </button>
-            <button
-              onClick={e =>
-                _self.setState({ mode: 'delete', offers_to_delete: [] })
-              }
-            >
-              Supprimer
-            </button>
+            <div className="list-title">
+              Historique des promotions
+              <button
+                onClick={e =>
+                  _self.setState({ mode: 'delete', offers_to_delete: [] })
+                }
+              >
+                Supprimer
+              </button>
+            </div>
           </div>
         ) : (
           <div className="mtop-title">

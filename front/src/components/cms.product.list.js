@@ -35,26 +35,29 @@ export default class CmsProductList extends React.Component {
     const { mode } = this.state;
     return (
       <div className="wrapper">
-        <div className="product__create">
-          {mode === 'product_list' && (
+        {mode === 'product_list' && (
+          <div>
             <button
               onClick={e => {
                 e.preventDefault();
                 app.action('product_create');
               }}
+              className="big-button"
             >
-              Créer un produit
+              Ajouter un produit
             </button>
-          )}
-          {mode === 'offer_product_add_display_modal' && (
+            <div className="list-title">Produits enregistrés</div>
+          </div>
+        )}
+        {mode === 'offer_product_add_display_modal' && (
+          <div className="product__select__header">
             <div>
-              <div className="top-right-submit">
-                <button onClick={this.handleCancel}>Annuler</button>
-                <button onClick={this.handleSave}>Valider</button>
-              </div>
+              <span>Cliquer sur les produits à inclure dans la promotion</span>
+              <button onClick={this.handleSave}>Valider</button>
+              <button onClick={this.handleCancel}>Annuler</button>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {this.state.productList.items.map(prod_ => (
           <CmsProductDetails key={prod_.id} prod={prod_} mode={mode} />

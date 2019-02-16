@@ -39,9 +39,6 @@ export default class CmsProductDetails extends React.Component {
         className={'product' + (isProductSelected === true ? ' selected' : '')}
         onClick={this.handleToggleProduct}
       >
-        {isProductSelected === true && (
-          <span className="product-offer-selected">Sélectionné</span>
-        )}
         <div
           className="product__image"
           style={{
@@ -49,35 +46,24 @@ export default class CmsProductDetails extends React.Component {
               'url(' + process.env.PUBLIC_URL + p.gallery[0] + ')',
           }}
         />
-        <ul className="product__description">
-          <li>
-            <strong>{p.title}</strong>
-          </li>
-          <li>
-            {p.batch === true && (
-              <span style={{ display: 'inline' }}>à partir de </span>
-            )}
-            {p.batch === false && (
-              <span className="product__price__initial">
-                {p.price.initial}€{' '}
-              </span>
-            )}
-            <span className="product__price__final">{p.price.selling}€ </span>
-            <span>{settings.getProductQuantity(p.quantity)}</span>
-          </li>
-          {p.desc && <li className="product__info--secondary">{p.desc}</li>}
-          <li className="product__info--secondary">
-            {p.quantity.val}{' '}
-            {p.quantity.unit === '' ? 'exemplaires' : p.quantity.unit}
-          </li>
-          <li key={shop.id} className="product__info--secondary">
-            {shop.name}
-          </li>
-
-          <li className="product__info--secondary">
-            {settings.getProductCategory(p.category)}
-          </li>
-        </ul>
+        <div class="product__desc">
+          <span>{p.title}</span>
+          {p.desc && <span>{p.desc}</span>}
+        </div>
+        <div class="product__cat">
+          <span>{settings.getProductCategory(p.category)}</span>
+          <span>{shop.name}</span>
+        </div>
+        <div class="product__qty">
+          {p.quantity.val}{' '}
+          {p.quantity.unit === '' ? 'exemplaires' : p.quantity.unit}
+        </div>
+        <div class="product__price">
+          {p.batch === true && ('à partir de ')}
+          {p.batch === false && (<span>{p.price.initial}€</span>)}
+          <strong>{p.price.selling}€</strong>
+          {settings.getProductQuantity(p.quantity) !== '' && (<span>{settings.getProductQuantity(p.quantity)}</span>)}
+        </div>
       </div>
     );
   }

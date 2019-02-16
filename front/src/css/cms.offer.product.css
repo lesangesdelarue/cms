@@ -1,0 +1,8 @@
+.offer__product {
+  float: left;
+  margin: 10px 0 0 10px;
+  width: 75px;
+  height: 75px;
+  background-size: cover;
+  background-position: center center;
+}

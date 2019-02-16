@@ -1,0 +1,25 @@
+/* Offers list */
+
+.mtop-title {
+  margin-top: 5rem;
+}
+
+.offers__add > button {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.offer {
+  border: 1px solid #ccc;
+  padding: 0 0 10px 0;
+  margin: 0 0 20px 0;
+  cursor: pointer;
+}
+.offer:hover {
+  background: #eee;
+}
+.offer:after {
+  content: '';
+  display: block;
+  clear: both;
+}

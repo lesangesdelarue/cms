@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family:sans-serif;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 840px) {
+  .wrapper {
+    padding: 0;
+  }
+}
+
+.big-button {
+  margin:80px auto;
+  display:block;
+  padding:20px 40px;
+  font-size:.9em;
+  text-transform:uppercase;
+  border-radius:3px;
+  border:1px solid #ccc;
+  background:#eee;
+  cursor:pointer;
+}
+.big-button:hover {
+  border:1px solid #bbb;
+  background:#ddd;
+}
+.list-title {
+  position:relative;
+  padding:0 0 20px 0;
+}
+.list-title button {
+  position:absolute;
+  right:0;
+}

@@ -1,0 +1,53 @@
+.product-edit {
+  margin-bottom: 20px;
+}
+.product-edit__photos:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.product-edit__photo {
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  background-position: center center;
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  position: relative;
+}
+.product-edit__photo__delete {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  right: 10px;
+}
+.product-edit__photo__add {
+  width: 250px;
+  height: 250px;
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  background: #eee;
+  font-size: 1em;
+}
+.product-edit__form__field {
+  margin: 0 0 20px 0;
+}
+.product-edit__form__field:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.product-edit__form__field label {
+  float: left;
+  width: 200px;
+}
+.product-edit__form__field input,
+.product-edit__form__field select {
+  float: left;
+}
+.product-edit__form__save {
+  padding: 10px 20px;
+}

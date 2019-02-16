@@ -39,9 +39,7 @@ export default class CmsOfferEdit extends React.Component {
     const prods = model.offer.offer_products;
     return (
       <div className="wrapper">
-        <div className="offer-edit__export">
-          <button onClick={this.exportImage}>Exporter pour Facebook</button>
-        </div>
+        <button onClick={this.exportImage} className="big-button">Exporter pour Facebook</button>
         <div className="offer-edit__add-product" />
         <div id="offer-area">
           {prods.map(prod => {

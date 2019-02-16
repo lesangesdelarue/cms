@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
+import './css/global.css';
 
 import Login from './components/login';
 import Cms from './components/cms';
