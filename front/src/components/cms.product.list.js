@@ -34,9 +34,9 @@ export default class CmsProductList extends React.Component {
   render() {
     const { mode } = this.state;
     return (
-      <div className="wrapper">
+      <div>
         {mode === 'product_list' && (
-          <div>
+          <div className="wrapper">
             <button
               onClick={e => {
                 e.preventDefault();
@@ -50,17 +50,22 @@ export default class CmsProductList extends React.Component {
           </div>
         )}
         {mode === 'offer_product_add_display_modal' && (
-          <div className="product__select__header">
-            <div>
-              <span>Cliquer sur les produits à inclure dans la promotion</span>
-              <button onClick={this.handleSave}>Valider</button>
-              <button onClick={this.handleCancel}>Annuler</button>
+          <div>
+            <div className="product__select__header">
+              <div className="wrapper">
+                <button onClick={this.handleCancel}>Annuler</button>
+                <button onClick={this.handleSave}>Valider</button>
+              </div>
+            </div>
+            <div className="product__select__title">
+              Cliquer sur les produits à inclure dans la promotion
             </div>
           </div>
         )}
-
         {this.state.productList.items.map(prod_ => (
-          <CmsProductDetails key={prod_.id} prod={prod_} mode={mode} />
+          <div className="wrapper">
+            <CmsProductDetails key={prod_.id} prod={prod_} mode={mode} />
+          </div>
         ))}
       </div>
     );

@@ -7,11 +7,13 @@ import '../css/cms.navbar.css';
 export default function CmsNav() {
   return (
     <div className="nav" onClick={app.onAction}>
-      <div className="nav__left">
-        {_link('product_list', 'Produits')}
-        {_link('offer_list', 'Promotions')}
+      <div className="wrapper">
+        <div className="nav__left">
+          {_link('offer_list', 'Promotions')}
+          {_link('product_list', 'Produits')}
+        </div>
+        <div className="nav__right">{_link('disconnect', 'Déconnexion')}</div>
       </div>
-      <div className="nav__right">{_link('disconnect', 'Déconnexion')}</div>
     </div>
   );
 }

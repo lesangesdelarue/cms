@@ -17,19 +17,25 @@ body {
 }
 
 .big-button {
-  margin:80px auto;
-  display:block;
+  margin:100px auto;
+  font-size:1.2em;
   padding:20px 40px;
-  font-size:.9em;
-  text-transform:uppercase;
-  border-radius:3px;
-  border:1px solid #ccc;
-  background:#eee;
+  display:block;
+  border-radius:4px;
+  cursor:pointer;
+  font-weight:bold;
+  color:#666;
+  border:1px solid #bbb;
+  background:#f8f8f8;/* 4bb861 - 76508f */
+  box-shadow:5px 5px 0 rgba(0,0,0,.1);
   cursor:pointer;
 }
-.big-button:hover {
-  border:1px solid #bbb;
-  background:#ddd;
+@media screen and (min-width:768px) {
+  .big-button {
+    font-size:1.4em;
+    padding:30px 60px;
+    margin:150px auto;
+  }
 }
 .list-title {
   position:relative;
@@ -38,4 +44,91 @@ body {
 .list-title button {
   position:absolute;
   right:0;
+  top:-7px;
+  background:none;
+  border:red 1px solid;
+  border-radius:30px;
+  width:30px;
+  height:30px;
+  color:red;
+}
+
+/* Half VH pattern */
+.half-vh {
+    height:100px;
+}
+@media screen and (min-height:300px) {
+  .half-vh {
+    height:150px;
+  }
+}
+@media screen and (min-height:400px) {
+  .half-vh {
+    height:200px;
+  }
+}
+@media screen and (min-height:500px) {
+  .half-vh {
+    height:250px;
+  }
+}
+@media screen and (min-height:650px) {
+  .half-vh {
+    height:300px;
+  }
+}
+@media screen and (min-height:700px) {
+  .half-vh {
+    height:350px;
+  }
+}
+@media screen and (min-height:800px) {
+  .half-vh {
+    height:400px;
+  }
+}
+@media screen and (min-height:900px) {
+  .half-vh {
+    height:450px;
+  }
+}
+@media screen and (min-height:1000px) {
+  .half-vh {
+    height:500px;
+  }
+}
+@media screen and (min-height:1100px) {
+  .half-vh {
+    height:550px;
+  }
+}
+@media screen and (min-height:1200px) {
+  .half-vh {
+    height:600px;
+  }
+}
+@media screen and (min-height:1300px) {
+  .half-vh {
+    height:650px;
+  }
+}
+@media screen and (min-height:1400px) {
+  .half-vh {
+    height:700px;
+  }
+}
+@media screen and (min-height:1500px) {
+  .half-vh {
+    height:750px;
+  }
+}
+
+.d-table {
+  display:table;
+  width:100%;
+}
+.d-table-cell {
+  display:table-cell;
+  vertical-align:middle;
+  width:100%;
 }

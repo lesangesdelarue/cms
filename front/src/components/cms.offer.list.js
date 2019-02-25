@@ -34,13 +34,13 @@ export default class CmsOfferList extends React.Component {
             </button>
             <div className="list-title">
               Historique des promotions
-              <button
+              {/* <button
                 onClick={e =>
                   _self.setState({ mode: 'delete', offers_to_delete: [] })
                 }
               >
-                Supprimer
-              </button>
+                x
+              </button> */}
             </div>
           </div>
         ) : (

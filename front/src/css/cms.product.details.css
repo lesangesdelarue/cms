@@ -24,10 +24,13 @@
 .product__cat {color:#666;background:rgba(0,0,0,.1);padding:2px;margin-top:5px;font-size:.7em;display:inline-block;}
 .product__cat span:last-child {display:none;}
 .product__price {position:absolute;bottom:10px;right:10px;}
+.product__price span:first-child {text-decoration:line-through;margin-right:5px;}
+.product__price span:last-child {margin-left:5px;}
 
 .product.selected {
-  border: 1px solid green;
-  background:lightGreen;
+  border: 1px solid #4bb861;
+  box-shadow:5px 5px 0 #4bb861;
+  background:#ddf2e1;
 }
 
 @media screen and (min-width: 600px) {
@@ -61,7 +64,5 @@
   .product__qty:before {content: 'Quantité en stock : ';}
   .product__cat {padding:8px;font-size:.8em;margin-top:0;}
   .product__price {padding-top:0;}
-  .product__price span:first-child {text-decoration:line-through;margin-right:5px;}
-  .product__price span:last-child {margin-left:5px;}
   .product__price strong {font-size:1.2em;}
 }

@@ -38,10 +38,9 @@ export default class CmsOfferEdit extends React.Component {
   render() {
     const prods = model.offer.offer_products;
     return (
-      <div className="wrapper">
-        <button onClick={this.exportImage} className="big-button">Exporter pour Facebook</button>
-        <div className="offer-edit__add-product" />
-        <div id="offer-area">
+      <div>
+        {/* <div className="offer-edit__add-product" /> */}
+        <div id="offer-area" class="offer-edit">
           {prods.map(prod => {
             const imgUrl = prod.gallery[0];
             return (
@@ -83,6 +82,9 @@ export default class CmsOfferEdit extends React.Component {
               </div>
             );
           })}
+        </div>
+        <div className="wrapper">
+          <button onClick={this.exportImage} className="big-button">Exporter pour Facebook</button>
         </div>
       </div>
     );

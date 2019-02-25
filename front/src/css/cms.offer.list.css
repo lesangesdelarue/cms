@@ -15,9 +15,6 @@
   margin: 0 0 20px 0;
   cursor: pointer;
 }
-.offer:hover {
-  background: #eee;
-}
 .offer:after {
   content: '';
   display: block;

@@ -16,8 +16,7 @@
 button.link {
   color: white;
   display: inline-block;
-  padding: 10px;
-  padding-bottom: 12px;
+  padding: 10px 15px 12px 15px;
   text-decoration: none;
   position:relative;
   align-items: normal;
@@ -27,6 +26,7 @@ button.link {
   box-sizing: content-box;
   cursor: pointer;
   font: inherit;
+  font-size:.8em;
   outline:none;
   height: auto;
   perspective-origin: 0 0;
@@ -36,20 +36,31 @@ button.link {
   -moz-appearance: none;
   -webkit-logical-height: 1em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
   -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
+  overflow:hidden;
+}
+button.link:after {
+  content:'';
+  position:absolute;
+  bottom:-3px;
+  height:3px;
+  width:100%;
+  background:rgba(255,255,255,.5);
+  left:0;
 }
 button.link svg {
   display:none;
   position:absolute;
-  top:6px;
-  left:7px;
+  top:15px;
+  left:15px;
   width:25px;
   height:25px;
   fill:white;
   opacity:.5;
 }
-@media screen and (min-width:400px) {
+@media screen and (min-width:768px) {
   button.link {
-    padding:10px 10px 10px 38px;
+    padding: 20px 25px 22px 53px;
+    font-size:.9em;
   }
   button.link svg {
     display:block;
@@ -73,18 +84,13 @@ button.link svg {
   }
 }
 
-button.link.active {
+button.link.active:after {
+  bottom:0;
+}
+button.link.active  {
   background: #f77336;
   color: white;
 }
 button.link.active svg {
   opacity:1;
-}
-
-button.link.active:hover {
-  background: #f88e5d;
-}
-
-button.link:hover {
-  background-color: #00aff5;
 }

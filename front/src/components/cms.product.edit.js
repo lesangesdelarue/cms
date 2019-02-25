@@ -150,33 +150,37 @@ export default class CmsProductEdit extends React.Component {
     const selectedShop = settings.getShop(prod.shop);
 
     return (
-      <div className="wrapper product-edit">
-        <h2>Photos</h2>
+      <div className="product-edit">
         <div className="product-edit__photos">
-          <div
-            className="product-edit__photo"
-            style={
-              hasPhoto
-                ? {
-                    backgroundImage: 'url(' + prod.gallery[0] + ')',
-                  }
-                : { backgroundColor: '#eee' }
-            }
-          />
-
-          <div>
-            <input
-              type="file"
-              onChange={this.handleselectedFile}
-              style={{ display: hasSelectedFile === false ? '' : 'none' }}
-            />
-            {hasSelectedFile && (
+          <div className="wrapper">
+            <h2>Photo</h2>
+            <div
+              className="product-edit__photo"
+              style={
+                hasPhoto
+                  ? {
+                      backgroundImage: 'url(' + prod.gallery[0] + ')',
+                    }
+                  : { backgroundColor: '#ddd' }
+              }
+            >
+              { !hasPhoto ? (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path stroke-width="6" d="m33,9c-1.63688,0 -3.06435,0.55366 -4.28125,1.4375c-1.18359,0.85965 -2.20542,2.12217 -2.59375,3.84375c-0.00096,0.004 -0.0303,-0.004 -0.03125,0l-0.03125,0.125l-2.5625,10.59375l-8.59375,0c-5.46165,0 -9.90625,4.53084 -9.90625,10l0,46c0,5.4692 4.4446,10 9.90625,10l60.09375,0a3.0003,3.0003 0 1 0 0,-6l-60.09375,0c-2.2031,0 -3.90625,-1.7132 -3.90625,-4l0,-46c0,-2.28684 1.70315,-4 3.90625,-4l70.1875,0c2.2031,0 3.90625,1.71317 3.90625,4l0,46c0,2.2868 -1.70315,4 -3.90625,4a3.0003,3.0003 0 1 0 0,6c5.46165,0 9.90625,-4.5308 9.90625,-10l0,-46c0,-5.46917 -4.4446,-10 -9.90625,-10l-8.59375,0l-2.5625,-10.59375c-0.009,-0.0449 -0.02137,-0.0807 -0.03125,-0.125l-0.03125,0c-0.38833,-1.72158 -1.41016,-2.9841 -2.59375,-3.84375c-1.2169,-0.88384 -2.64437,-1.4375 -4.28125,-1.4375l-34,0zm0,6l34,0c0.05803,0 0.47373,0.0806 0.75,0.28125c0.20721,0.15049 0.29319,0.33085 0.3125,0.34375a3.0003,3.0003 0 0 0 0.03125,0.0625l2.25,9.3125l-40.6875,0l2.25,-9.3125a3.0003,3.0003 0 0 0 0.03125,-0.0625c0.01931,-0.01291 0.1053,-0.19326 0.3125,-0.34375c0.27627,-0.20066 0.69197,-0.28125 0.75,-0.28125zm17,20c-12.66701,0 -23,10.33296 -23,23c0,12.667 10.33299,23 23,23c12.66701,0 23,-10.333 23,-23c0,-12.66704 -10.33299,-23 -23,-23zm0,6c9.42437,0 17,7.5756 17,17c0,9.4244 -7.57563,17 -17,17c-9.42437,0 -17,-7.5756 -17,-17c0,-9.4244 7.57563,-17 17,-17zm-8.34375,13.96875a3.0003,3.0003 0 0 0 -2.65625,3.03125c0,6.0396 4.9604,11 11,11a3.0003,3.0003 0 1 0 0,-6c-2.79696,0 -5,-2.2031 -5,-5a3.0003,3.0003 0 0 0 -3.0625,-3.03125a3.0003,3.0003 0 0 0 -0.28125,0z"/></svg>
+              ) : ''}
+              <input
+                type="file"
+                onChange={this.handleselectedFile}
+                style={{ display: hasSelectedFile === false ? '' : 'none' }}
+              />
+            </div>
+            {/* hasSelectedFile && (
               <button onClick={this.handleUpload}>
                 {'Télécharger ' + _progressLabel(this.state.loaded)}
               </button>
-            )}
+            ) */}
           </div>
         </div>
+        <div className="wrapper">
         <h2>Description</h2>
 
         <div className="product-edit__form__field">
@@ -198,21 +202,6 @@ export default class CmsProductEdit extends React.Component {
         </div>
 
         <div className="product-edit__form__field">
-          <label htmlFor="product_location">Point de vente</label>
-          <select
-            id="product_location"
-            onChange={this.handleChangeShop}
-            value={selectedShop.id}
-          >
-            {settings.shops.map(shop_ => (
-              <option value={shop_.id} key={shop_.id}>
-                {shop_.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="product-edit__form__field">
           <label htmlFor="product_category">Catégorie</label>
           <select
             id="product_category"
@@ -224,43 +213,6 @@ export default class CmsProductEdit extends React.Component {
                 {cat_.val}
               </option>
             ))}
-          </select>
-        </div>
-
-        <div className="product-edit__form__field">
-          <label htmlFor="product_quantity_type">Type de quantité</label>
-          <select
-            id="product_quantity_type"
-            onChange={this.handleChangeProductUnit}
-            value={prod.quantity.unit}
-          >
-            {settings.productUnits.map(cat_ => (
-              <option value={cat_.unit} key={cat_.id}>
-                {cat_.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="product-edit__form__field">
-          <label htmlFor="product_quantity">Quantité</label>
-          <input
-            type="number"
-            id="product_quantity"
-            value={prod.quantity.val}
-            onChange={this.handleChangeQuantity}
-          />
-        </div>
-
-        <div className="product-edit__form__field">
-          <label htmlFor="product_price_precise">Prix "à partir de"</label>
-          <select
-            id="product_price_precise"
-            onChange={this.handleChangeBatch}
-            value={prod.batch === true ? '1' : '0'}
-          >
-            <option value="0">Non</option>
-            <option value="1">Oui</option>
           </select>
         </div>
 
@@ -283,10 +235,63 @@ export default class CmsProductEdit extends React.Component {
             value={prod.price.selling}
           />
         </div>
+        
+        <div className="product-edit__form__field">
+          <label htmlFor="product_price_precise">Prix "à partir de" ?</label>
+          <select
+            id="product_price_precise"
+            onChange={this.handleChangeBatch}
+            value={prod.batch === true ? '1' : '0'}
+          >
+            <option value="0">Non</option>
+            <option value="1">Oui</option>
+          </select>
+        </div>
 
-        <button className="product-edit__form__save" onClick={this.handleSave}>
+        <div className="product-edit__form__field">
+          <label htmlFor="product_quantity_type">Le prix concerne</label>
+          <select
+            id="product_quantity_type"
+            onChange={this.handleChangeProductUnit}
+            value={prod.quantity.unit}
+          >
+            {settings.productUnits.map(cat_ => (
+              <option value={cat_.unit} key={cat_.id}>
+                {cat_.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="product-edit__form__field">
+          <label htmlFor="product_quantity">Stock</label>
+          <input
+            type="number"
+            id="product_quantity"
+            value={prod.quantity.val}
+            onChange={this.handleChangeQuantity}
+          />
+        </div>
+
+        <div className="product-edit__form__field">
+          <label htmlFor="product_location">Point de vente</label>
+          <select
+            id="product_location"
+            onChange={this.handleChangeShop}
+            value={selectedShop.id}
+          >
+            {settings.shops.map(shop_ => (
+              <option value={shop_.id} key={shop_.id}>
+                {shop_.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <button className="big-button" onClick={this.handleSave}>
           Enregistrer
         </button>
+        </div>
       </div>
     );
   }
