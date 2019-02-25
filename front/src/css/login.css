@@ -27,6 +27,7 @@
 .authentication form input[type='submit'] {
   margin-top: 10px;
   padding: 5px 30px;
+  background:white;
 }
 .authentication__error {
   text-align: center;
