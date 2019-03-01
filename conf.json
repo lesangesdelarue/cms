@@ -1,19 +1,30 @@
 {
   "productCategories": [
-    { "id": 0, "val": "Animalerie" },
-    { "id": 1, "val": "Bébé" },
-    { "id": 2, "val": "Boissons" },
-    { "id": 3, "val": "Entretien, nettoyage" },
-    { "id": 4, "val": "Epicerie salée" },
-    { "id": 5, "val": "Epicerie sucrée" },
-    { "id": 6, "val": "Fruits, légumes" },
-    { "id": 7, "val": "Hygiène, santé" },
-    { "id": 8, "val": "Jouets" },
-    { "id": 9, "val": "Maison, Bricolage" },
-    { "id": 10, "val": "Musique, livres, films" },
-    { "id": 11, "val": "Sports, loisirs" },
-    { "id": 12, "val": "Vêtements, Chaussures, Bijoux" },
-    { "id": 13, "val": "Viandes, poissons" }
+    { "id": 0, "val": "Vêtements neufs" },
+    { "id": 1, "val": "Fripes" },
+    { "id": 2, "val": "Chaussures" },
+    { "id": 3, "val": "Sport" },
+    { "id": 4, "val": "Bébés" },
+    { "id": 5, "val": "Animaux" },
+    { "id": 6, "val": "Jouets" },
+    { "id": 7, "val": "Produits alimentaires" },
+    { "id": 8, "val": "Bonbons" },
+    { "id": 9, "val": "Vaisselle" },
+    { "id": 10, "val": "Produits ménagers" },
+    { "id": 11, "val": "Boissons" },
+    { "id": 12, "val": "Décoration" },
+    { "id": 13, "val": "TV & Hifi" },
+    { "id": 14, "val": "Electroménager" },
+    { "id": 15, "val": "Bricolage" },
+    { "id": 16, "val": "Matériaux de construction" },
+    { "id": 17, "val": "Jardin" },
+    { "id": 18, "val": "Musique, livres, films" },
+    { "id": 19, "val": "Matériel scolaire" },
+    { "id": 20, "val": "Matériel de bureau" },
+    { "id": 21, "val": "Equipement auto" },
+    { "id": 22, "val": "Produits Les Anges de la Rue" },
+    { "id": 23, "val": "Matériel pro" },
+    { "id": 24, "val": "Bazar" }
   ],
   "productUnits": [
     { "id": 0, "unit": "", "label": "1 unité de produit" },
@@ -30,13 +41,13 @@
   "shops": [
     {
       "id": 0,
-      "name": "Epicerie solidaire Gigean",
-      "address": "3 Rue de Copernic 34770 Gigean"
+      "name": "Gigean",
+      "address": ""
     },
     {
       "id": 1,
-      "name": "Grand marché solidaire Lattes",
-      "address": "Le mas neuf Avenue de l'agau 34970 Lattes"
+      "name": "Bourg St Andéol",
+      "address": ""
     }
   ]
 }
