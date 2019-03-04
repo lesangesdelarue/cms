@@ -46,7 +46,8 @@
   font-size:.8em;
   color:#999;
 }
-.product-edit__form__field input,
+.product-edit__form__field input[type="text"],
+.product-edit__form__field input[type="number"],
 .product-edit__form__field select {
   border:none;
   background:#f2f2f2;
@@ -56,6 +57,9 @@
   width:100%;
   padding:10px 0;
 }
+.product-edit__form__field input[type="checkbox"] + label {
+  margin:20px 0;
+}
 @media screen and (min-width:792px) {
   .product-edit__form__field {
     display:flex;
@@ -64,9 +68,14 @@
     flex: 0 0 200px;
     padding-top:20px;
   }
-  .product-edit__form__field input,
+  .product-edit__form__field input[type="text"],
+  .product-edit__form__field input[type="number"],
   .product-edit__form__field select {
     flex-grow:1;
     padding:20px;
+  }
+  .product-edit__form__field input[type="checkbox"] + label {
+    left:200px;
+    margin: 5px 0;
   }
 }
