@@ -35,6 +35,7 @@ export default class CmsProductEdit extends React.Component {
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
 
     this.handleSave = this.handleSave.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
 
     this.handleselectedFile = this.handleselectedFile.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
@@ -142,6 +143,9 @@ export default class CmsProductEdit extends React.Component {
     this.handleChangeProduct(res.productCreate);
     app.action('product_list');
   }
+  handleCancel() {
+    app.go('product_list');
+  }
 
   render() {
     const prod = this.state.prod;
@@ -151,6 +155,12 @@ export default class CmsProductEdit extends React.Component {
 
     return (
       <div className="product-edit">
+        <div className="sticky-header">
+          <div className="wrapper">
+            <button onClick={this.handleCancel}>Annuler</button>
+            <button onClick={this.handleSave}>Valider</button>
+          </div>
+        </div>
         <div className="product-edit__photos">
           <div className="wrapper">
             <h2>Photo</h2>
@@ -281,9 +291,9 @@ export default class CmsProductEdit extends React.Component {
           </select>
         </div>
 
-        <button className="big-button" onClick={this.handleSave}>
+        {/* <button className="big-button" onClick={this.handleSave}>
           Enregistrer
-        </button>
+        </button> */}
         </div>
       </div>
     );

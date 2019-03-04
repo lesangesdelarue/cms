@@ -1,3 +1,6 @@
+.product-edit {
+  padding-bottom:50px;
+}
 .product-edit h2 {
   margin:0;
   padding:30px 0;
@@ -5,6 +8,7 @@
 .product-edit__photos {
   background:#eee;
   padding:0 0 50px 0;
+  margin-top:50px;
 }
 .product-edit__photos:after {
   content: '';

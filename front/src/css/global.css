@@ -180,3 +180,51 @@ body {
   opacity: 1; /* coche opaque */
   transform: scale(1); /* mise à l'échelle 1:1 */
 }
+
+
+
+
+.sticky-header {
+  color:#666;
+  border-bottom:1px solid #bbb;
+  background:#f8f8f8;/* 4bb861 - 76508f */
+  box-shadow:0 5px 0 rgba(0,0,0,.1);
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:10;
+  text-align:right;
+  padding:20px 0;
+}
+.sticky-header button {
+  cursor:pointer;
+  color:white;
+  margin-right:20px;
+  font-size:1.1em;
+  padding:10px 20px;
+  border-radius:4px;
+  cursor:pointer;
+  font-weight:bold;
+  color:#666;
+  border:1px solid #bbb;
+  background:#f8f8f8;/* 4bb861 - 76508f */
+  cursor:pointer;
+}
+.sticky-header button:last-child {
+  background:#4bb861;
+  border:1px solid #4bb861;
+  color:white;
+}
+.ticky-header__title {
+  text-align:center;
+  font-style:italic;
+  margin-top:100px;
+  padding:0 30px 50px 30px;
+}
+@media screen and (min-width:768px) {
+  .sticky-header button {
+    padding:20px 40px;
+    font-size:1.2em;
+  }
+}

@@ -51,13 +51,13 @@ export default class CmsProductList extends React.Component {
         )}
         {mode === 'offer_product_add_display_modal' && (
           <div>
-            <div className="product__select__header">
+            <div className="sticky-header">
               <div className="wrapper">
                 <button onClick={this.handleCancel}>Annuler</button>
                 <button onClick={this.handleSave}>Valider</button>
               </div>
             </div>
-            <div className="product__select__title">
+            <div className="ticky-header__title">
               Cliquer sur les produits à inclure dans la promotion
             </div>
           </div>
