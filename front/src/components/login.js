@@ -32,29 +32,25 @@ export default class Login extends React.Component {
   render() {
     return (
       <div className="authentication">
-        <div className="authentication__content">
-          <h1>Les Anges de la Rue</h1>
-          {this.state.error === true && (
-            <p className="authentication__error">
-              Mauvais login ou mot de passe
-            </p>
-          )}
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              placeholder="Login"
-              onChange={this.login_handleChange}
-            />
-            <br />
-            <input
-              type="password"
-              placeholder="Mot de passe"
-              onChange={this.passwd_handleChange}
-            />
-            <br />
-            <input type="submit" value="Connexion" />
-          </form>
-        </div>
+        <h1>Les Anges de la Rue</h1>
+        {this.state.error === true && (
+          <p className="authentication__error">
+            Mauvais login ou mot de passe
+          </p>
+        )}
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            placeholder="Login"
+            onChange={this.login_handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            onChange={this.passwd_handleChange}
+          />
+          <input type="submit" value="Connexion" />
+        </form>
       </div>
     );
   }
