@@ -46,19 +46,19 @@ export default class CmsProductDetails extends React.Component {
               'url(' + process.env.PUBLIC_URL + p.gallery[0] + ')',
           }}
         />
-        <div class="product__desc">
+        <div className="product__desc">
           <span>{p.title}</span>
           {p.desc && <span>{p.desc}</span>}
         </div>
-        <div class="product__cat">
+        <div className="product__cat">
           <span>{settings.getProductCategory(p.category)}</span>
           <span>{shop.name}</span>
         </div>
-        <div class="product__qty">
+        <div className="product__qty">
           {p.quantity.val}{' '}
           {p.quantity.unit === '' ? 'exemplaires' : p.quantity.unit}
         </div>
-        <div class="product__price">
+        <div className="product__price">
           {p.batch === true && ('à partir de ')}
           {p.batch === false && (<span>{p.price.initial}€</span>)}
           <strong>{p.price.selling}€</strong>

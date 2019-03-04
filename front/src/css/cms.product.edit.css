@@ -43,15 +43,18 @@
 .product-edit__form__field label {
   display:block;
   padding-bottom:8px;
+  font-size:.8em;
+  color:#999;
 }
 .product-edit__form__field input,
 .product-edit__form__field select {
   border:none;
   background:#f2f2f2;
+  border:2px solid #ccc;
   border-radius:3px;
   font-size:1em;
   width:100%;
-  PADDING:10px 0;
+  padding:10px 0;
 }
 @media screen and (min-width:792px) {
   .product-edit__form__field {
