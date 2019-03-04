@@ -1,6 +1,10 @@
 .offer-edit {
-  background:#eee;
-  padding:100px 0;
+  margin-top:50px;
+  padding:50px 0;
+  background:#222;
+}
+.offer-area {
+  background:#222;
 }
 .offer-edit__add-product {
   text-align: center;
@@ -9,7 +13,7 @@
 .offer-edit__product {
   width: 200px;
   height: 200px;
-  margin: 0 auto 4px;
+  margin: 0 auto 1px;
   background-size: cover;
   background-position: center center;
   position: relative;

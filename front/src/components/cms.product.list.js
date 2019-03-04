@@ -53,7 +53,7 @@ export default class CmsProductList extends React.Component {
           <div>
             <div className="sticky-header">
               <div className="wrapper">
-                <button onClick={this.handleCancel}>Annuler</button>
+                <button onClick={this.handleCancel}>X</button>
                 <button onClick={this.handleSave}>Valider</button>
               </div>
             </div>

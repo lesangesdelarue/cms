@@ -51,7 +51,7 @@ export default class CmsOfferList extends React.Component {
                   _self.setState({ mode: 'list', offers_to_delete: [] })
                 }
               >
-                Annuler
+                X
               </button>
               <button
                 onClick={e => {
