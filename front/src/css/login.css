@@ -38,10 +38,11 @@
 .authentication form input[type='submit'] {
   display:block;
   width:90.5%;
-  background:#222;
+  background:#0098d5;
   margin:0 auto;
   padding:12px 0;
-  border:2px solid #222;
+  border:2px solid #0098d5;
+  box-shadow: 5px 5px 0 rgba(0,0,0,.1);
   color:white;
   font-size:1.2em;
   border-radius:3px;

@@ -14,7 +14,7 @@ export default class CmsProductEdit extends React.Component {
     super(props);
 
     const mode = props.prod ? 'edit' : 'add';
-
+    
     this.state = {
       mode,
       prod: mode === 'add' ? products.create() : props.prod,
@@ -152,18 +152,18 @@ export default class CmsProductEdit extends React.Component {
     const hasPhoto = prod.gallery.length > 0;
     const hasSelectedFile = this.state.selectedFile !== null;
     const selectedShop = settings.getShop(prod.shop);
-
+    
     return (
       <div className="product-edit">
         <div className="sticky-header">
           <div className="wrapper">
             <button onClick={this.handleCancel}>X</button>
-            <button onClick={this.handleSave}>Valider</button>
+            <button onClick={this.handleSave} disabled={false}>Valider</button>
           </div>
         </div>
         <div className="product-edit__photos">
           <div className="wrapper">
-            <h2>Photo</h2>
+            <h2>Photo <span className="colorRed">*</span></h2>
             <div
               className="product-edit__photo"
               style={
@@ -194,12 +194,37 @@ export default class CmsProductEdit extends React.Component {
         <h2>Description</h2>
 
         <div className="product-edit__form__field">
-          <label htmlFor="product_title">Titre *</label>
+          <label htmlFor="product_title">Titre <span className="colorRed">*</span></label>
           <input
             type="text"
             id="product_title"
             onChange={this.handleChangeTitle}
           />
+        </div>
+
+        <div className="product-edit__form__field">
+          <label htmlFor="product_price_initial">Prix initial <span className="colorRed">*</span></label>
+          <input
+            type="number"
+            id="product_price_initial"
+            onChange={this.handleChangeInitialPrice}
+            value={prod.price.initial}
+          />
+        </div>
+
+        <div className="product-edit__form__field">
+          <label htmlFor="product_price_final">Prix de vente <span className="colorRed">*</span></label>
+          <input
+            type="number"
+            id="product_price_final"
+            onChange={this.handleChangeSellingPrice}
+            value={prod.price.selling}
+          />
+        </div>
+      
+        <div className="product-edit__form__field">
+          <input id="product_price_precise" type="checkbox" value={prod.batch} onClick={this.handleChangeBatch} />
+          <label htmlFor="product_price_precise">Prix "à partir de" ?</label>
         </div>
 
         <div className="product-edit__form__field">
@@ -224,31 +249,6 @@ export default class CmsProductEdit extends React.Component {
               </option>
             ))}
           </select>
-        </div>
-
-        <div className="product-edit__form__field">
-          <label htmlFor="product_price_initial">Prix initial</label>
-          <input
-            type="number"
-            id="product_price_initial"
-            onChange={this.handleChangeInitialPrice}
-            value={prod.price.initial}
-          />
-        </div>
-
-        <div className="product-edit__form__field">
-          <label htmlFor="product_price_final">Prix de vente *</label>
-          <input
-            type="number"
-            id="product_price_final"
-            onChange={this.handleChangeSellingPrice}
-            value={prod.price.selling}
-          />
-        </div>
-        
-        <div className="product-edit__form__field">
-          <input id="product_price_precise" type="checkbox" value={prod.batch} onClick={this.handleChangeBatch} />
-          <label htmlFor="product_price_precise">Prix "à partir de" ?</label>
         </div>
 
         <div className="product-edit__form__field">

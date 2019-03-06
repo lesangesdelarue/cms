@@ -10,6 +10,10 @@ body {
   padding: 0 20px;
 }
 
+.colorRed {
+  color:#f45030;
+}
+
 @media screen and (min-width: 840px) {
   .wrapper {
     padding: 0;
@@ -145,6 +149,7 @@ body {
   position: relative; /* permet de positionner les pseudo-éléments */
   padding:15px 15px 15px 25px; /* fait un peu d'espace pour notre case à venir */
   cursor: pointer;    /* affiche un curseur adapté */
+  font-size:1em;
 }
 
 /* Aspect des checkboxes */
@@ -153,7 +158,7 @@ body {
 [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
-  left:0; top: 12px;
+  left:0; top: 13px;
   width: 17px; height: 17px; /* dim. de la case */
   border: 1px solid #aaa;
   background: #f8f8f8;
@@ -165,7 +170,7 @@ body {
 [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
-  top: 13px; left: 4px;
+  top: 14px; left: 4px;
   font-size: 14px;
   color: #09ad7e;
   transition: all .2s; /* on prévoit une animation */
@@ -216,6 +221,11 @@ body {
   border:1px solid #4bb861;
   color:white;
   padding:10px 20px;
+  box-shadow: 5px 5px 0 rgba(0,0,0,.1);
+}
+.sticky-header button:last-child:disabled {
+  opacity:.4;
+  filter:grayscale(1);
 }
 .sticky-header button.facebookColor {
   background:#3B5998;
