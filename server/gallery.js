@@ -16,7 +16,7 @@ function upload(req, res) {
   const { imgFile } = req.files;
   const fileName = `${conf.UPLOAD_DIR}/${type}/${imgFile.name}`;
 
-  console.log(fileName);
+  // console.log(fileName);
 
   imgFile.mv(fileName, function(err) {
     if (err) return res.status(500).send(err);

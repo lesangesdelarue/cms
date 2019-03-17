@@ -55240,7 +55240,7 @@ function upload(req, res) {
   const { imgFile } = req.files;
   const fileName = `${server_conf.UPLOAD_DIR}/${type}/${imgFile.name}`;
 
-  console.log(fileName);
+  // console.log(fileName);
 
   imgFile.mv(fileName, function(err) {
     if (err) return res.status(500).send(err);
@@ -55368,7 +55368,7 @@ function save() {
 function productCreate(params) {
   const { products } = server_model.data;
   const { product } = params;
-  console.log(params);
+  // console.log(params);
   products.unshift(product);
   server_model.save();
   return product;

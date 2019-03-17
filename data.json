@@ -160,6 +160,27 @@
  ],
  "products": [
   {
+   "id": "781b8dd8-522c-45ca-9b1b-b5d8abfb50e4",
+   "batch": false,
+   "created_at": 1552851513,
+   "desc": "",
+   "gallery": [
+    "img/prod/781b8dd8-522c-45ca-9b1b-b5d8abfb50e4_0.jpg?1552851518194?1552851518194"
+   ],
+   "title": "Chaussons bébé fraise gourmand",
+   "shop": 1,
+   "category": 0,
+   "quantity": {
+    "val": 1,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 4,
+    "selling": 2
+   }
+  },
+  {
    "id": "a4eb818b-97c8-4005-9b26-c0a1242c5186",
    "batch": true,
    "created_at": 1551383789,

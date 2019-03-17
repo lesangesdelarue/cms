@@ -71,7 +71,7 @@ export default {
 function productCreate(params) {
   const { products } = model.data;
   const { product } = params;
-  console.log(params);
+  // console.log(params);
   products.unshift(product);
   model.save();
   return product;
