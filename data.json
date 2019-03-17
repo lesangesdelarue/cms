@@ -1,6 +1,56 @@
 {
  "offers": [
   {
+   "id": "da9dd649-4276-40b0-a53f-540d5c3c8215",
+   "created_at": 1551383899,
+   "info": "",
+   "offer_products": [
+    "a4eb818b-97c8-4005-9b26-c0a1242c5186",
+    "42bb2eb1-b531-4b80-86b1-fcf890807533"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "feba62fe-5be8-4cfe-8453-aed3f8db61aa",
+   "created_at": 1551380275,
+   "info": "",
+   "offer_products": [
+    "6a4ee852-effd-45bc-81d8-e96d1c11c63b",
+    "170e2761-8e9a-416f-a694-2d20b86b215e"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "3061d3ab-fcb4-4c9b-bda9-3c946ffe8721",
+   "created_at": 1551379641,
+   "info": "",
+   "offer_products": [
+    "42bb2eb1-b531-4b80-86b1-fcf890807533",
+    "0846ec9d-8c29-489b-85c6-267bb4adce11"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "c14fd3a4-66bd-4bfe-9f3d-ad276ee78089",
+   "created_at": 1551371364,
+   "info": "",
+   "offer_products": [
+    "170e2761-8e9a-416f-a694-2d20b86b215e",
+    "6a822d65-45bb-43bb-a67f-006b6a2253b2"
+   ],
+   "offer_shop": 1
+  },
+  {
+   "id": "eefa9872-b05f-4b40-9082-582e915fafcc",
+   "created_at": 1551356747,
+   "info": "",
+   "offer_products": [
+    "adfb89a5-56ae-48b8-9d2c-4495db13ff4d",
+    "9d437650-b084-42af-8bad-d885034adf96"
+   ],
+   "offer_shop": 1
+  },
+  {
    "id": "ac4f006c-4116-45da-9d4d-6abaafff24bb",
    "created_at": 1549907646,
    "info": "",
@@ -109,6 +159,111 @@
   }
  ],
  "products": [
+  {
+   "id": "a4eb818b-97c8-4005-9b26-c0a1242c5186",
+   "batch": true,
+   "created_at": 1551383789,
+   "desc": "",
+   "gallery": [
+    "img/prod/a4eb818b-97c8-4005-9b26-c0a1242c5186_0.jpg?1551383813043?1551383813043"
+   ],
+   "title": "Bonzai",
+   "shop": 1,
+   "category": 11,
+   "quantity": {
+    "val": 10,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 14,
+    "selling": 7
+   }
+  },
+  {
+   "id": "6a4ee852-effd-45bc-81d8-e96d1c11c63b",
+   "batch": false,
+   "created_at": 1551380107,
+   "desc": "Super casque",
+   "gallery": [
+    "img/prod/6a4ee852-effd-45bc-81d8-e96d1c11c63b_0.jpg?1551380142069?1551380142069"
+   ],
+   "title": "Casque",
+   "shop": 1,
+   "category": 11,
+   "quantity": {
+    "val": 150,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 56,
+    "selling": 12
+   }
+  },
+  {
+   "id": "42bb2eb1-b531-4b80-86b1-fcf890807533",
+   "batch": false,
+   "created_at": 1551379575,
+   "desc": "Nettoyant",
+   "gallery": [
+    "img/prod/42bb2eb1-b531-4b80-86b1-fcf890807533_0.jpg?1551379588324?1551379588324"
+   ],
+   "title": "Spray",
+   "shop": 0,
+   "category": 0,
+   "quantity": {
+    "val": 1,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 3,
+    "selling": 1.5
+   }
+  },
+  {
+   "id": "0846ec9d-8c29-489b-85c6-267bb4adce11",
+   "batch": false,
+   "created_at": 1551379476,
+   "desc": "",
+   "gallery": [
+    "img/prod/0846ec9d-8c29-489b-85c6-267bb4adce11_0.jpg?1551379495897?1551379495897"
+   ],
+   "title": "DVD",
+   "shop": 1,
+   "category": 10,
+   "quantity": {
+    "val": 1000,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 5,
+    "selling": 2
+   }
+  },
+  {
+   "id": "170e2761-8e9a-416f-a694-2d20b86b215e",
+   "batch": false,
+   "created_at": 1551371210,
+   "desc": "",
+   "gallery": [
+    "img/prod/170e2761-8e9a-416f-a694-2d20b86b215e_0.jpg?1551371239755?1551371239755"
+   ],
+   "title": "Stylo",
+   "shop": 1,
+   "category": 9,
+   "quantity": {
+    "val": 1,
+    "unit": ""
+   },
+   "condition": 0,
+   "price": {
+    "initial": 12,
+    "selling": 6
+   }
+  },
   {
    "id": "b2707bc5-342a-46ac-83ef-95cdf5c5505d",
    "batch": false,

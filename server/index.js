@@ -16,7 +16,7 @@ import gql from './gql';
 
 const app = express();
 const host = 'localhost';
-const port = conf.SERVER_PORT;
+const port = process.env.PORT || conf.SERVER_PORT;
 const day_ms = 86400000;
 
 if (port === undefined) {
@@ -36,10 +36,16 @@ app.use(
     store: new MemoryStore({
       checkPeriod: day_ms,
     }),
-  }),
+  })
 );
 
 app.use(helmet());
+
+if (process.env.NODE_ENV === 'production') {
+  console.log('production mode');
+  app.use(express.static('front/build'));
+}
+
 app.use(bodyParser.json());
 app.use(fileUpload());
 

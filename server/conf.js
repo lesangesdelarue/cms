@@ -3,7 +3,7 @@ import { readFileSync } from 'fs';
 import dotenv from 'dotenv';
 
 const conf = {
-  UPLOAD_DIR: 'front/public/img',
+  UPLOAD_DIR: 'front/build/img',
 };
 
 Object.assign(conf, dotenv.config().parsed);
