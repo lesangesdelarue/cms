@@ -1,5 +1,18 @@
 # CMS de l'association Les anges de la rue
 
+**deploy**
+
+build server and frontends assets from workstation before deploy
+
+`npm run build`:
+
+- build/ncc (server)
+- front/build (frontend assets)
+
+```
+[!] copy front/build/img/prod/* into front/public/img/prod in order to prevent 'new added images' lost
+```
+
 **dev**
 
 ```
@@ -27,19 +40,3 @@ Configuration file in cwd, contains configuration data:
 **data.json**
 
 Fake database endpoint
-
-**postgresql (DRAFT)**
-
-```
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-SELECT uuid_generate_v1();
-
-
-CREATE TABLE prods (
-    prod_id uuid DEFAULT uuid_generate_v4 (),
-		prod_val jsonb,
-    PRIMARY KEY (prod_id)
-);
-
-ALTER TABLE prods ADD COLUMN created_at TIMESTAMP DEFAULT NOW()
-```

@@ -9,7 +9,7 @@
     "debug": "npm-run-all --parallel front:dev server:debug",
     "dev": "npm-run-all --parallel front:dev server:dev",
     "build": "npm run front:build && npm run server:ncc:build",
-    "start": "npm run server:ncc:start",
+    "start": "cross-env NODE_ENV=production node build/ncc",
     "front:build": "cd front && npm run build",
     "front:dev": "cd front && npm run start",
     "server:debug": "npm-run-all --parallel server:dev:build server:debug:start",
@@ -18,7 +18,6 @@
     "server:debug:start": "nodemon --inspect --inspect-brk dist/server.dev.js",
     "server:dev:start": "nodemon dist/server.dev.js",
     "server:ncc:build": "cross-env NODE_ENV=production ncc build server/index.js -o build/ncc -M -S",
-    "server:ncc:start": "cross-env NODE_ENV=production node build/ncc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
