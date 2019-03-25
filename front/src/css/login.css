@@ -6,6 +6,7 @@
   font-weight:normal;
   margin-bottom:50px;
   font-size:1.7em;
+  color: purple;
 }
 @media screen and (min-height:600px) {
   .authentication {
