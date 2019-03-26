@@ -224,7 +224,7 @@ export default class CmsProductEdit extends React.Component {
       
         <div className="product-edit__form__field">
           <input id="product_price_precise" type="checkbox" value={prod.batch} onClick={this.handleChangeBatch} />
-          <label htmlFor="product_price_precise">Prix "à partir de" ?</label>
+          <label htmlFor="product_price_precise">Prix "à partir de"</label>
         </div>
 
         <div className="product-edit__form__field">

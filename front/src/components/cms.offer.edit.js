@@ -22,10 +22,10 @@ export default class CmsOfferEdit extends React.Component {
     const offerDelProd = document.querySelectorAll(
       '.offer-edit__product__delete',
     );
-    offerArea.style.width = '300px';
+    offerArea.style.width = '600px';
     offerDelProd.forEach(n => (n.style.display = 'none'));
 
-    html2canvas(offerArea, { width: 300 }).then(function(canvas) {
+    html2canvas(offerArea, { width: 600 }).then(function(canvas) {
       canvas.toBlob(
         function(blob) {
           FileSaver.saveAs(blob, 'promotion.jpg');
@@ -73,7 +73,7 @@ export default class CmsOfferEdit extends React.Component {
                         à partir de
                       </span>
                       <span className="offer-edit__product__price__final">
-                        <span style={{ fontSize: '0.7em' }}>
+                        <span className="offer-edit__product__price__final__from">
                           {prod.batch === true ? 'à partir de ' : ''}
                         </span>
                         {prod.price.selling}

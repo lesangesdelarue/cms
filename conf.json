@@ -24,10 +24,11 @@
     { "id": 21, "val": "Equipement auto" },
     { "id": 22, "val": "Produits Les Anges de la Rue" },
     { "id": 23, "val": "Matériel pro" },
-    { "id": 24, "val": "Bazar" }
+    { "id": 24, "val": "Bazar" },
+    { "id": 25, "val": "Autre" }
   ],
   "productUnits": [
-    { "id": 0, "unit": "", "label": "1 unité de produit" },
+    { "id": 0, "unit": "", "label": "1 produit" },
     { "id": 1, "unit": "kg", "label": "1 kg de produit" },
     { "id": 2, "unit": "l", "label": "1 litre de produit" },
     { "id": 3, "unit": "m³", "label": "1 mètre cube de produit" }
@@ -41,12 +42,12 @@
   "shops": [
     {
       "id": 0,
-      "name": "Gigean",
+      "name": "Bourg St-Andéol",
       "address": ""
     },
     {
       "id": 1,
-      "name": "Bourg St Andéol",
+      "name": "Gigean",
       "address": ""
     }
   ]

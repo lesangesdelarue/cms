@@ -11,8 +11,8 @@
   padding: 50px 0;
 }
 .offer-edit__product {
-  width: 200px;
-  height: 200px;
+  width: 600px;
+  height: 600px;
   margin: 0 auto 1px;
   background-size: cover;
   background-position: center center;
@@ -25,16 +25,17 @@
   bottom: 20px;
   left: 0;
   font-weight: bold;
+  font-size:2em;
 }
 
 .offer-edit__product__price {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background: yellow;
-  border-radius: 100px;
+  border-radius: 150px;
   display: table;
 }
 .offer-edit__product__price__content {
@@ -50,10 +51,16 @@
 .offer-edit__product__price__initial {
   display: block;
   text-decoration: line-through;
+  font-size:1.5em;
 }
 .offer-edit__product__price__final {
-  font-size: 1.5em;
+  font-size: 3em;
   font-weight: bold;
+  display: block;
+}
+.offer-edit__product__price__final__from {
+  font-size: 0.3em;
+  padding:0 0 5px 0;
   display: block;
 }
 
@@ -72,12 +79,6 @@
   color: #fff;
 }
 
-@media screen and (min-width: 600px) {
-  .offer-edit__product {
-    width: 300px;
-    height: 300px;
-  }
-}
 .offer-edit__products-list {
   display: none;
   position: fixed;
