@@ -3,10 +3,8 @@
 }
 .authentication h1 {
   text-align: center;
-  font-weight:normal;
   margin-bottom:50px;
   font-size:1.7em;
-  color: purple;
 }
 @media screen and (min-height:600px) {
   .authentication {
@@ -57,4 +55,9 @@
   color: red;
   padding: 5px 0;
   margin-bottom: 10px;
+}
+.authentication a {
+  display:block;
+  text-align:center;
+  padding:50px 0;
 }

@@ -51,6 +51,7 @@ export default class Login extends React.Component {
           />
           <input type="submit" value="Connexion" />
         </form>
+        <a href="http://www.lesangesdelarue.org">Retour au site</a>
       </div>
     );
   }
