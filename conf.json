@@ -42,12 +42,12 @@
   "shops": [
     {
       "id": 0,
-      "name": "Bourg St-Andéol",
+      "name": "1 - Gigean",
       "address": ""
     },
     {
       "id": 1,
-      "name": "Gigean",
+      "name": "2 - Bourg St-Andéol",
       "address": ""
     }
   ]
